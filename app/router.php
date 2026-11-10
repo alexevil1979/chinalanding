@@ -54,12 +54,14 @@ if ($route === 'search') {
             $count = db()->prepare("SELECT COUNT(DISTINCT a.id) FROM articles a LEFT JOIN article_category ac ON ac.article_id=a.id LEFT JOIN categories c ON c.id=ac.category_id WHERE a.status='published' AND a.published_at<=NOW() AND (a.title LIKE ? OR a.content_html LIKE ? OR c.name LIKE ?)");
             $count->execute([$like, $like, $like]);
             $total = (int)$count->fetchColumn();
+            $order = articles_order_by('a');
             $results = localize_articles(query(
-                "SELECT a.*,(SELECT c.name FROM article_category x JOIN categories c ON c.id=x.category_id WHERE x.article_id=a.id LIMIT 1) category_name FROM articles a WHERE a.status='published' AND a.published_at<=NOW() AND (a.title LIKE ? OR a.content_html LIKE ? OR EXISTS(SELECT 1 FROM article_category x JOIN categories c ON c.id=x.category_id WHERE x.article_id=a.id AND c.name LIKE ?)) ORDER BY a.is_popular DESC,a.published_at DESC LIMIT {$perPage} OFFSET {$offset}",
+                "SELECT a.*,(SELECT c.name FROM article_category x JOIN categories c ON c.id=x.category_id WHERE x.article_id=a.id LIMIT 1) category_name FROM articles a WHERE a.status='published' AND a.published_at<=NOW() AND (a.title LIKE ? OR a.content_html LIKE ? OR EXISTS(SELECT 1 FROM article_category x JOIN categories c ON c.id=x.category_id WHERE x.article_id=a.id AND c.name LIKE ?)) ORDER BY {$order} LIMIT {$perPage} OFFSET {$offset}",
                 [$like, $like, $like]
             ));
         } else {
-            $all = query("SELECT a.*,(SELECT c.name FROM article_category x JOIN categories c ON c.id=x.category_id WHERE x.article_id=a.id LIMIT 1) category_name FROM articles a WHERE a.status='published' AND a.published_at<=NOW() ORDER BY a.is_popular DESC,a.published_at DESC");
+            $order = articles_order_by('a');
+            $all = query("SELECT a.*,(SELECT c.name FROM article_category x JOIN categories c ON c.id=x.category_id WHERE x.article_id=a.id LIMIT 1) category_name FROM articles a WHERE a.status='published' AND a.published_at<=NOW() ORDER BY {$order}");
             $needle = mb_strtolower($term, 'UTF-8');
             $matched = [];
             foreach ($all as $row) {
@@ -210,8 +212,9 @@ if (preg_match('#^category/([a-z0-9-]+)$#', $route, $m)) {
     $page = max(1, (int)($_GET['page'] ?? 1));
     $perPage = 12;
     $offset = ($page - 1) * $perPage;
+    $order = articles_order_by('a');
     $articles = localize_articles(query(
-        "SELECT a.* FROM articles a JOIN article_category ac ON ac.article_id=a.id WHERE ac.category_id=? AND a.status='published' AND a.published_at<=NOW() ORDER BY a.is_featured DESC,a.published_at DESC LIMIT {$perPage} OFFSET {$offset}",
+        "SELECT a.* FROM articles a JOIN article_category ac ON ac.article_id=a.id WHERE ac.category_id=? AND a.status='published' AND a.published_at<=NOW() ORDER BY {$order} LIMIT {$perPage} OFFSET {$offset}",
         [(int)$cats[0]['id']]
     ));
     $countQ = db()->prepare("SELECT COUNT(*) FROM articles a JOIN article_category ac ON ac.article_id=a.id WHERE ac.category_id=? AND a.status='published' AND a.published_at<=NOW()");

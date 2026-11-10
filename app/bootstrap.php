@@ -25,6 +25,30 @@ function strip_hiddifysales_html(string $html): string {
     return $html;
 }
 function query(string $sql, array $params=[]): array { $q=db()->prepare($sql); $q->execute($params); return $q->fetchAll(); }
+function article_columns(): array {
+    static $cols;
+    if ($cols !== null) {
+        return $cols;
+    }
+    try {
+        $cols = array_map(static fn($r) => (string)$r['Field'], query('SHOW COLUMNS FROM articles'));
+    } catch (Throwable $x) {
+        $cols = [];
+    }
+    return $cols;
+}
+function articles_order_by(string $alias = 'a'): string {
+    $cols = article_columns();
+    $parts = [];
+    if (in_array('is_featured', $cols, true)) {
+        $parts[] = $alias . '.is_featured DESC';
+    }
+    if (in_array('is_popular', $cols, true)) {
+        $parts[] = $alias . '.is_popular DESC';
+    }
+    $parts[] = $alias . '.published_at DESC';
+    return implode(', ', $parts);
+}
 function render(string $view, array $data=[]): void { extract($data); require dirname(__DIR__).'/app/Views/layouts/header.php'; require dirname(__DIR__).'/app/Views/'.$view.'.php'; require dirname(__DIR__).'/app/Views/layouts/footer.php'; }
 function csrf(): string { if (empty($_SESSION['csrf'])) $_SESSION['csrf']=bin2hex(random_bytes(32)); return $_SESSION['csrf']; }
 function verify_csrf(): void { if (!hash_equals($_SESSION['csrf'] ?? '', $_POST['csrf'] ?? '')) { http_response_code(419); exit('Invalid request'); } }

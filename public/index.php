@@ -22,6 +22,19 @@ if (str_ends_with($route, '.xml')) {
 session_set_cookie_params(['httponly' => true, 'secure' => isset($_SERVER['HTTPS']), 'samesite' => 'Lax']);
 session_start();
 
+set_exception_handler(static function (Throwable $e): void {
+    error_log('[anquanzhinan] ' . $e->getMessage() . ' @ ' . $e->getFile() . ':' . $e->getLine());
+    if (!headers_sent()) {
+        http_response_code(500);
+        header('Content-Type: text/plain; charset=utf-8');
+    }
+    if (is_file('/tmp/anquan_debug') || (($GLOBALS['config']['debug'] ?? false) === true)) {
+        echo 'ERR: ' . $e->getMessage() . "\n" . $e->getFile() . ':' . $e->getLine() . "\n";
+        return;
+    }
+    echo 'Internal Server Error';
+});
+
 if (isset($_GET['lang']) && in_array($_GET['lang'], SUPPORTED_LOCALES, true)) {
     $target = (string)$_GET['lang'];
     $qs = $_GET;
