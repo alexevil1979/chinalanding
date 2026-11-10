@@ -1,16 +1,15 @@
 <div class="container page-stack">
   <section class="category-head">
-    <nav class="breadcrumbs" aria-label="面包屑"><a href="/">首页</a><span>›</span><span><?=e($category['name'])?></span></nav>
+    <nav class="breadcrumbs" aria-label="<?=e(t('breadcrumbs'))?>"><a href="<?=e(lp('/'))?>"><?=e(t('home'))?></a><span>›</span><span><?=e($category['name'])?></span></nav>
     <p class="eyebrow">TOPIC COLLECTION</p>
-    <?php $displayName=($category['slug']??'')==='vpn-technology'?'网络加密技术':$category['name']; ?>
-    <h1><?=e($displayName)?></h1>
+    <h1><?=e($category['name'])?></h1>
     <p><?=e($category['description'])?></p>
   </section>
 
   <div class="latest-grid">
     <?php foreach ($articles as $i => $article): ?>
     <article class="latest-card">
-      <a href="/articles/<?=e($article['slug'])?>">
+      <a href="<?=e(lp('articles/'.$article['slug']))?>">
         <div class="article-thumb thumb-<?=($i % 4) + 1?>">
           <?php if (!empty($article['image_url'])): ?>
             <img src="<?=e($article['image_url'])?>" alt="<?=e($article['image_alt'] ?? $article['title'])?>" loading="lazy">
@@ -23,17 +22,17 @@
           <p class="meta"><?=e(substr($article['published_at'] ?? '', 0, 10))?></p>
           <h3><?=e($article['title'])?></h3>
           <p><?=e($article['meta_description'])?></p>
-          <span class="read-more">阅读全文 →</span>
+          <span class="read-more"><?=e(t('read_more'))?></span>
         </div>
       </a>
     </article>
     <?php endforeach; ?>
   </div>
 
-  <?php if (empty($articles)): ?><p>该主题的文章正在整理中，请浏览其他安全指南。</p><?php endif; ?>
+  <?php if (empty($articles)): ?><p><?=e(locale()==='zh'?'该主题的文章正在整理中，请浏览其他安全指南。':(locale()==='ru'?'Статьи по этой теме готовятся. Посмотрите другие разделы.':'Articles for this topic are being prepared. Browse other guides.'))?></p><?php endif; ?>
 
   <?php if (($pages ?? 1) > 1): ?>
-  <nav class="pagination" aria-label="分页">
+  <nav class="pagination" aria-label="<?=e(t('page_n', ['n'=>'']))?>">
     <?php for ($p = 1; $p <= $pages; $p++): ?>
       <a class="<?=$p === $page ? 'current' : ''?>" href="?page=<?=$p?>" <?=$p === $page ? 'aria-current="page"' : ''?>><?=$p?></a>
     <?php endfor; ?>
@@ -42,10 +41,10 @@
 
   <section class="tool-callout">
     <div>
-      <p class="eyebrow">继续探索</p>
-      <h2>把知识连接起来</h2>
-      <p>通过站内搜索查找与 <?=e($category['name'])?> 相关的其他文章。</p>
+      <p class="eyebrow">CONTINUE</p>
+      <h2><?=e(t('topics'))?></h2>
+      <p><?=e($category['name'])?></p>
     </div>
-    <a href="/search?q=<?=urlencode($category['name'])?>">搜索本主题 ↗</a>
+    <a href="<?=e(lp('search'))?>?q=<?=urlencode($category['name'])?>"><?=e(t('find_articles'))?></a>
   </section>
 </div>

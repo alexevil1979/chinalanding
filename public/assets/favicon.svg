@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Digital Security Guide">
+  <defs>
+    <linearGradient id="g" x1="12" y1="8" x2="52" y2="56" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#10243d"/>
+      <stop offset="1" stop-color="#1d4f86"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#g)"/>
+  <path d="M32 12c8 4 14 5 18 5v14c0 12-8 20-18 23-10-3-18-11-18-23V17c4 0 10-1 18-5z" fill="#173a5c" stroke="#7ee8e0" stroke-width="2"/>
+  <text x="32" y="38" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="16" font-weight="800" fill="#ffffff">DS</text>
+  <circle cx="44" cy="18" r="3.2" fill="#39d6d0"/>
+</svg>

@@ -1,0 +1,88 @@
+<?php
+declare(strict_types=1);
+return [
+    'network-security' => [
+        'name_zh' => '网络安全',
+        'name' => 'Network Security',
+        'description' => 'From threat recognition to everyday defenses—build reliable security habits.',
+        'seo_title' => 'Network Security Guides | Digital Security Guide',
+        'meta_description' => 'Learn about attacks, device protection, and practical security habits.',
+    ],
+    'network-privacy' => [
+        'name_zh' => '网络隐私',
+        'name' => 'Network Privacy',
+        'description' => 'Understand data collection, browser tracking, and privacy-protection methods.',
+        'seo_title' => 'Network Privacy Guides | Digital Security Guide',
+        'meta_description' => 'Learn how to protect personal information and online privacy.',
+    ],
+    'account-security' => [
+        'name_zh' => '账户安全',
+        'name' => 'Account Security',
+        'description' => 'Passwords, two-factor authentication, and digital-identity basics.',
+        'seo_title' => 'Account Security Guides | Digital Security Guide',
+        'meta_description' => 'Protect online accounts, passwords, and digital identity.',
+    ],
+    'secure-network' => [
+        'name_zh' => '安全网络',
+        'name' => 'Secure Networking',
+        'description' => 'Practical knowledge for public networks, routers, and safer connections.',
+        'seo_title' => 'Secure Network Connection Guides | Digital Security Guide',
+        'meta_description' => 'Learn about public Wi-Fi, routers, and safer connections.',
+    ],
+    'network-technology' => [
+        'name_zh' => '网络技术',
+        'name' => 'Network Technology',
+        'description' => 'Clear introductions to network protocols and foundational technology.',
+        'seo_title' => 'Network Technology Basics | Digital Security Guide',
+        'meta_description' => 'Understand DNS, HTTPS, IP addresses, and network protocols.',
+    ],
+    'vpn-technology' => [
+        'name_zh' => 'VPN技术',
+        'name' => 'Network Encryption',
+        'description' => 'Objective explainers of VPN concepts, encryption, and related protocols.',
+        'seo_title' => 'Network Encryption Knowledge | Digital Security Guide',
+        'meta_description' => 'Learn how VPN concepts and privacy tooling work at a protocol level.',
+    ],
+    'tutorials' => [
+        'name_zh' => '使用教程',
+        'name' => 'Tutorials',
+        'description' => 'Hands-on guides for everyday device and account security.',
+        'seo_title' => 'Digital Security Tutorials | Digital Security Guide',
+        'meta_description' => 'Clear, practical digital-security how-tos.',
+    ],
+    'data-protection' => [
+        'name_zh' => '数据保护',
+        'name' => 'Data Protection',
+        'description' => 'Reduce exposure of personal data and improve everyday data hygiene.',
+        'seo_title' => 'Data Protection | Digital Security Guide',
+        'meta_description' => 'Practical ways to reduce personal data leaks.',
+    ],
+    'cryptography' => [
+        'name_zh' => '密码学',
+        'name' => 'Cryptography',
+        'description' => 'Approachable introductions to encryption ideas used on the modern web.',
+        'seo_title' => 'Cryptography Basics | Digital Security Guide',
+        'meta_description' => 'Learn encryption concepts used in everyday online security.',
+    ],
+    'digital-identity' => [
+        'name_zh' => '数字身份',
+        'name' => 'Digital Identity',
+        'description' => 'Protect identity signals across accounts, devices, and services.',
+        'seo_title' => 'Digital Identity | Digital Security Guide',
+        'meta_description' => 'Protect digital identity across services and devices.',
+    ],
+    'mobile-security' => [
+        'name_zh' => '移动安全',
+        'name' => 'Mobile Security',
+        'description' => 'Safer habits for phones, apps, and mobile data.',
+        'seo_title' => 'Mobile Security | Digital Security Guide',
+        'meta_description' => 'Protect mobile devices, apps, and data.',
+    ],
+    'network-protocols' => [
+        'name_zh' => '网络协议',
+        'name' => 'Network Protocols',
+        'description' => 'How common internet protocols work and where trust boundaries sit.',
+        'seo_title' => 'Network Protocols | Digital Security Guide',
+        'meta_description' => 'Understand common internet protocols and trust boundaries.',
+    ],
+];

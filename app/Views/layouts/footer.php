@@ -2,59 +2,59 @@
 <footer class="site-footer">
   <div class="container footer-columns">
     <div>
-      <a class="brand footer-brand" href="/">
-        <span class="brand-mark">DS</span>
-        <span class="brand-name">数字安全指南<small>DIGITAL SECURITY GUIDE</small></span>
+      <a class="brand footer-brand" href="<?=e(lp('/'))?>">
+        <span class="brand-mark" aria-hidden="true"><img src="/assets/favicon.svg" width="40" height="40" alt=""></span>
+        <span class="brand-name"><?=e(t('site_name'))?><small><?=e(t('site_tagline'))?></small></span>
       </a>
-      <p>面向中文读者的数字安全与网络技术科普平台。以清晰、审慎、可验证的内容，帮助读者理解网络安全与账户防护。</p>
+      <p><?=e(t('footer_blurb'))?></p>
     </div>
     <div>
-      <h2>探索主题</h2>
-      <a href="/category/network-security">网络安全</a>
-      <a href="/category/network-privacy">网络隐私</a>
-      <a href="/category/account-security">账户安全</a>
-      <a href="/category/vpn-technology">网络加密</a>
-      <a href="/category/tutorials">使用教程</a>
-      <a href="/category/data-protection">数据保护</a>
-      <a href="/category/cryptography">密码学</a>
-      <a href="/category/digital-identity">数字身份</a>
-      <a href="/category/mobile-security">移动安全</a>
-      <a href="/category/network-protocols">网络协议</a>
+      <h2><?=e(t('explore_topics'))?></h2>
+      <a href="<?=e(lp('category/network-security'))?>"><?=e(t('nav_network_security'))?></a>
+      <a href="<?=e(lp('category/network-privacy'))?>"><?=e(t('nav_network_privacy'))?></a>
+      <a href="<?=e(lp('category/account-security'))?>"><?=e(t('nav_account_security'))?></a>
+      <a href="<?=e(lp('category/vpn-technology'))?>"><?=e(t('nav_vpn_technology'))?></a>
+      <a href="<?=e(lp('category/tutorials'))?>"><?=e(t('nav_tutorials'))?></a>
+      <a href="<?=e(lp('category/data-protection'))?>"><?=e(locale()==='zh'?'数据保护':(locale()==='ru'?'Защита данных':'Data Protection'))?></a>
+      <a href="<?=e(lp('category/cryptography'))?>"><?=e(locale()==='zh'?'密码学':(locale()==='ru'?'Криптография':'Cryptography'))?></a>
+      <a href="<?=e(lp('category/digital-identity'))?>"><?=e(locale()==='zh'?'数字身份':(locale()==='ru'?'Цифровая идентичность':'Digital Identity'))?></a>
+      <a href="<?=e(lp('category/mobile-security'))?>"><?=e(locale()==='zh'?'移动安全':(locale()==='ru'?'Мобильная безопасность':'Mobile Security'))?></a>
+      <a href="<?=e(lp('category/network-protocols'))?>"><?=e(locale()==='zh'?'网络协议':(locale()==='ru'?'Сетевые протоколы':'Network Protocols'))?></a>
     </div>
     <div>
-      <h2>关于本站</h2>
-      <a href="/about">关于我们</a>
-      <a href="/contact">联系我们</a>
-      <a href="/privacy-policy">隐私政策</a>
-      <a href="/terms">使用条款</a>
+      <h2><?=e(t('about_site'))?></h2>
+      <a href="<?=e(lp('about'))?>"><?=e(t('about'))?></a>
+      <a href="<?=e(lp('contact'))?>"><?=e(t('contact'))?></a>
+      <a href="<?=e(lp('privacy-policy'))?>"><?=e(t('privacy'))?></a>
+      <a href="<?=e(lp('terms'))?>"><?=e(t('terms'))?></a>
     </div>
     <div>
-      <h2>订阅与索引</h2>
-      <a href="/tools">网络加密与安全工具</a>
-      <a href="/sitemap.xml">XML Sitemap</a>
-      <a href="/rss.xml">RSS Feed</a>
+      <h2><?=e(t('subscribe_index'))?></h2>
+      <a href="<?=e(lp('tools'))?>"><?=e(t('tools_link'))?></a>
+      <a href="/sitemap.xml"><?=e(t('xml_sitemap'))?></a>
+      <a href="<?=e(lp('rss.xml'))?>"><?=e(t('rss_feed'))?></a>
       <?php if (show_hiddifysales()): ?>
-      <a href="https://hiddifysales.com" rel="sponsored noopener" target="_blank">HiddifySales（广告 / 商业链接）</a>
+      <a href="https://hiddifysales.com" rel="sponsored noopener" target="_blank"><?=e(t('hiddify_ad'))?></a>
       <?php endif; ?>
     </div>
   </div>
   <div class="container legal-disclaimer">
-    <p>本站内容仅供技术学习与网络安全科普，不构成规避监管、违法使用网络服务或任何违法行为的指导；请遵守中华人民共和国法律法规及相关政策。涉及协议原理的说明不等于使用建议，也不对匿名性或绝对安全作出保证。</p>
+    <p><?=e(t('legal_disclaimer'))?></p>
   </div>
   <div class="container footer-bottom">
-    <span>© <?=date('Y')?> 数字安全指南</span>
+    <span><?=e(t('copyright', ['year' => date('Y')]))?></span>
     <?php
-      $icp=trim(setting('icp_beian'));
-      $icpUrl=trim(setting('icp_url','https://beian.miit.gov.cn/'));
+      $icp = trim(setting('icp_beian'));
+      $icpUrl = trim(setting('icp_url', 'https://beian.miit.gov.cn/'));
     ?>
     <?php if ($icp !== ''): ?>
       <a class="icp-link" href="<?=e($icpUrl !== '' ? $icpUrl : 'https://beian.miit.gov.cn/')?>" rel="noopener" target="_blank"><?=e($icp)?></a>
     <?php else: ?>
-      <span class="icp-placeholder">ICP备案号：申请中 / 待填入 · <a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">beian.miit.gov.cn</a></span>
+      <span class="icp-placeholder"><?=e(t('icp_pending'))?> · <a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">beian.miit.gov.cn</a></span>
     <?php endif; ?>
-    <span>内容用于一般信息参考，不构成安全或法律保证。</span>
+    <span><?=e(t('legal_note'))?></span>
   </div>
 </footer>
-<script src="/assets/site.js?v=20261110d" defer></script>
+<script src="/assets/site.js?v=20261110i18n" defer></script>
 </body>
 </html>
