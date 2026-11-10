@@ -25,6 +25,9 @@ echo "migration_ok\n";
 $c['site_url'] = 'https://chinalanding.1tlt.ru';
 file_put_contents($site . '/config/config.php', "<?php\nreturn " . var_export($c, true) . ";\n");
 echo "site_url=https://chinalanding.1tlt.ru\n";
+$q = $pdo->prepare('INSERT INTO settings (`key`, value) VALUES (?, ?) ON DUPLICATE KEY UPDATE value=IF(value="", VALUES(value), value)');
+$q->execute(['gtm_id', 'GTM-P5PGDL39']);
+echo "gtm_id seeded if empty\n";
 PHP
 
 chown -R www-data:www-data "$SITE"

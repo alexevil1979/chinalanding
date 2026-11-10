@@ -31,10 +31,14 @@
 
   <section class="admin-settings prose">
     <h2>Google / 搜索引擎收录</h2>
-    <p class="meta">用于 Google Search Console 与百度站长验证。保存后 meta 标签会自动出现在全站页头。</p>
+    <p class="meta">Search Console 验证码、GTM 容器 ID。保存后自动写入全站页头（后台页面不加载 GTM）。</p>
     <form method="post" action="/admin/settings" class="admin-toggle-form">
       <input type="hidden" name="csrf" value="<?=e(csrf())?>">
       <input type="hidden" name="form_seo" value="1">
+      <label>
+        Google Tag Manager ID
+        <input type="text" name="gtm_id" value="<?=e((string)($gtmId ?? ''))?>" placeholder="GTM-XXXXXXX" autocomplete="off">
+      </label>
       <label>
         Google Search Console 验证码
         <input type="text" name="google_verification" value="<?=e((string)($googleVerification ?? ''))?>" placeholder="google-site-verification 内容值" autocomplete="off">

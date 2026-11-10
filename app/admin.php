@@ -18,6 +18,12 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
   if (isset($_POST['form_seo'])) {
     set_setting('google_verification', preg_replace('/[^a-zA-Z0-9_-]/', '', (string)($_POST['google_verification'] ?? '')) ?? '');
     set_setting('baidu_verification', preg_replace('/[^a-zA-Z0-9_-]/', '', (string)($_POST['baidu_verification'] ?? '')) ?? '');
+    $gtm = strtoupper(trim((string)($_POST['gtm_id'] ?? '')));
+    $gtm = preg_replace('/[^A-Z0-9-]/', '', $gtm) ?? '';
+    if ($gtm !== '' && !preg_match('/^GTM-[A-Z0-9]+$/', $gtm)) {
+      $gtm = '';
+    }
+    set_setting('gtm_id', $gtm);
   }
   header('Location: /admin?saved=1'); exit;
  }
@@ -56,6 +62,7 @@ if($route==='admin'){
     'saved'=>isset($_GET['saved']),
     'googleVerification'=>setting('google_verification'),
     'baiduVerification'=>setting('baidu_verification'),
+    'gtmId'=>setting('gtm_id'),
   ]);
   exit;
 }
