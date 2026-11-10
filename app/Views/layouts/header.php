@@ -30,8 +30,15 @@ $ogImage = (isset($article) && !empty($article['image_url']))
 <meta property="og:locale:alternate" content="zh_CN">
 <meta property="og:locale:alternate" content="en_US">
 <meta property="og:locale:alternate" content="ru_RU">
-<meta name="baidu-site-verification" content="<?=e(setting('baidu_verification'))?>">
-<meta name="google-site-verification" content="<?=e(setting('google_verification'))?>">
+<?php
+$googleVerify = trim(setting('google_verification'));
+$baiduVerify = trim(setting('baidu_verification'));
+if ($googleVerify !== ''): ?>
+<meta name="google-site-verification" content="<?=e($googleVerify)?>">
+<?php endif; ?>
+<?php if ($baiduVerify !== ''): ?>
+<meta name="baidu-site-verification" content="<?=e($baiduVerify)?>">
+<?php endif; ?>
 <meta property="og:url" content="<?=e($canonical)?>">
 <meta property="og:image" content="<?=e($ogImage)?>">
 <meta property="og:image:width" content="1200">
@@ -43,9 +50,10 @@ $ogImage = (isset($article) && !empty($article['image_url']))
 <meta name="twitter:image" content="<?=e($ogImage)?>">
 <?php
 $robotsPath = $canonicalPath;
-$robotsMeta = (!empty($robots)) ? $robots : ((str_starts_with($robotsPath, 'search') || str_starts_with($robotsPath, 'admin')) ? 'noindex,follow' : 'index,follow');
+$robotsMeta = (!empty($robots)) ? $robots : ((str_starts_with($robotsPath, 'search') || str_starts_with($robotsPath, 'admin') || str_starts_with($robotsPath, 'analytics')) ? 'noindex,follow' : 'index,follow');
 ?>
 <meta name="robots" content="<?=e($robotsMeta)?>">
+<meta name="googlebot" content="<?=e(str_starts_with($robotsPath, 'admin') || str_starts_with($robotsPath, 'analytics') ? 'noindex,nofollow' : $robotsMeta)?>">
 <meta name="theme-color" content="#0d1f35">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/assets/favicon.ico" sizes="any">
@@ -53,9 +61,40 @@ $robotsMeta = (!empty($robots)) ? $robots : ((str_starts_with($robotsPath, 'sear
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="alternate" type="application/rss+xml" title="<?=e(t('rss_title'))?>" href="<?=e(lp('rss.xml'))?>">
-<link rel="stylesheet" href="/assets/style.css?v=20261110i18n">
-<script type="application/ld+json"><?=json_encode(['@context'=>'https://schema.org','@type'=>'Organization','name'=>t('site_name'),'url'=>url('/'),'logo'=>url('assets/logo.svg')], JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES)?></script>
-<?php if (empty($article)): ?><script type="application/ld+json"><?=json_encode(['@context'=>'https://schema.org','@type'=>'WebSite','name'=>t('site_name'),'url'=>lurl('/'),'inLanguage'=>locale_bcp47(),'potentialAction'=>['@type'=>'SearchAction','target'=>lurl('search').'?q={search_term_string}','query-input'=>'required name=search_term_string']], JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES)?></script><?php endif; ?>
+<link rel="stylesheet" href="/assets/style.css?v=20261110analytics">
+<?php
+$orgSchema = [
+    '@context' => 'https://schema.org',
+    '@type' => 'Organization',
+    'name' => t('site_name'),
+    'url' => url('/'),
+    'logo' => [
+        '@type' => 'ImageObject',
+        'url' => url('assets/logo.svg'),
+        'width' => 512,
+        'height' => 512,
+    ],
+    'description' => t('default_description'),
+];
+$websiteSchema = [
+    '@context' => 'https://schema.org',
+    '@type' => 'WebSite',
+    'name' => t('site_name'),
+    'url' => lurl('/'),
+    'inLanguage' => locale_bcp47(),
+    'publisher' => ['@type' => 'Organization', 'name' => t('site_name'), 'url' => url('/')],
+    'potentialAction' => [
+        '@type' => 'SearchAction',
+        'target' => [
+            '@type' => 'EntryPoint',
+            'urlTemplate' => lurl('search') . '?q={search_term_string}',
+        ],
+        'query-input' => 'required name=search_term_string',
+    ],
+];
+?>
+<script type="application/ld+json"><?=json_encode($orgSchema, JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES)?></script>
+<?php if (empty($article)): ?><script type="application/ld+json"><?=json_encode($websiteSchema, JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES)?></script><?php endif; ?>
 </head>
 <body>
 <a class="skip-link" href="#main"><?=e(t('skip_to_content'))?></a>

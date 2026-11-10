@@ -87,7 +87,7 @@ if ($route === 'search') {
     exit;
 }
 
-if (in_array($route, ['rss.xml', 'sitemap-articles.xml', 'sitemap-categories.xml'], true)) {
+if (in_array($route, ['rss.xml', 'sitemap.xml', 'sitemap-pages.xml', 'sitemap-articles.xml', 'sitemap-categories.xml'], true)) {
     require dirname(__DIR__) . '/app/seo.php';
     exit;
 }

@@ -1,6 +1,19 @@
 User-agent: *
 Allow: /
 Allow: /assets/
-Allow: /search
+Allow: /en/
+Allow: /ru/
 Disallow: /admin/
+Disallow: /analytics/
+Disallow: /search?
+
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+Disallow: /analytics/
+
+User-agent: Googlebot-Image
+Allow: /assets/
+Allow: /uploads/
+
 Sitemap: https://anquanzhinan.com/sitemap.xml

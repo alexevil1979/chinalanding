@@ -10,6 +10,41 @@ CREATE TABLE settings (`key` VARCHAR(120) PRIMARY KEY, `value` TEXT NOT NULL) EN
 CREATE TABLE redirects (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, from_path VARCHAR(255) NOT NULL UNIQUE, to_path VARCHAR(255) NOT NULL, status_code SMALLINT NOT NULL DEFAULT 301) ENGINE=InnoDB;
 CREATE TABLE media (id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY, filename VARCHAR(255) NOT NULL, mime_type VARCHAR(100) NOT NULL, created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP) ENGINE=InnoDB;
 CREATE TABLE seo_metadata (id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY, entity_type VARCHAR(40) NOT NULL, entity_id BIGINT UNSIGNED NOT NULL, canonical_url VARCHAR(500) NULL, og_image VARCHAR(500) NULL, UNIQUE KEY entity(entity_type,entity_id)) ENGINE=InnoDB;
+CREATE TABLE analytics_pageviews (
+  id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  visitor_id CHAR(32) NOT NULL,
+  session_id CHAR(32) NOT NULL,
+  path VARCHAR(500) NOT NULL,
+  page_type VARCHAR(40) NOT NULL DEFAULT 'page',
+  article_slug VARCHAR(180) NULL,
+  locale CHAR(5) NOT NULL DEFAULT 'zh',
+  referrer_host VARCHAR(255) NULL,
+  country CHAR(2) NOT NULL DEFAULT 'XX',
+  browser VARCHAR(40) NOT NULL DEFAULT 'Other',
+  os VARCHAR(40) NOT NULL DEFAULT 'Other',
+  device VARCHAR(20) NOT NULL DEFAULT 'desktop',
+  is_bot TINYINT(1) NOT NULL DEFAULT 0,
+  created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  KEY idx_created (created_at),
+  KEY idx_country_created (country, created_at),
+  KEY idx_path_created (path(191), created_at),
+  KEY idx_visitor_created (visitor_id, created_at),
+  KEY idx_session_created (session_id, created_at),
+  KEY idx_bot_created (is_bot, created_at)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE analytics_events (
+  id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  visitor_id CHAR(32) NOT NULL,
+  session_id CHAR(32) NOT NULL,
+  event_name VARCHAR(60) NOT NULL,
+  event_value VARCHAR(255) NULL,
+  path VARCHAR(500) NOT NULL,
+  locale CHAR(5) NOT NULL DEFAULT 'zh',
+  country CHAR(2) NOT NULL DEFAULT 'XX',
+  created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  KEY idx_created (created_at),
+  KEY idx_name_created (event_name, created_at)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 INSERT INTO categories(name,slug,description,seo_title,meta_description) VALUES
 ('网络安全','network-security','从威胁识别到日常防护，建立可靠的安全习惯。','网络安全知识与实用指南｜数字安全指南','了解网络攻击、设备防护和安全习惯。'),('网络隐私','network-privacy','理解数据收集、浏览器追踪与隐私保护方法。','网络隐私保护指南｜数字安全指南','学习保护个人信息和网络隐私的方法。'),('账户安全','account-security','密码、双重验证与数字身份的基础保护。','账户安全实用指南｜数字安全指南','保护在线账户、密码和数字身份。'),('安全网络','secure-network','公共网络、路由器和安全连接的实用知识。','安全网络连接指南｜数字安全指南','了解公共 Wi-Fi、路由器和安全连接。'),('网络技术','network-technology','用易懂的方式认识网络协议和基础技术。','网络技术入门｜数字安全指南','理解 DNS、HTTPS、IP 地址和网络协议。'),('VPN技术','vpn-technology','客观介绍 VPN、加密和相关网络协议。','VPN 技术知识｜数字安全指南','了解 VPN 工作原理和隐私工具选择。'),('使用教程','tutorials','面向日常用户的设备和账户安全操作指南。','数字安全使用教程｜数字安全指南','清晰实用的数字安全操作教程。');
 INSERT INTO settings(`key`,`value`) VALUES ('site_name','数字安全指南'),('baidu_verification',''),('google_verification','');

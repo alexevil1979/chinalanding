@@ -12,7 +12,13 @@ require_admin();
 if($_SERVER['REQUEST_METHOD']==='POST'){
  verify_csrf();
  if($route==='admin/settings'){
-  set_setting('show_hiddifysales', isset($_POST['show_hiddifysales']) ? '1' : '0');
+  if (isset($_POST['form_hiddify'])) {
+    set_setting('show_hiddifysales', isset($_POST['show_hiddifysales']) ? '1' : '0');
+  }
+  if (isset($_POST['form_seo'])) {
+    set_setting('google_verification', preg_replace('/[^a-zA-Z0-9_-]/', '', (string)($_POST['google_verification'] ?? '')) ?? '');
+    set_setting('baidu_verification', preg_replace('/[^a-zA-Z0-9_-]/', '', (string)($_POST['baidu_verification'] ?? '')) ?? '');
+  }
   header('Location: /admin?saved=1'); exit;
  }
  if($route==='admin/articles/delete'){db()->prepare('DELETE FROM articles WHERE id=?')->execute([(int)$_POST['id']]);}
@@ -39,7 +45,30 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
  }
  header('Location: /admin/articles');exit;
 }
-if($route==='admin'){ $stats=(int)db()->query("SELECT COUNT(*) FROM articles WHERE status='published'")->fetchColumn();$drafts=(int)db()->query("SELECT COUNT(*) FROM articles WHERE status='draft'")->fetchColumn();render('admin/dashboard',['title'=>'管理后台','stats'=>$stats,'drafts'=>$drafts,'showHiddify'=>show_hiddifysales(),'saved'=>isset($_GET['saved'])]);exit; }
+if($route==='admin'){
+  $stats=(int)db()->query("SELECT COUNT(*) FROM articles WHERE status='published'")->fetchColumn();
+  $drafts=(int)db()->query("SELECT COUNT(*) FROM articles WHERE status='draft'")->fetchColumn();
+  render('admin/dashboard',[
+    'title'=>'管理后台',
+    'stats'=>$stats,
+    'drafts'=>$drafts,
+    'showHiddify'=>show_hiddifysales(),
+    'saved'=>isset($_GET['saved']),
+    'googleVerification'=>setting('google_verification'),
+    'baiduVerification'=>setting('baidu_verification'),
+  ]);
+  exit;
+}
+if($route==='admin/analytics'){
+  $range=$_GET['range']??'30d';
+  if(!in_array($range,['today','7d','30d','90d'],true)) $range='30d';
+  render('admin/analytics',[
+    'title'=>'访问统计',
+    'robots'=>'noindex,nofollow',
+    'report'=>analytics_dashboard($range),
+  ]);
+  exit;
+}
 if($route==='admin/articles'){$articles=query('SELECT * FROM articles ORDER BY created_at DESC');render('admin/articles',['title'=>'文章管理','articles'=>$articles]);exit;}
 if($route==='admin/articles/new'){$cats=query('SELECT * FROM categories ORDER BY id');render('admin/editor',['title'=>'新建文章','article'=>['id'=>0,'title'=>'','slug'=>'','seo_title'=>'','meta_description'=>'','content_html'=>'','status'=>'draft','published_at'=>'','is_featured'=>0,'is_popular'=>0,'image_url'=>'','image_alt'=>'','faq_json'=>'[]','sources_json'=>'[]'],'categories'=>$cats,'selectedCategories'=>[]]);exit;}
 if(preg_match('#^admin/articles/(\\d+)/edit$#',$route,$m)){$items=query('SELECT * FROM articles WHERE id=?',[(int)$m[1]]);if(!$items){http_response_code(404);render('pages/404',['title'=>'页面未找到']);exit;}$cats=query('SELECT * FROM categories ORDER BY id');$selected=array_column(query('SELECT category_id FROM article_category WHERE article_id=?',[(int)$m[1]]),'category_id');render('admin/editor',['title'=>'编辑文章','article'=>$items[0],'categories'=>$cats,'selectedCategories'=>$selected]);exit;}

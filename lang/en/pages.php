@@ -38,7 +38,7 @@ return [
         'h1' => 'Privacy policy',
         'lead' => 'This site does not offer public user registration. Servers may process technical logs needed for operations, security, and troubleshooting. We do not sell personal information. You can manage local storage and cookies in your browser.',
         'h2_minimize' => 'Data minimization',
-        'minimize' => 'Access logs may include request time, IP address, user-agent, and path, used for security troubleshooting. Admin access requires a session cookie. Visitor account registration is not offered.',
+        'minimize' => 'Access logs may include request time, IP address, user-agent, and path, used for security troubleshooting. We also run first-party analytics (pages, locale, browser/device, approximate country from CDN headers, and on-site events) without sharing data with ad platforms. Clear aq_vid / aq_sid cookies to reset the visitor id. Admin access requires a session cookie. Visitor account registration is not offered.',
         'h2_third' => 'Third-party links',
         'third' => 'External sites have their own privacy policies. Verify the domain before opening outbound links and review the destination’s terms. Links labeled “advertisement / commercial link” are separate from editorial content.',
     ],

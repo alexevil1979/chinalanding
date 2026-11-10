@@ -55,6 +55,6 @@
     <span><?=e(t('legal_note'))?></span>
   </div>
 </footer>
-<script src="/assets/site.js?v=20261110i18n" defer></script>
+<script src="/assets/site.js?v=20261110analytics" defer></script>
 </body>
 </html>

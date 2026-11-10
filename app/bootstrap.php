@@ -1,6 +1,7 @@
 <?php
 declare(strict_types=1);
 require_once __DIR__ . '/i18n.php';
+require_once __DIR__ . '/analytics.php';
 function db(): PDO {
     static $pdo; global $config;
     if (!$pdo) $pdo = new PDO($config['db']['dsn'], $config['db']['user'], $config['db']['password'], [PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION, PDO::ATTR_DEFAULT_FETCH_MODE=>PDO::FETCH_ASSOC]);
@@ -49,7 +50,15 @@ function articles_order_by(string $alias = 'a'): string {
     $parts[] = $alias . '.published_at DESC';
     return implode(', ', $parts);
 }
-function render(string $view, array $data=[]): void { extract($data); require dirname(__DIR__).'/app/Views/layouts/header.php'; require dirname(__DIR__).'/app/Views/'.$view.'.php'; require dirname(__DIR__).'/app/Views/layouts/footer.php'; }
+function render(string $view, array $data=[]): void {
+    extract($data);
+    if (function_exists('analytics_track_pageview')) {
+        analytics_track_pageview();
+    }
+    require dirname(__DIR__).'/app/Views/layouts/header.php';
+    require dirname(__DIR__).'/app/Views/'.$view.'.php';
+    require dirname(__DIR__).'/app/Views/layouts/footer.php';
+}
 function csrf(): string { if (empty($_SESSION['csrf'])) $_SESSION['csrf']=bin2hex(random_bytes(32)); return $_SESSION['csrf']; }
 function verify_csrf(): void { if (!hash_equals($_SESSION['csrf'] ?? '', $_POST['csrf'] ?? '')) { http_response_code(419); exit('Invalid request'); } }
 function is_admin(): bool { return !empty($_SESSION['admin_id']); }
