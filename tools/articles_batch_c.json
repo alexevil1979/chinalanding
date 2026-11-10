@@ -1,0 +1,211 @@
+[
+  {
+    "slug": "check-network-security",
+    "title": "如何检查网络连接安全性",
+    "seo_title": "如何检查网络连接安全性：普通用户可执行的步骤",
+    "meta_description": "从网络身份、加密状态、设备配置和异常表现四方面检查连接安全。",
+    "content_html": "<p>检查网络连接安全时，不必一开始就使用复杂专业工具。普通用户可以从网络身份、加密状态、设备配置和异常表现四个角度入手。</p><h2>确认网络身份</h2><p>核对本机连接的是哪个 Wi-Fi 或有线网络，名称是否与预期一致。公共场所尤其要避免加入名称相似的陌生热点。</p><h2>检查加密与证书</h2><p>浏览器地址栏应显示安全连接标识。若出现证书错误、反复跳转或突然要求安装未知证书，应停止操作并换一个可信网络。</p><h2>检查设备自身</h2><p>确认系统已更新，防火墙或系统安全功能未被异常关闭，共享功能没有不必要地开启。查看是否存在陌生的 VPN 配置、代理或证书。</p><h2>记录异常</h2><p>如果出现频繁掉线、异常弹窗或账户登录提醒，记录时间、设备与现象，必要时联系网络管理员或服务商。不要在异常状态下继续输入敏感信息。</p><h2>总结</h2><p>网络连接安全检查是一套轻量习惯：确认身份、确认加密、确认设备，再处理异常。</p>",
+    "faq_json": [
+      {
+        "q": "没有专业工具能检查吗？",
+        "a": "可以。先从网络名称、HTTPS、系统更新和异常登录提醒开始。"
+      },
+      {
+        "q": "证书警告可以忽略吗？",
+        "a": "多数情况下不应忽略，尤其是在登录或支付页面。"
+      }
+    ],
+    "sources_json": [
+      {
+        "title": "Mozilla HTTPS explanation",
+        "url": "https://developer.mozilla.org/docs/Glossary/HTTPS"
+      },
+      {
+        "title": "CISA Secure Our World",
+        "url": "https://www.cisa.gov/secure-our-world"
+      }
+    ],
+    "is_featured": 0,
+    "is_popular": 0,
+    "cats": [
+      1,
+      4
+    ],
+    "image_url": "/uploads/covers/check-network-security.svg",
+    "image_alt": "如何检查网络连接安全性主题插图"
+  },
+  {
+    "slug": "windows-network-security-settings",
+    "title": "Windows 网络安全设置指南",
+    "seo_title": "Windows 网络安全设置指南：更新、防火墙与账户",
+    "meta_description": "介绍 Windows 用户可检查的账户、更新、防火墙和应用来源设置。",
+    "content_html": "<p>Windows 的网络安全并不只取决于杀毒软件。系统更新、账户权限、防火墙和应用来源共同决定了基础防护水平。</p><h2>保持更新</h2><p>通过官方渠道安装系统和驱动更新。临时关闭更新可能方便某次操作，但长期关闭会积累已知漏洞。</p><h2>防火墙与安全功能</h2><p>保持防火墙开启。不要为了运行来源不明的程序而长期关闭系统安全功能。若必须放行，应尽量限定具体应用。</p><h2>账户与应用来源</h2><p>日常使用标准用户权限更稳妥。安装软件前检查发布者，优先使用官方站点或可信商店。减少随安装捆绑的额外工具。</p><h2>总结</h2><p>Windows 网络安全的基础是：更新、最小权限、防火墙和谨慎安装。额外工具无法替代这些基本设置。</p>",
+    "faq_json": [
+      {
+        "q": "必须安装第三方杀毒吗？",
+        "a": "取决于环境和威胁模型。首先应确保系统安全功能、更新和安装来源可靠。"
+      },
+      {
+        "q": "管理员账户为什么有风险？",
+        "a": "管理员权限会放大恶意程序的影响，日常使用低权限账户更稳妥。"
+      }
+    ],
+    "sources_json": [
+      {
+        "title": "Microsoft Security guidance",
+        "url": "https://www.microsoft.com/security"
+      },
+      {
+        "title": "CISA guidance",
+        "url": "https://www.cisa.gov/"
+      }
+    ],
+    "is_featured": 0,
+    "is_popular": 0,
+    "cats": [
+      7,
+      1
+    ],
+    "image_url": "/uploads/covers/windows-network-security-settings.svg",
+    "image_alt": "Windows 网络安全设置指南主题插图"
+  },
+  {
+    "slug": "why-data-encryption-matters",
+    "title": "数据加密为什么重要",
+    "seo_title": "数据加密为什么重要？传输中与静态数据",
+    "meta_description": "理解传输加密和存储加密如何降低信息被读取的风险，以及密钥管理为何关键。",
+    "content_html": "<p>加密把可读信息转换为需要密钥才能还原的形式，是保护数据机密性的基础技术。无论是网页传输、设备存储还是备份，都可能用到不同形式的加密。</p><h2>传输中的加密</h2><p>HTTPS/TLS 等技术保护浏览器与网站之间的通信，降低路径上被直接窃听的风险。这对登录、支付和隐私浏览尤其重要。</p><h2>静态数据加密</h2><p>设备硬盘加密、备份加密和服务器端加密，关注的是数据在存储状态下被拿走后是否仍可被读取。丢失笔记本时，磁盘加密能显著降低内容直接暴露的风险。</p><h2>密钥管理决定效果</h2><p>没有良好密钥管理的加密，保护会大打折扣。弱密码、共享密钥或把密钥和密文放在一起，都会削弱加密价值。</p><h2>总结</h2><p>加密很重要，但它不能替代访问控制、备份和恶意软件防护。应把它理解为整体安全中的一层。</p>",
+    "faq_json": [
+      {
+        "q": "开了磁盘加密就不用设锁屏了吗？",
+        "a": "不是。锁屏保护的是正在使用中的会话，磁盘加密保护的是存储数据。"
+      },
+      {
+        "q": "所有加密都一样强吗？",
+        "a": "不一样。算法、实现和密钥管理都会影响实际安全性。"
+      }
+    ],
+    "sources_json": [
+      {
+        "title": "NIST Cryptography resources",
+        "url": "https://csrc.nist.gov/projects/cryptographic-standards-and-guidelines"
+      },
+      {
+        "title": "Cloudflare Learning: Encryption",
+        "url": "https://www.cloudflare.com/learning/"
+      }
+    ],
+    "is_featured": 0,
+    "is_popular": 0,
+    "cats": [
+      10,
+      2
+    ],
+    "image_url": "/uploads/covers/why-data-encryption-matters.svg",
+    "image_alt": "数据加密为什么重要主题插图"
+  },
+  {
+    "slug": "safe-public-network-use",
+    "title": "如何安全地使用公共网络",
+    "seo_title": "如何安全地使用公共网络：机场、酒店与咖啡馆",
+    "meta_description": "在机场、酒店和咖啡店使用公共网络时，用可执行的步骤降低风险。",
+    "content_html": "<p>公共网络的便利性伴随着身份不确定和配置不可控。把它当作临时通道，而不是可信办公环境，会更安全。</p><h2>使用前</h2><p>关闭文件共享和自动连接，确认热点名称，完成系统与应用更新。尽量使用官方应用处理重要账户。</p><h2>使用中</h2><p>优先 HTTPS，不在陌生网络中重置密码或做大额操作。发现证书警告、异常弹窗或强制安装配置时立即停止。</p><h2>使用后</h2><p>退出账户，忘记网络，检查是否多了陌生证书、代理或配置文件。如有异常登录提醒，尽快修改密码。</p><h2>总结</h2><p>安全使用公共网络的关键是：少做敏感事、确认加密、用后清理。</p>",
+    "faq_json": [
+      {
+        "q": "酒店 Wi-Fi 登录页安全吗？",
+        "a": "门户页本身常见，但要确认你进入的是官方网络，并在登录后警惕后续钓鱼页。"
+      },
+      {
+        "q": "用手机热点是否更好？",
+        "a": "在不信任公共 Wi-Fi 时，个人热点通常更可控，但仍需注意流量与设备安全。"
+      }
+    ],
+    "sources_json": [
+      {
+        "title": "CISA Secure Our World",
+        "url": "https://www.cisa.gov/secure-our-world"
+      },
+      {
+        "title": "EFF Surveillance Self-Defense",
+        "url": "https://ssd.eff.org/"
+      }
+    ],
+    "is_featured": 0,
+    "is_popular": 1,
+    "cats": [
+      4,
+      7
+    ],
+    "image_url": "/uploads/covers/safe-public-network-use.svg",
+    "image_alt": "如何安全地使用公共网络主题插图"
+  },
+  {
+    "slug": "what-is-https",
+    "title": "什么是 HTTPS 及其作用",
+    "seo_title": "什么是 HTTPS 及其作用？TLS 与证书基础",
+    "meta_description": "了解 HTTPS 如何保护浏览器与网站之间的传输，以及它不能证明什么。",
+    "content_html": "<p>HTTPS 是在 HTTP 之上使用 TLS 的安全传输方式。它帮助保护浏览器与网站之间的通信，并通过证书帮助浏览器验证网站身份。</p><h2>HTTPS 保护什么</h2><p>它可以降低传输内容在路径上被直接读取或篡改的风险，使登录、表单和 Cookie 等数据更不容易在中间链路上明文暴露。</p><h2>看见锁形图标不代表一切安全</h2><p>HTTPS 证明的是连接加密和证书相关身份信息，不代表网站内容可信，也不能阻止你主动把密码交给钓鱼站。仿冒站点同样可能启用 HTTPS。</p><h2>遇到证书错误怎么办</h2><p>不要习惯性点“继续访问”。先检查时间设置、网络环境和域名拼写。对银行、邮箱等关键服务，应改用官方应用或已知安全的网络。</p><h2>总结</h2><p>HTTPS 是现代网页的基础安全能力，但需要与域名核对、钓鱼识别和设备安全一起使用。</p>",
+    "faq_json": [
+      {
+        "q": "HTTP 和 HTTPS 差在哪里？",
+        "a": "HTTPS 在传输层增加了 TLS 保护，降低路径窃听和篡改风险。"
+      },
+      {
+        "q": "公司代理导致证书警告正常吗？",
+        "a": "某些托管网络会插入检查证书。若你不理解该环境，不要在警告状态下处理敏感事务。"
+      }
+    ],
+    "sources_json": [
+      {
+        "title": "Mozilla HTTPS",
+        "url": "https://developer.mozilla.org/docs/Glossary/HTTPS"
+      },
+      {
+        "title": "Cloudflare Learning: What is HTTPS?",
+        "url": "https://www.cloudflare.com/learning/ssl/what-is-https/"
+      }
+    ],
+    "is_featured": 0,
+    "is_popular": 1,
+    "cats": [
+      12,
+      5
+    ],
+    "image_url": "/uploads/covers/what-is-https.svg",
+    "image_alt": "什么是 HTTPS 及其作用主题插图"
+  },
+  {
+    "slug": "protect-online-accounts",
+    "title": "如何保护自己的在线账户",
+    "seo_title": "如何保护自己的在线账户：密码、验证与恢复",
+    "meta_description": "用独立密码、多重验证、恢复信息和登录提醒建立账户安全防线。",
+    "content_html": "<p>在线账户保护需要多个独立环节共同工作。只设置一个复杂密码，却不做验证和恢复保护，仍然容易在钓鱼或泄露事件中失守。</p><h2>四项基础措施</h2><p>使用独立密码；开启多重验证；保护恢复邮箱和手机号；打开登录通知并定期查看活动记录。这四项能覆盖大多数个人账户场景。</p><h2>减少长期暴露</h2><p>不使用的账户应关闭或删除。检查已授权的第三方应用，撤销不再需要的访问。特别关注邮箱，因为它常被用于重置其他服务。</p><h2>发现异常时</h2><p>立即修改密码，退出陌生会话，检查转发规则和已授权应用，并通知可能受影响的相关服务。保留时间线有助于后续判断。</p><h2>总结</h2><p>账户安全是组合拳：凭据、验证、恢复和监控缺一不可。</p>",
+    "faq_json": [
+      {
+        "q": "为什么邮箱最重要？",
+        "a": "因为多数服务把邮箱作为重置入口，邮箱失守常导致连锁失守。"
+      },
+      {
+        "q": "登录通知有必要吗？",
+        "a": "有。它能帮助你更早发现异常登录并采取行动。"
+      }
+    ],
+    "sources_json": [
+      {
+        "title": "Google Account Security",
+        "url": "https://myaccount.google.com/security"
+      },
+      {
+        "title": "OWASP Authentication Cheat Sheet",
+        "url": "https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html"
+      }
+    ],
+    "is_featured": 0,
+    "is_popular": 1,
+    "cats": [
+      3
+    ],
+    "image_url": "/uploads/covers/protect-online-accounts.svg",
+    "image_alt": "如何保护自己的在线账户主题插图"
+  }
+]

@@ -1,0 +1,211 @@
+[
+  {
+    "slug": "what-is-vpn",
+    "title": "什么是 VPN 及其工作原理",
+    "seo_title": "什么是 VPN 及其工作原理：能力与边界",
+    "meta_description": "了解 VPN 隧道、加密和服务商角色，理性判断 VPN 的适用范围。",
+    "content_html": "<p>VPN（Virtual Private Network）通常在你的设备与 VPN 服务器之间建立加密连接，使部分或全部网络流量通过该服务器转发。它常被用于在不可信网络中增加传输保护，或改变网站看到的出口地址。</p><h2>VPN 大致如何工作</h2><p>设备先与 VPN 服务建立隧道，流量在进入公共网络前被加密；到达 VPN 服务器后再发往目标网站。对目标网站而言，更常看到的是 VPN 出口地址，而不是你家中网络的直接地址。</p><h2>VPN 能做什么</h2><p>它可以降低公共 Wi-Fi 等场景下传输被直接读取的风险，并在一些情况下帮助保护网络路径隐私。不同协议（如 WireGuard、OpenVPN 等）在性能、实现复杂度和部署方式上有差异。</p><h2>VPN 不能保证什么</h2><p>VPN 不会自动阻止钓鱼网站、恶意软件或所有在线追踪。它也不能让你“绝对匿名”。服务商本身需要被信任，因为流量会经过其服务器。设备中毒、账户被盗或主动泄露信息，都超出 VPN 的保护范围。</p><h2>选择与使用建议</h2><p>先明确自己的目标：是保护公共网络通信，还是理解特定协议。阅读服务商的隐私政策、日志说明和官方文档；使用来自可信渠道的客户端；不要把营销承诺当成技术事实。</p><h2>总结</h2><p>VPN 是有明确边界的网络工具。理解它保护什么、不保护什么，才能避免产生错误的安全感。</p>",
+    "faq_json": [
+      {
+        "q": "VPN 能让我完全匿名吗？",
+        "a": "不能。它改变的是部分网络路径和出口表现，不等于隐藏所有身份痕迹。"
+      },
+      {
+        "q": "所有 VPN 都一样吗？",
+        "a": "不一样。协议、客户端质量、运营方政策和日志策略都会影响实际效果。"
+      }
+    ],
+    "sources_json": [
+      {
+        "title": "Cloudflare: What is a VPN?",
+        "url": "https://www.cloudflare.com/learning/access-management/what-is-a-vpn/"
+      },
+      {
+        "title": "WireGuard official site",
+        "url": "https://www.wireguard.com/"
+      }
+    ],
+    "is_featured": 1,
+    "is_popular": 1,
+    "cats": [
+      6
+    ],
+    "image_url": "/uploads/covers/what-is-vpn.svg",
+    "image_alt": "什么是 VPN 及其工作原理主题插图"
+  },
+  {
+    "slug": "vpn-vs-proxy",
+    "title": "VPN 和代理服务器有什么区别",
+    "seo_title": "VPN 和代理服务器有什么区别？覆盖范围与加密差异",
+    "meta_description": "比较 VPN 与代理在覆盖范围、加密程度和使用场景上的差异，帮助做出更合适的选择。",
+    "content_html": "<p>VPN 和代理都可能改变网络请求的出口路径，但它们通常工作在不同层级，保护范围也不相同。把二者当成同义词，容易造成错误预期。</p><h2>代理通常做什么</h2><p>代理多为特定应用或协议转发请求，例如浏览器通过 HTTP/HTTPS/SOCKS 代理访问网站。它可能改变该应用的出口地址，但不一定保护设备上的其他流量，也不一定提供系统级加密隧道。</p><h2>VPN 通常做什么</h2><p>VPN 更常在系统或网络层建立隧道，让多种应用的流量一起进入加密通道。它的目标往往不只是“换出口”，还包括保护设备到 VPN 服务器之间的传输。</p><h2>如何选择</h2><p>如果只是测试某个应用的出口，或开发调试需要，代理可能足够。如果目标是在不可信网络中保护设备上的多种流量，应更关注 VPN 的协议、客户端和运营透明度。无论使用哪种工具，都要选择来源可信的软件。</p><h2>总结</h2><p>代理更偏向应用级转发，VPN 更偏向系统级隧道。先明确目标，再比较覆盖范围、加密和信任模型，而不是只看名称。</p>",
+    "faq_json": [
+      {
+        "q": "代理是否一定没有加密？",
+        "a": "不一定。某些代理链路可配合 TLS 等方式，但不能默认所有代理都等价于 VPN。"
+      },
+      {
+        "q": "可以同时使用 VPN 和代理吗？",
+        "a": "技术上可能，但配置复杂且容易出错。普通用户通常应先选一种并确认其行为。"
+      }
+    ],
+    "sources_json": [
+      {
+        "title": "Cloudflare Learning Center",
+        "url": "https://www.cloudflare.com/learning/"
+      },
+      {
+        "title": "Mozilla Proxy documentation concepts",
+        "url": "https://developer.mozilla.org/"
+      }
+    ],
+    "is_featured": 0,
+    "is_popular": 0,
+    "cats": [
+      6,
+      5
+    ],
+    "image_url": "/uploads/covers/vpn-vs-proxy.svg",
+    "image_alt": "VPN 和代理服务器有什么区别主题插图"
+  },
+  {
+    "slug": "choose-secure-network-connection",
+    "title": "如何选择安全的网络连接",
+    "seo_title": "如何选择安全的网络连接：家庭、移动与公共场景",
+    "meta_description": "从加密、身份验证、设备更新和网络分离等方面检查连接是否足够安全。",
+    "content_html": "<p>安全连接不仅取决于信号强弱，还取决于网络是否可信、通信是否加密，以及设备配置是否合理。家庭网络、移动数据和公共热点的风险模型并不相同。</p><h2>家庭网络</h2><p>更新路由器固件，修改默认管理密码，关闭不必要的远程管理，并尽量使用现代 Wi-Fi 安全模式。把访客设备放到独立网络，可减少一台失陷设备影响整网的风险。</p><h2>移动数据</h2><p>在不确定热点身份时，移动数据往往比陌生公共 Wi-Fi 更可控。但仍需保持系统和应用更新，并注意钓鱼短信与恶意应用安装。</p><h2>公共场景</h2><p>先确认热点名称，关闭自动连接，避免处理高敏感事务。需要时再考虑额外的加密隧道工具，并理解其边界。</p><h2>总结</h2><p>选择安全连接的关键是：确认网络身份、保持设备更新、限制敏感操作，并按场景调整保护强度。</p>",
+    "faq_json": [
+      {
+        "q": "家里 Wi-Fi 需要经常改密码吗？",
+        "a": "当怀疑泄露、访客过多或设备异常时应当更换，并同时更新路由器管理密码。"
+      },
+      {
+        "q": "信号强就代表安全吗？",
+        "a": "不代表。信号强度与身份验证、加密和设备安全是不同问题。"
+      }
+    ],
+    "sources_json": [
+      {
+        "title": "CISA Home Network Security",
+        "url": "https://www.cisa.gov/secure-our-world"
+      },
+      {
+        "title": "Cloudflare Learning Center",
+        "url": "https://www.cloudflare.com/learning/"
+      }
+    ],
+    "is_featured": 0,
+    "is_popular": 0,
+    "cats": [
+      4,
+      1
+    ],
+    "image_url": "/uploads/covers/choose-secure-network-connection.svg",
+    "image_alt": "如何选择安全的网络连接主题插图"
+  },
+  {
+    "slug": "identify-phishing-attacks",
+    "title": "网络钓鱼攻击如何识别",
+    "seo_title": "网络钓鱼攻击如何识别？邮件、短信与网页信号",
+    "meta_description": "掌握钓鱼邮件、短信和网页的常见信号，减少误点击和凭据泄露。",
+    "content_html": "<p>钓鱼攻击借助紧迫感、权威身份或奖励诱惑，诱导人交出凭据、转账或安装危险软件。攻击者不一定写出满篇错别字，精致的页面同样可能是假的。</p><h2>先检查请求是否合理</h2><p>突然要求“立即验证，否则冻结账户”，或要求提供验证码、种子密钥、远程控制权限，都值得警惕。真正的服务商很少通过聊天工具索取完整验证码。</p><h2>核对链接与域名</h2><p>不要只看显示文字。把鼠标悬停或长按查看真实地址，确认主域名是否与官方一致。对重要服务，手动打开官方应用或书签，而不是点击消息中的链接。</p><h2>网页与附件信号</h2><p>异常弹窗、强制下载、证书警告、要求关闭安全软件，都是危险信号。来源不明的办公附件也应先在安全环境中判断。</p><h2>总结</h2><p>识别钓鱼的关键是放慢速度：核实身份、核实域名、通过独立渠道确认。怀疑时先停下来，比事后补救成本低得多。</p>",
+    "faq_json": [
+      {
+        "q": "官网做得像就一定是真的吗？",
+        "a": "不一定。攻击者可以模仿页面外观，真正要核对的是域名和进入方式。"
+      },
+      {
+        "q": "已经点了可疑链接怎么办？",
+        "a": "不要继续输入信息；如已输入密码，立即修改并检查异常登录，必要时联系官方支持。"
+      }
+    ],
+    "sources_json": [
+      {
+        "title": "OWASP",
+        "url": "https://owasp.org/"
+      },
+      {
+        "title": "Google Safety Center",
+        "url": "https://safety.google/"
+      }
+    ],
+    "is_featured": 0,
+    "is_popular": 1,
+    "cats": [
+      1,
+      7
+    ],
+    "image_url": "/uploads/covers/identify-phishing-attacks.svg",
+    "image_alt": "网络钓鱼攻击如何识别主题插图"
+  },
+  {
+    "slug": "protect-mobile-data",
+    "title": "如何保护手机上的个人数据",
+    "seo_title": "如何保护手机上的个人数据：锁屏、权限与备份",
+    "meta_description": "通过锁屏、系统更新、权限管理和备份，降低手机数据泄露与丢失风险。",
+    "content_html": "<p>手机集中保存照片、联系人、聊天记录、支付能力和身份验证器，因此应把它当作重要的个人设备来管理，而不是“随便用用的小屏幕”。</p><h2>基础锁定与系统更新</h2><p>使用可靠的锁屏方式，及时安装系统和应用更新。通知预览可改为锁屏隐藏内容，避免验证码或私信在锁屏界面直接显示。</p><h2>应用权限最小化</h2><p>定期检查定位、相机、麦克风、通讯录和文件访问权限。对长期不用的应用，直接删除比“以后再说”更安全。</p><h2>备份与丢失应对</h2><p>开启设备查找和必要备份，但要确认备份本身受账户保护。如果手机丢失，应尽快从其他设备退出账户会话并修改关键密码。</p><h2>总结</h2><p>手机安全的重点是：锁好设备、减少权限、保持更新，并提前想好丢失后的处理步骤。</p>",
+    "faq_json": [
+      {
+        "q": "只靠应用商店下载就够了吗？",
+        "a": "官方商店更稳妥，但仍需看权限、开发者和评价，并保持更新。"
+      },
+      {
+        "q": "公共充电桩有风险吗？",
+        "a": "未知充电接口可能带来风险。条件允许时使用自己的充电器或不传输数据的充电方案。"
+      }
+    ],
+    "sources_json": [
+      {
+        "title": "Apple Platform Security / Google Android Security",
+        "url": "https://source.android.com/docs/security"
+      },
+      {
+        "title": "CISA Mobile Device Tips",
+        "url": "https://www.cisa.gov/"
+      }
+    ],
+    "is_featured": 0,
+    "is_popular": 0,
+    "cats": [
+      11,
+      3
+    ],
+    "image_url": "/uploads/covers/protect-mobile-data.svg",
+    "image_alt": "如何保护手机上的个人数据主题插图"
+  },
+  {
+    "slug": "what-is-dns-leak",
+    "title": "什么是 DNS 泄露",
+    "seo_title": "什么是 DNS 泄露？如何理解和检查",
+    "meta_description": "DNS 请求可能透露访问的域名。了解解析路径有助于判断网络隐私风险。",
+    "content_html": "<p>DNS 负责把域名转换成 IP 地址。即使其他流量经过加密隧道，如果 DNS 请求仍由外部网络直接处理，查询内容也可能暴露你正在访问哪些域名，这常被称为 DNS 泄露相关问题。</p><h2>为什么它重要</h2><p>DNS 查询本身就能透露浏览意图。对关注隐私的用户而言，确认 DNS 请求走哪条路径，与确认主流量是否加密同样重要。</p><h2>常见原因</h2><p>系统或浏览器使用了与隧道不同的 DNS；IPv6 路径未纳入保护；客户端配置不完整；又或网络环境强制劫持 DNS。不同设备和客户端表现可能不同。</p><h2>如何理解检测结果</h2><p>可用服务商或第三方检测页查看当前 DNS 解析器。不要只凭一次结果下结论，应结合系统设置、客户端说明和实际网络环境综合判断。</p><h2>总结</h2><p>DNS 泄露关注的是“域名查询是否按预期路径处理”。配置加密隧道后，记得同时检查 DNS 行为。</p>",
+    "faq_json": [
+      {
+        "q": "DNS 泄露等于密码泄露吗？",
+        "a": "通常不是。它更可能暴露访问的域名信息，而不是直接交出账户密码。"
+      },
+      {
+        "q": "换 DNS 就一定更隐私吗？",
+        "a": "不一定。应了解该 DNS 服务的日志政策和可靠性，并确认设备真正在使用它。"
+      }
+    ],
+    "sources_json": [
+      {
+        "title": "Cloudflare Learning: What is DNS?",
+        "url": "https://www.cloudflare.com/learning/dns/what-is-dns/"
+      },
+      {
+        "title": "Mozilla DNS over HTTPS docs",
+        "url": "https://support.mozilla.org/"
+      }
+    ],
+    "is_featured": 0,
+    "is_popular": 0,
+    "cats": [
+      6,
+      12
+    ],
+    "image_url": "/uploads/covers/what-is-dns-leak.svg",
+    "image_alt": "什么是 DNS 泄露主题插图"
+  }
+]

@@ -1,0 +1,15 @@
+.env
+config/config.php
+storage/logs/*
+!storage/logs/.gitkeep
+public/uploads/*
+!public/uploads/.htaccess
+!public/uploads/covers/
+!public/uploads/covers/**
+backups/
+tools/_*.json
+tools/_*.txt
+*.sql.gz
+*.tgz
+.DS_Store
+Thumbs.db

@@ -1,0 +1,1188 @@
+[
+  {
+    "id": 1,
+    "title": "如何保护个人网络隐私",
+    "slug": "protect-online-privacy",
+    "seo_title": "如何保护个人网络隐私：可执行的分层做法",
+    "meta_description": "从账号、设备、浏览器、网络与数据最小化出发，给出可验证的个人网络隐私保护步骤与常见误区。",
+    "content_html": "<p>网络隐私保护的目标，是减少不必要的标识与长期追踪，并降低账号被接管后的连锁损失。它不是安装一个工具就结束，而是一组可复查的配置。</p>\n<h2>先分清威胁</h2>\n<p>商业追踪、公共网络旁路、针对性骚扰与数据泄露库撞库，对应措施不同。先写下最怕发生的一两件事，再分配精力。</p>\n<h2>账号层</h2>\n<ul>\n<li>邮箱与密码管理器视为核心：独立强密码、双重验证、保存恢复码。</li>\n<li>检查登录设备与邮件转发规则，撤销陌生 OAuth 应用。</li>\n<li>减少到处复用同一手机号与邮箱作为唯一标识。</li>\n</ul>\n<p>延伸：<a href=\"/articles/protect-online-accounts\">保护在线账户</a>、<a href=\"/articles/two-factor-authentication-guide\">双重验证</a>。</p>\n<h2>设备与应用层</h2>\n<ul>\n<li>系统与应用自动更新；限制通讯录、短信、无障碍等高危权限。</li>\n<li>只从官方商店安装软件；淘汰设备前退出云会话并擦除。</li>\n</ul>\n<h2>浏览器与追踪</h2>\n<p>限制第三方 Cookie、审查扩展权限、按场景分离登录配置。清除 Cookie 有帮助，但账号登录与指纹仍可能延续识别。见 <a href=\"/articles/how-online-tracking-works\">在线追踪如何运作</a> 与 <a href=\"/articles/browser-privacy-settings\">浏览器隐私设置</a>。</p>\n<h2>网络层</h2>\n<p>公共网络默认不信任：敏感操作优先移动数据；必要时使用可信隧道并确认 HTTPS。理解 VPN 的边界：<a href=\"/articles/what-is-vpn\">VPN 原理</a>、<a href=\"/articles/public-wifi-safety\">公共 Wi-Fi</a>。</p>\n<h2>数据最小化</h2>\n<p>能不填的证件号与通讯录就不填；网盘外链设过期；定期清理长期授权。工具选型见 <a href=\"/articles/choose-privacy-tools\">如何选择隐私工具</a>。</p>\n<h2>如何验证“有没有做好”</h2>\n<ul>\n<li>能否用恢复码重新登录核心邮箱？</li>\n<li>陌生登录是否会收到通知？</li>\n<li>浏览器扩展列表是否都能叫出名字？</li>\n<li>公共网络下证书告警时，你是否会停止输入？</li>\n</ul>",
+    "status": "published",
+    "published_at": "2026-11-09 17:02:21",
+    "updated_at": "2026-11-10 03:45:52",
+    "is_featured": 1,
+    "is_popular": 1,
+    "image_url": "/uploads/covers/protect-online-privacy.svg",
+    "image_alt": "如何保护个人网络隐私主题插图",
+    "faq_json": [
+      {
+        "q": "只开 VPN 够不够？",
+        "a": "通常不够。VPN 主要影响路径层；账号、追踪标识与权限同样关键。"
+      },
+      {
+        "q": "无痕模式等于隐私达标吗？",
+        "a": "无痕主要减少本地残留，对已登录站点与服务端追踪帮助有限。"
+      },
+      {
+        "q": "隐私和便利如何取舍？",
+        "a": "把高暴露功能留给真正需要的场景，而不是全局永久开启所有同步与定位。"
+      }
+    ],
+    "sources_json": [
+      {
+        "title": "EFF Surveillance Self-Defense",
+        "url": "https://ssd.eff.org/"
+      },
+      {
+        "title": "Mozilla Privacy & Security guides",
+        "url": "https://www.mozilla.org/en-US/privacy/"
+      },
+      {
+        "title": "OWASP Top Ten",
+        "url": "https://owasp.org/www-project-top-ten/"
+      },
+      {
+        "title": "NIST Digital Identity Guidelines",
+        "url": "https://pages.nist.gov/800-63-3/"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "公共 Wi-Fi 安全吗",
+    "slug": "public-wifi-safety",
+    "seo_title": "公共 Wi-Fi 安全吗：风险分级与可行防护",
+    "meta_description": "分析公共 Wi-Fi 的旁路嗅探、钓鱼门户与假热点风险，并给出按敏感度分级的实用防护步骤。",
+    "content_html": "<p>公共 Wi-Fi 可用，但不应该被默认信任。风险来自同一局域网内的旁路观察、恶意门户页、假热点以及你在其上完成的高敏感操作。</p>\n<h2>主要风险</h2>\n<ul>\n<li>未加密或弱加密链路上的旁路嗅探（现代 HTTPS 大幅缓解内容窃听，但门户与DNS仍可能被做手脚）。</li>\n<li>仿冒登录页骗取邮箱或会员密码。</li>\n<li>名称相近的假热点。</li>\n<li>自动连接后开启的文件共享暴露。</li>\n</ul>\n<h2>按操作分级</h2>\n<ul>\n<li><strong>低敏感：</strong>看新闻、查地图——确认 HTTPS 即可。</li>\n<li><strong>中敏感：</strong>邮件与社交——建议可信隧道，并避免在门户页输入无关密码。</li>\n<li><strong>高敏感：</strong>网银、改密、提交证件——优先切换移动数据或个人热点。</li>\n</ul>\n<h2>可行防护</h2>\n<ul>\n<li>关闭自动加入开放网络；用完选择“忘记”。</li>\n<li>系统网络配置文件选“公用”，限制发现与共享。</li>\n<li>证书告警立即离开，不要点继续。</li>\n<li>需要时使用可信 VPN 隧道，并检查 <a href=\"/articles/what-is-dns-leak\">DNS 是否泄露</a>。</li>\n</ul>\n<p>延伸阅读：<a href=\"/articles/safe-public-network-use\">安全使用公共网络</a>、<a href=\"/articles/what-is-https\">HTTPS</a>、<a href=\"/articles/what-is-vpn\">VPN</a>。</p>\n<h2>常见错误</h2>\n<ul>\n<li>在门户页输入银行密码。</li>\n<li>向陌生人索取的“店内 Wi-Fi”二维码扫码支付。</li>\n<li>以为有小锁就代表热点运营方可信。</li>\n</ul>",
+    "status": "published",
+    "published_at": "2026-11-09 17:02:21",
+    "updated_at": "2026-11-10 03:45:52",
+    "is_featured": 0,
+    "is_popular": 1,
+    "image_url": "/uploads/covers/public-wifi-safety.svg",
+    "image_alt": "公共 Wi-Fi 安全吗主题插图",
+    "faq_json": [
+      {
+        "q": "公共 Wi-Fi 一定不能用吗？",
+        "a": "不是。关键是避免高敏感操作，并确认 HTTPS 与网络配置文件设置。"
+      },
+      {
+        "q": "开了 VPN 就绝对安全吗？",
+        "a": "不能绝对。还要防钓鱼门户、假客户端与 DNS 配置错误。"
+      },
+      {
+        "q": "手机热点是否更安全？",
+        "a": "通常信任边界更清晰，但仍需注意套餐费用与热点本身的口令设置。"
+      }
+    ],
+    "sources_json": [
+      {
+        "title": "FTC: Public Wi-Fi networks",
+        "url": "https://consumer.ftc.gov/articles/how-safe-your-public-wi-fi-network"
+      },
+      {
+        "title": "CISA: Securing Public Wi-Fi Tips",
+        "url": "https://www.cisa.gov/news-events/news/securing-public-wi-fi-networks"
+      },
+      {
+        "title": "EFF SSD: Connecting to public Wi-Fi",
+        "url": "https://ssd.eff.org/"
+      },
+      {
+        "title": "Cloudflare: What is a VPN?",
+        "url": "https://www.cloudflare.com/learning/access-management/what-is-a-vpn/"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "如何防止个人信息泄露",
+    "slug": "prevent-personal-data-leaks",
+    "seo_title": "如何防止个人信息泄露：实用检查清单",
+    "meta_description": "从数据最小化、外链治理与泄露止损顺序减少个人数据暴露。",
+    "content_html": "<p>个人信息泄露往往不是单一事件造成的，而是多个小疏忽叠加的结果：重复密码、过度授权、点击可疑链接，以及长期不清理的旧账户。建立一份可重复执行的检查清单，比临时紧张更有效。</p><h2>保护登录凭据</h2><p>使用密码管理器生成并保存独立密码。为邮箱和金融相关账户开启双重身份验证，并妥善保存恢复代码。不要通过聊天工具发送验证码或完整密码。</p><h2>识别社交工程</h2><p>任何要求你“立即付款”“提供验证码”或“安装远程控制软件”的请求，都应通过官方渠道重新核实。骗子常利用紧迫感和权威身份降低你的判断力。</p><h2>减少数据暴露面</h2><p>注册新服务时尽量使用最小必要信息。检查社交平台的公开范围，避免同时公开生日、手机号、住址和证件照片。删除不再使用的账户，能减少未来被拖库后的影响。</p><h2>定期复盘</h2><p>查看账户登录记录、已授权应用和设备列表。发现不认识的会话立即退出并修改密码。如果怀疑敏感信息已泄露，优先保护邮箱和支付相关账户。</p><h2>注册新服务时的最小信息原则</h2><p>能不填的选填项就先不填；能用应用内别名或单独邮箱就尽量隔离。很多泄露不是黑客“攻破”造成的，而是用户一开始就提供了过多信息。</p><h2>发生疑似泄露后的处理顺序</h2><ol><li>修改邮箱密码并检查转发规则。</li><li>退出陌生登录会话。</li><li>为金融和社交账户改密并开双重验证。</li><li>留意诈骗短信或电话，对方可能拿已泄露信息伪装成熟人。</li></ol><h2>家庭与共用设备场景</h2><p>共用电脑应使用不同系统账户，不在浏览器中保存所有人的密码，也不要把验证器只放在一台可能被多人使用的设备上。</p><h2>总结</h2><p>防泄露的核心是分层防护：凭据、验证、权限和人工判断缺一不可。把检查做成习惯，才能在风险真正出现前发现异常。</p>\n<h2>最小化与止损</h2><p>少提交证件与通讯录；外链设过期。若已泄露：改密、下线会话、检查转发与网盘分享。</p><h2>相关阅读</h2><p><a href=\"/articles/protect-digital-identity\">数字身份</a> · <a href=\"/articles/protect-online-privacy\">网络隐私</a> · <a href=\"/articles/identify-phishing-attacks\">防钓鱼</a></p>",
+    "status": "published",
+    "published_at": "2026-11-09 17:02:21",
+    "updated_at": "2026-11-10 03:46:14",
+    "is_featured": 0,
+    "is_popular": 0,
+    "image_url": "/uploads/covers/prevent-personal-data-leaks.svg",
+    "image_alt": "如何防止个人信息泄露主题插图",
+    "faq_json": [
+      {
+        "a": "立即修改该账户及所有复用同一密码的账户，并检查邮箱与支付相关服务。",
+        "q": "密码泄露后最先做什么？"
+      },
+      {
+        "a": "长期不用的账户仍可能保存个人信息，并成为攻击者进入其他服务的跳板。",
+        "q": "为什么旧账户也有风险？"
+      }
+    ],
+    "sources_json": [
+      {
+        "title": "OWASP Top Ten",
+        "url": "https://owasp.org/www-project-top-ten/"
+      },
+      {
+        "title": "EFF Privacy",
+        "url": "https://www.eff.org/issues/privacy"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "什么是端到端加密",
+    "slug": "what-is-end-to-end-encryption",
+    "seo_title": "什么是端到端加密：保护范围与局限",
+    "meta_description": "解释端到端加密如何让服务端无法读取内容，并澄清元数据、终端安全、备份与多设备同步等边界。",
+    "content_html": "<p>端到端加密（E2EE）意味着数据在发送端加密、仅在接收端解密，服务运营方以协议设计为目标无法读取明文内容。它保护的是内容机密性，不是通信存在的事实本身。</p>\n<h2>与“传输加密”的区别</h2>\n<p>TLS 保护客户端到服务器的传输；服务器常可看到明文以提供检索、推荐或备份。E2EE 把解密密钥留在端侧，服务器主要转发密文。两者可同时存在：先 E2EE，再套 TLS 传输。</p>\n<h2>密钥与身份</h2>\n<p>可靠的 E2EE 系统会提供安全码/指纹核对，用于发现中间人。多设备同步需要谨慎的密钥分发；设备丢失时的远程注销与密钥轮换策略决定真实安全性。</p>\n<h2>它不自动保护什么</h2>\n<ul>\n<li>屏幕偷窥、终端木马、被胁迫解锁。</li>\n<li>元数据：谁与谁、何时、消息频率等。</li>\n<li>若云备份未同样端到端，备份通道可能成为弱点。</li>\n<li>错误把对方设备当成可信终点——对方设备失陷仍会泄露。</li>\n</ul>\n<p>磁盘与备份加密是另一层，见 <a href=\"/articles/why-data-encryption-matters\">为什么数据加密重要</a>；传输层见 <a href=\"/articles/network-traffic-encryption\">网络流量加密</a>。</p>\n<h2>选型时要问的问题</h2>\n<ul>\n<li>默认是否开启 E2EE，还是仅“可选”？</li>\n<li>能否验证联系人安全码？</li>\n<li>多设备与备份如何实现，密钥是否离开终端？</li>\n<li>是否有独立审计与清晰的威胁模型文档？</li>\n</ul>\n<p>工具评估框架见 <a href=\"/articles/choose-privacy-tools\">如何选择隐私工具</a>。</p>",
+    "status": "published",
+    "published_at": "2026-11-09 17:02:21",
+    "updated_at": "2026-11-10 03:45:52",
+    "is_featured": 1,
+    "is_popular": 0,
+    "image_url": "/uploads/covers/what-is-end-to-end-encryption.svg",
+    "image_alt": "什么是端到端加密主题插图",
+    "faq_json": [
+      {
+        "q": "有 E2EE 就代表运营方完全看不到任何信息？",
+        "a": "通常仍可能处理元数据与账号信息；要阅读具体产品的白皮书。"
+      },
+      {
+        "q": "为什么还需要核对安全码？",
+        "a": "用于发现中间人篡改密钥的情况，尤其在首次通信或密钥变更后。"
+      },
+      {
+        "q": "E2EE 能防钓鱼吗？",
+        "a": "不能直接防止你向假站点输入密码；防钓鱼仍靠核实入口。"
+      }
+    ],
+    "sources_json": [
+      {
+        "title": "Cloudflare Learning: What is end-to-end encryption?",
+        "url": "https://www.cloudflare.com/learning/privacy/what-is-end-to-end-encryption/"
+      },
+      {
+        "title": "NIST: Encryption topics",
+        "url": "https://www.nist.gov/cryptography"
+      },
+      {
+        "title": "EFF: Communicating with Others",
+        "url": "https://ssd.eff.org/module/communicating-others"
+      },
+      {
+        "title": "MDN: Confidentiality, Integrity, and Availability",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/Security"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "如何创建安全密码",
+    "slug": "create-strong-passwords",
+    "seo_title": "如何创建安全密码：长度、独立与密码管理器",
+    "meta_description": "强调长度与唯一性，说明密码管理器与泄露后轮换的实践方法。",
+    "content_html": "<p>安全密码的重点不是复杂到无法记住，而是足够长、每个服务独立，并且不包含容易猜到的个人信息。对普通人而言，密码管理器通常是最现实的方案。</p><h2>为什么“复杂但短”不够</h2><p>短密码即便包含符号，也可能被高速猜测。长度更重要。同时，如果同一个密码在多个网站重复使用，一个站点泄露就会牵连其他账户。</p><h2>推荐做法</h2><p>使用密码管理器生成随机长密码；无法使用管理器时，可用多个无关联词组成足够长的密码短语。为邮箱设置特别强的密码，因为它常用于找回其他账户。</p><h2>不要这样做</h2><p>不要使用生日、手机号、姓名拼音或连续字符；不要把密码明文保存在公开笔记或聊天中；不要在公共电脑上勾选“记住密码”后不再检查。</p><h2>配合多重验证</h2><p>即使密码很强，钓鱼和泄露仍可能发生。为重要账户开启双重身份验证，并保存恢复代码，可以显著提高账户被接管的难度。</p><h2>密码策略要和账户价值匹配</h2><p>邮箱、云存储、支付和域名管理账户的价值最高，应使用最长、最独立的密码，并开启双重验证。论坛或临时注册可以用密码管理器生成的随机密码，但不要回流到高价值账户。</p>\n<h2>主密码怎么设</h2><p>如果你使用密码管理器，主密码需要既强又能长期记住。可用足够长的密码短语，并确保只有你能完成恢复。把主密码写在唯一人知道的离线位置，通常好过存在聊天软件里。</p>\n<h2>泄露后的替换策略</h2><p>一旦某个网站出现泄露通知，立即替换该站密码，并检查是否曾把同一密码用在别处。优先保护邮箱，再向外扩散检查。</p><h2>不要用记忆技巧牺牲独立性</h2><p>有人为了好记，把同一词根改尾缀用在所有网站。这种模式一旦被猜中，仍会连锁失守。独立性优先于“我能记住所有密码”。</p><h2>总结</h2><p>好密码策略是：足够长、彼此独立、妥善保存，再配合双重验证。把邮箱和金融账户放在最高优先级。</p>\n<h2>长度与唯一性</h2><p>优先足够长且每站唯一，交由密码管理器生成。短而复杂却到处复用，仍会在泄露后被撞库。</p><h2>相关阅读</h2><p><a href=\"/articles/two-factor-authentication-guide\">双重验证</a> · <a href=\"/articles/protect-online-accounts\">账户保护</a> · <a href=\"/articles/choose-privacy-tools\">选择隐私工具</a></p>",
+    "status": "published",
+    "published_at": "2026-11-09 17:02:21",
+    "updated_at": "2026-11-10 03:45:52",
+    "is_featured": 0,
+    "is_popular": 1,
+    "image_url": "/uploads/covers/create-strong-passwords.svg",
+    "image_alt": "如何创建安全密码主题插图",
+    "faq_json": [
+      {
+        "a": "符号有帮助，但长度和独立性通常更关键。按服务要求设置即可。",
+        "q": "密码一定要包含特殊符号吗？"
+      },
+      {
+        "a": "主流密码管理器能降低重复密码风险，但仍需保护主密码并开启多重验证。",
+        "q": "密码管理器安全吗？"
+      }
+    ],
+    "sources_json": [
+      {
+        "title": "NIST SP 800-63B passwords",
+        "url": "https://pages.nist.gov/800-63-3/sp800-63b.html"
+      },
+      {
+        "title": "OWASP Password Storage Cheat Sheet",
+        "url": "https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "双重身份验证有什么用",
+    "slug": "two-factor-authentication-guide",
+    "seo_title": "双重身份验证有什么用？设置方法与注意事项",
+    "meta_description": "比较安全密钥、验证器应用与短信等双重验证方式及恢复策略。",
+    "content_html": "<p>双重身份验证（2FA）要求登录者在密码之外再提供第二种证明，例如验证器应用代码、安全密钥或设备确认。它的价值在于：即使密码泄露，攻击者仍难以直接接管账户。</p><h2>常见第二因素类型</h2><p>短信验证码最常见，但可能受到 SIM 替换等风险影响；验证器应用通常更稳妥；硬件安全密钥在支持的服务中安全性更高。选择时要同时考虑可用性和恢复方式。</p><h2>如何正确设置</h2><p>先保护邮箱，再为其他重要账户开启 2FA。设置完成后立即保存恢复代码，并确认备用登录方式仍然可用。不要把验证码告诉任何人，即使对方自称客服。</p><h2>恢复流程同样重要</h2><p>很多人只关注开启 2FA，却忽略恢复邮箱、手机号和备用码。这些恢复渠道一旦失守，账户仍可能被接管。定期检查恢复信息是否仍然有效。</p><h2>不同第二因素的取舍</h2><p>短信方便但依赖号码安全；验证器应用通常更稳；硬件密钥在支持的服务中很强，但要考虑备份密钥和丢失流程。没有绝对最好，只有与你恢复能力匹配的方案。</p>\n<h2>旅行与换机场景</h2><p>换手机前，先确认验证器已迁移或恢复码仍可用。旅行时给重要账户准备备用登录路径，避免只依赖一台设备。把恢复码拍进相册又不加锁，等于几乎没保护。</p>\n<h2>企业与个人账户要分开</h2><p>工作邮箱和个人邮箱的验证方式、恢复手机号最好隔离。混用会让一次社工同时威胁两边。</p><h2>对客服话术保持怀疑</h2><p>任何让你读出验证码、屏幕数字或批准登录请求的来电/消息，都应视为高风险。真正的安全验证，不应要求你把第二因素交给别人。</p><h2>总结</h2><p>双重身份验证不是额外负担，而是现代账户安全的标配。优先覆盖邮箱、云存储和金融相关服务。</p>\n<h2>验证方式优先级</h2><p>安全密钥/通行密钥优先，其次应用生成验证码，短信仍优于没有 2FA。启用后立即保存恢复码。</p><h2>相关阅读</h2><p><a href=\"/articles/protect-online-accounts\">保护在线账户</a> · <a href=\"/articles/create-strong-passwords\">强密码</a> · <a href=\"/articles/identify-phishing-attacks\">防钓鱼</a></p>",
+    "status": "published",
+    "published_at": "2026-11-09 17:02:21",
+    "updated_at": "2026-11-10 03:45:52",
+    "is_featured": 0,
+    "is_popular": 1,
+    "image_url": "/uploads/covers/two-factor-authentication-guide.svg",
+    "image_alt": "双重身份验证有什么用主题插图",
+    "faq_json": [
+      {
+        "a": "算，但它通常不是最强的选择。条件允许时优先使用验证器或安全密钥。",
+        "q": "短信验证码算不算双重验证？"
+      },
+      {
+        "a": "部分服务支持安全密钥或备用码。开启前先确认自己能完成恢复流程。",
+        "q": "没有手机还能开 2FA 吗？"
+      }
+    ],
+    "sources_json": [
+      {
+        "title": "NIST SP 800-63B Authentication",
+        "url": "https://pages.nist.gov/800-63-3/sp800-63b.html"
+      },
+      {
+        "title": "OWASP Multifactor Auth Cheat Sheet",
+        "url": "https://cheatsheetseries.owasp.org/cheatsheets/Multifactor_Authentication_Cheat_Sheet.html"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "什么是 VPN 及其工作原理",
+    "slug": "what-is-vpn",
+    "seo_title": "什么是 VPN：隧道、加密、DNS 与威胁模型",
+    "meta_description": "用威胁模型解释 VPN 的隧道封装、加密、DNS、出口 IP 与元数据边界，以及服务商角色和适用场景。",
+    "content_html": "<p>VPN（Virtual Private Network，虚拟专用网络）把设备上的部分或全部 IP 流量封装进一条加密隧道，再经由远端节点转发到互联网。它改变的是路径与出口表现，并不能自动提供匿名或设备安全。</p>\n<h2>它解决什么问题</h2>\n<p>常见目标包括：在不可信网络上降低旁路窃听风险；把流量集中到可控出口；在企业场景中远程接入内网。是否值得使用，取决于你要对抗谁：咖啡馆旁路观察者、运营商侧可见性，还是需要访问受控资源。</p>\n<h2>隧道与封装</h2>\n<p>客户端在本机创建虚拟网卡或接管路由，把原始 IP 包封装后发往 VPN 服务器。对路径上的中间节点而言，常见可见信息是“你的设备在与 VPN 服务器通信”，而不是内层访问的每一个明文目标（仍可能有流量大小、时间等侧信道）。</p>\n<h2>加密与完整性</h2>\n<p>现代 VPN 协议对隧道载荷做机密性与完整性保护，防止路径上篡改。协议选择（如 WireGuard、IPsec、基于 TLS 的方案）影响实现复杂度、性能与审计难度，但都无法替代端点安全：若设备已失陷，攻击者可在入隧前读取数据。</p>\n<p>更细的协议细节见 <a href=\"/articles/what-is-wireguard\">WireGuard 协议说明</a> 与 <a href=\"/articles/network-traffic-encryption\">网络流量加密</a>。</p>\n<h2>DNS 在隧道中的位置</h2>\n<p>域名解析若仍走本地或运营商解析器，可能出现 DNS 泄露：隧道已建立，但查询域名的路径绕行。可靠部署会明确指定隧道内 DNS，或使用加密 DNS，并在变更配置后复查。详见 <a href=\"/articles/what-is-dns-leak\">什么是 DNS 泄露</a>。</p>\n<h2>IP 路由与出口</h2>\n<p>连接成功后，默认路由或分流规则决定哪些前缀走隧道。全隧道把几乎所有流量送入远端；分流（split tunneling）只保护选定网段。出口 IP 变为服务商节点地址，网站与风控系统会据此看到“来自该节点的访问”，这与匿名不是一回事。</p>\n<h2>元数据仍然存在</h2>\n<p>即使载荷加密，连接起止时间、流量体积、与 VPN 服务器的会话本身仍可能被观察。VPN 不消除浏览器 Cookie、账号登录态与设备指纹；它主要改变网络路径层的暴露面。</p>\n<h2>服务商扮演的角色</h2>\n<p>你把流量交给运营方解密（在其出口）并转发。因此日志政策、司法管辖、客户端供应链与是否可独立审计，比广告语更重要。商业链接若出现在本站，会单独标注；任何服务都不能承诺“绝对无日志且绝对安全”。</p>\n<h2>威胁模型示例</h2>\n<ul>\n<li><strong>公共 Wi-Fi 旁路嗅探：</strong>可信隧道 + HTTPS 通常有帮助。</li>\n<li><strong>账号被钓鱼：</strong>VPN 基本无助，应靠验证入口与双重验证。</li>\n<li><strong>设备丢失：</strong>需要磁盘加密与锁屏，不是 VPN。</li>\n<li><strong>对抗全局强大攻击者：</strong>单一商业 VPN 往往不够，需更完整的对抗方案。</li>\n</ul>\n<h2>典型误区</h2>\n<ul>\n<li>把“换 IP”当成“隐身”。</li>\n<li>安装来路不明的客户端，反而引入后门。</li>\n<li>忽略 DNS 与杀开关（断线时是否泄漏直连流量）。</li>\n<li>在已中木马的电脑上指望隧道保护输入内容。</li>\n</ul>\n<h2>与代理的关系</h2>\n<p>代理多作用于单个应用；VPN 类隧道更接近系统路径变更。二者覆盖范围与信任边界不同，见 <a href=\"/articles/vpn-vs-proxy\">VPN 和代理的区别</a>。</p>",
+    "status": "published",
+    "published_at": "2026-11-09 17:02:21",
+    "updated_at": "2026-11-10 03:45:52",
+    "is_featured": 1,
+    "is_popular": 1,
+    "image_url": "/uploads/covers/what-is-vpn.svg",
+    "image_alt": "什么是 VPN 及其工作原理主题插图",
+    "faq_json": [
+      {
+        "q": "VPN 能让我完全匿名吗？",
+        "a": "不能。它改变部分网络路径与出口表现，不消除账号、Cookie、指纹等身份关联。"
+      },
+      {
+        "q": "只用 HTTPS 还需要 VPN 吗？",
+        "a": "取决于威胁模型。HTTPS 保护浏览器到网站的内容；VPN 额外改变系统级路径与出口，二者可叠加但目标不同。"
+      },
+      {
+        "q": "免费 VPN 可以信任吗？",
+        "a": "要额外审查商业模式与客户端来源。免费服务常以数据或广告支撑，不等于一定恶意，但风险更高。"
+      },
+      {
+        "q": "断线后会泄漏流量吗？",
+        "a": "若未启用杀开关或防火墙规则，隧道断开时流量可能回到默认网络。部署时应验证这一行为。"
+      }
+    ],
+    "sources_json": [
+      {
+        "title": "Cloudflare Learning: What is a VPN?",
+        "url": "https://www.cloudflare.com/learning/access-management/what-is-a-vpn/"
+      },
+      {
+        "title": "NIST SP 800-77 Rev. 1 Guide to IPsec VPNs",
+        "url": "https://csrc.nist.gov/pubs/sp/800/77/r1/final"
+      },
+      {
+        "title": "OWASP: Transport Layer Protection Cheat Sheet",
+        "url": "https://cheatsheetseries.owasp.org/cheatsheets/Transport_Layer_Protection_Cheat_Sheet.html"
+      },
+      {
+        "title": "EFF Surveillance Self-Defense",
+        "url": "https://ssd.eff.org/"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "VPN 和代理服务器有什么区别",
+    "slug": "vpn-vs-proxy",
+    "seo_title": "VPN 和代理有什么区别：覆盖范围与信任边界",
+    "meta_description": "从覆盖范围、加密、DNS、信任边界与适用场景对比 VPN 隧道与代理，帮助按威胁模型选择。",
+    "content_html": "<p>VPN 与代理都可能改变流量路径，但作用层级、覆盖范围与失败方式不同。选型应先写清要保护的应用集合，再看加密与日志假设。</p>\n<h2>覆盖范围</h2>\n<p>HTTP/SOCKS 等代理通常只影响配置了代理的应用或浏览器；未走代理的应用仍直连。系统级 VPN 隧道通过虚拟网卡与路由，使更多（乃至全部）IP 流量进入隧道，除非你显式分流。</p>\n<h2>加密程度</h2>\n<p>“代理”一词本身不保证加密：明文 HTTP 代理几乎不提供传输保护；HTTPS 代理或带 TLS 的方案另论。VPN 协议的设计目标通常包含隧道加密与完整性。细节见 <a href=\"/articles/what-is-vpn\">VPN 原理</a> 与 <a href=\"/articles/network-traffic-encryption\">流量加密</a>。</p>\n<h2>DNS 行为</h2>\n<p>代理场景下，DNS 可能在本地解析后只把连接交给代理，或把域名交给代理解析，行为因实现而异。VPN 则常通过隧道内 DNS 或路由规则影响解析路径；配置不当会出现 <a href=\"/articles/what-is-dns-leak\">DNS 泄露</a>。</p>\n<h2>信任边界</h2>\n<p>使用代理时，你信任该代理运营方看到（或转发）对应应用的流量。使用 VPN 时，信任边界扩大到进入隧道的所有流量。覆盖越广，运营方能看到的潜在内容越多（在出口解密之后）。</p>\n<h2>典型场景</h2>\n<ul>\n<li><strong>仅浏览器临时访问：</strong>应用级代理可能足够，但要接受其他应用泄漏。</li>\n<li><strong>公共网络多应用保护：</strong>系统级隧道更贴切，并叠加 HTTPS。</li>\n<li><strong>企业内网接入：</strong>常使用受管 VPN，并配合设备合规，而不是浏览器插件代理。</li>\n</ul>\n<h2>常见错误</h2>\n<ul>\n<li>以为开了浏览器代理，聊天软件与系统更新也受保护。</li>\n<li>叠加多层来路不明代理“图更安全”，实则增加错误配置与供应链风险。</li>\n<li>忽略杀开关：隧道或代理失效时流量默默回直连。</li>\n</ul>\n<p>协议选型可继续阅读 <a href=\"/articles/what-is-wireguard\">WireGuard</a>；工具评估见 <a href=\"/articles/choose-privacy-tools\">隐私工具选择</a>。</p>",
+    "status": "published",
+    "published_at": "2026-11-09 17:02:21",
+    "updated_at": "2026-11-10 03:45:52",
+    "is_featured": 0,
+    "is_popular": 0,
+    "image_url": "/uploads/covers/vpn-vs-proxy.svg",
+    "image_alt": "VPN 和代理服务器有什么区别主题插图",
+    "faq_json": [
+      {
+        "q": "哪个更安全？",
+        "a": "没有绝对答案。看覆盖范围是否匹配需求，以及运营方、客户端与 DNS 行为是否可信。"
+      },
+      {
+        "q": "可以同时开 VPN 和代理吗？",
+        "a": "可以，但路径会变复杂，排障困难。应能说清每一跳谁解密什么，避免盲目叠加。"
+      },
+      {
+        "q": "代理一定加密吗？",
+        "a": "不一定。协议与实现决定是否加密；不要被名称误导。"
+      }
+    ],
+    "sources_json": [
+      {
+        "title": "MDN: Proxy server",
+        "url": "https://developer.mozilla.org/en-US/docs/Glossary/Proxy_server"
+      },
+      {
+        "title": "Cloudflare: What is a VPN?",
+        "url": "https://www.cloudflare.com/learning/access-management/what-is-a-vpn/"
+      },
+      {
+        "title": "OWASP: Transport Layer Protection",
+        "url": "https://cheatsheetseries.owasp.org/cheatsheets/Transport_Layer_Protection_Cheat_Sheet.html"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "title": "如何选择安全的网络连接",
+    "slug": "choose-secure-network-connection",
+    "seo_title": "如何选择安全的网络连接：家庭、移动与公共场景",
+    "meta_description": "按家庭、外出与办公场景选择更稳妥的网络连接策略。",
+    "content_html": "<p>安全连接不仅取决于信号强弱，还取决于网络是否可信、通信是否加密，以及设备配置是否合理。家庭网络、移动数据和公共热点的风险模型并不相同。</p><h2>家庭网络</h2><p>更新路由器固件，修改默认管理密码，关闭不必要的远程管理，并尽量使用现代 Wi-Fi 安全模式。把访客设备放到独立网络，可减少一台失陷设备影响整网的风险。</p><h2>移动数据</h2><p>在不确定热点身份时，移动数据往往比陌生公共 Wi-Fi 更可控。但仍需保持系统和应用更新，并注意钓鱼短信与恶意应用安装。</p><h2>公共场景</h2><p>先确认热点名称，关闭自动连接，避免处理高敏感事务。需要时再考虑额外的加密隧道工具，并理解其边界。</p><h2>总结</h2><p>选择安全连接的关键是：确认网络身份、保持设备更新、限制敏感操作，并按场景调整保护强度。</p>\n<h2>按场景选择连接</h2><p>家庭网更新路由固件并隔离访客；外出优先移动数据办理敏感事务；公司设备遵守分区策略。</p><h2>相关阅读</h2><p><a href=\"/articles/check-network-security\">网络自检</a> · <a href=\"/articles/public-wifi-safety\">公共 Wi-Fi</a></p>",
+    "status": "published",
+    "published_at": "2026-11-09 17:02:21",
+    "updated_at": "2026-11-10 03:46:14",
+    "is_featured": 0,
+    "is_popular": 0,
+    "image_url": "/uploads/covers/choose-secure-network-connection.svg",
+    "image_alt": "如何选择安全的网络连接主题插图",
+    "faq_json": [
+      {
+        "a": "当怀疑泄露、访客过多或设备异常时应当更换，并同时更新路由器管理密码。",
+        "q": "家里 Wi-Fi 需要经常改密码吗？"
+      },
+      {
+        "a": "不代表。信号强度与身份验证、加密和设备安全是不同问题。",
+        "q": "信号强就代表安全吗？"
+      }
+    ],
+    "sources_json": [
+      {
+        "title": "CISA Best Practices",
+        "url": "https://www.cisa.gov/topics/cybersecurity-best-practices"
+      },
+      {
+        "title": "Cloudflare Learning Center",
+        "url": "https://www.cloudflare.com/learning/"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "title": "网络钓鱼攻击如何识别",
+    "slug": "identify-phishing-attacks",
+    "seo_title": "网络钓鱼攻击如何识别？邮件、短信与网页信号",
+    "meta_description": "识别钓鱼话术与商务邮件妥协，并给出不在邮件内登录的反制步骤。",
+    "content_html": "<p>钓鱼攻击借助紧迫感、权威身份或奖励诱惑，诱导人交出凭据、转账或安装危险软件。攻击者不一定写出满篇错别字，精致的页面同样可能是假的。</p><h2>先检查请求是否合理</h2><p>突然要求“立即验证，否则冻结账户”，或要求提供验证码、种子密钥、远程控制权限，都值得警惕。真正的服务商很少通过聊天工具索取完整验证码。</p><h2>核对链接与域名</h2><p>不要只看显示文字。把鼠标悬停或长按查看真实地址，确认主域名是否与官方一致。对重要服务，手动打开官方应用或书签，而不是点击消息中的链接。</p><h2>网页与附件信号</h2><p>异常弹窗、强制下载、证书警告、要求关闭安全软件，都是危险信号。来源不明的办公附件也应先在安全环境中判断。</p><h2>高仿页面为什么仍然有效</h2><p>攻击者并不需要完美复制官网，只要在你匆忙时提供一个“看起来能登录”的盒子就够了。时间压力、奖励诱惑和恐惧措辞，都会压缩你核对域名的耐心。</p>\n<h2>企业场景的额外信号</h2><p>突然要求转账到新账户、要求安装远程软件、或通过私人聊天处理公司财务，都要改走官方流程。内部流程越清楚，钓鱼越难成功。</p>\n<h2>训练自己的停顿点</h2><p>养成一个固定停顿：看见登录框先看域名，看见验证码请求先问“谁在要”，看见附件先问“我是否正在等这份文件”。停顿三秒，往往比任何插件都管用。</p><h2>短链接和二维码</h2><p>短链接和二维码会隐藏最终地址。重要操作前，尽量回到官方 App 或手动输入域名。扫码支付或登录时，先确认发起场景是否由你本人主动开始。</p><h2>总结</h2><p>识别钓鱼的关键是放慢速度：核实身份、核实域名、通过独立渠道确认。怀疑时先停下来，比事后补救成本低得多。</p>\n<h2>反制要点</h2><p>不在邮件内点登录链；验证码只用于你主动发起的登录；付款账户变更用第二渠道确认。</p><h2>相关阅读</h2><p><a href=\"/articles/identify-malicious-websites\">恶意网站</a> · <a href=\"/articles/protect-online-accounts\">账户保护</a> · <a href=\"/articles/two-factor-authentication-guide\">双重验证</a></p>",
+    "status": "published",
+    "published_at": "2026-11-09 17:02:21",
+    "updated_at": "2026-11-10 03:45:52",
+    "is_featured": 0,
+    "is_popular": 1,
+    "image_url": "/uploads/covers/identify-phishing-attacks.svg",
+    "image_alt": "网络钓鱼攻击如何识别主题插图",
+    "faq_json": [
+      {
+        "a": "不一定。攻击者可以模仿页面外观，真正要核对的是域名和进入方式。",
+        "q": "官网做得像就一定是真的吗？"
+      },
+      {
+        "a": "不要继续输入信息；如已输入密码，立即修改并检查异常登录，必要时联系官方支持。",
+        "q": "已经点了可疑链接怎么办？"
+      }
+    ],
+    "sources_json": [
+      {
+        "title": "CISA: Phishing Guidance",
+        "url": "https://www.cisa.gov/topics/cyber-threats-and-advisories/phishing"
+      },
+      {
+        "title": "OWASP Phishing",
+        "url": "https://owasp.org/www-community/attacks/Phishing"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "title": "如何保护手机上的个人数据",
+    "slug": "protect-mobile-data",
+    "seo_title": "如何保护手机上的个人数据：锁屏、权限与备份",
+    "meta_description": "从权限、更新、备份与淘汰流程说明如何保护手机中的个人数据与账号会话。",
+    "content_html": "<p>手机集中保存照片、联系人、聊天记录、支付能力和身份验证器，因此应把它当作重要的个人设备来管理，而不是“随便用用的小屏幕”。</p><h2>基础锁定与系统更新</h2><p>使用可靠的锁屏方式，及时安装系统和应用更新。通知预览可改为锁屏隐藏内容，避免验证码或私信在锁屏界面直接显示。</p><h2>应用权限最小化</h2><p>定期检查定位、相机、麦克风、通讯录和文件访问权限。对长期不用的应用，直接删除比“以后再说”更安全。</p><h2>备份与丢失应对</h2><p>开启设备查找和必要备份，但要确认备份本身受账户保护。如果手机丢失，应尽快从其他设备退出账户会话并修改关键密码。</p><h2>总结</h2><p>手机安全的重点是：锁好设备、减少权限、保持更新，并提前想好丢失后的处理步骤。</p>\n<h2>移动端优先控制项</h2><p>锁屏、系统更新、官方商店安装来源，以及谨慎授予短信/无障碍/设备管理员权限，构成手机数据保护的基础。淘汰设备前退出云会话并恢复出厂。</p><h2>相关阅读</h2><p>结合 <a href=\"/articles/protect-online-accounts\">账户保护</a> 与 <a href=\"/articles/protect-online-privacy\">网络隐私</a> 一起配置，避免只加固设备却忽略邮箱。</p>",
+    "status": "published",
+    "published_at": "2026-11-09 17:02:21",
+    "updated_at": "2026-11-10 03:46:14",
+    "is_featured": 0,
+    "is_popular": 0,
+    "image_url": "/uploads/covers/protect-mobile-data.svg",
+    "image_alt": "如何保护手机上的个人数据主题插图",
+    "faq_json": [
+      {
+        "a": "官方商店更稳妥，但仍需看权限、开发者和评价，并保持更新。",
+        "q": "只靠应用商店下载就够了吗？"
+      },
+      {
+        "a": "未知充电接口可能带来风险。条件允许时使用自己的充电器或不传输数据的充电方案。",
+        "q": "公共充电桩有风险吗？"
+      }
+    ],
+    "sources_json": [
+      {
+        "title": "OWASP Mobile Top 10",
+        "url": "https://owasp.org/www-project-mobile-top-10/"
+      },
+      {
+        "title": "CISA: Mobile Device Security",
+        "url": "https://www.cisa.gov/topics/cybersecurity-best-practices"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "title": "什么是 DNS 泄露",
+    "slug": "what-is-dns-leak",
+    "seo_title": "什么是 DNS 泄露：原理、检测与缓解",
+    "meta_description": "解释 DNS 泄露如何在隧道外暴露域名查询，以及加密 DNS、隧道内解析与分流场景下的注意点。",
+    "content_html": "<p>DNS 泄露指：你以为查询会走受保护路径（例如 VPN 隧道），实际上域名解析仍经由本地网络、运营商或其他非预期解析器完成，从而暴露访问意图。</p>\n<h2>DNS 在连接中的位置</h2>\n<p>浏览器访问网站前，通常需要把域名解析成 IP。解析器能看到你查询的域名；若查询不加密，路径上的观察者也可能看到。即便随后网页走 HTTPS，查询阶段的暴露仍然独立存在。基础概念见 <a href=\"/articles/how-dns-servers-work\">DNS 服务器如何工作</a>。</p>\n<h2>为何在 VPN 场景常见</h2>\n<p>隧道建立后，若操作系统、浏览器或 remapper 仍把 DNS 发向原网络的解析器，就会出现“IP 已是远程出口，但域名查询在本地泄漏”。分流配置下，部分域名本就应直连，这与“误泄漏”不同，关键是行为是否符合你的预期。</p>\n<h2>加密 DNS 能做什么</h2>\n<p>DoH/DoT 等技术保护查询在传输中的机密性与完整性，降低路径窃听与篡改，但不会自动隐藏你对解析服务本身的查询内容。选择政策清晰的解析器，并确认浏览器扩展没有劫持解析。</p>\n<h2>如何检查</h2>\n<ul>\n<li>连接隧道前后，对比 DNS 出口与预期是否一致（使用你信任的检测页或自建探测）。</li>\n<li>变更客户端、系统更新或浏览器设置后重新测一次；泄露状态不是一次测试永久有效。</li>\n<li>确认“阻止非隧道 DNS”或同类选项已按厂商文档开启。</li>\n</ul>\n<h2>缓解步骤</h2>\n<ul>\n<li>在 VPN 客户端指定隧道内 DNS，并验证。</li>\n<li>系统或路由器统一配置可信加密 DNS，减少应用各自为政。</li>\n<li>理解分流：预期直连的域名走本地解析不一定是缺陷；意外绕行才是。</li>\n</ul>\n<p>相关阅读：<a href=\"/articles/what-is-vpn\">VPN 原理</a>、<a href=\"/articles/what-is-https\">HTTPS</a>、<a href=\"/articles/public-wifi-safety\">公共 Wi-Fi 安全</a>。</p>",
+    "status": "published",
+    "published_at": "2026-11-09 17:02:21",
+    "updated_at": "2026-11-10 03:45:52",
+    "is_featured": 0,
+    "is_popular": 0,
+    "image_url": "/uploads/covers/what-is-dns-leak.svg",
+    "image_alt": "什么是 DNS 泄露主题插图",
+    "faq_json": [
+      {
+        "q": "换了 VPN 就一定没有 DNS 泄露？",
+        "a": "不一定。取决于客户端是否强制隧道内 DNS，以及系统/浏览器是否另有解析路径。"
+      },
+      {
+        "q": "加密 DNS 能隐藏访问的网站内容吗？",
+        "a": "不能。它主要保护查询通道；页面内容仍靠 HTTPS 等机制保护。"
+      },
+      {
+        "q": "IPv6 会导致泄露吗？",
+        "a": "若隧道未妥善处理 IPv6，而系统仍走 IPv6 直连，可能绕过预期路径。应确认 IPv6 策略。"
+      }
+    ],
+    "sources_json": [
+      {
+        "title": "Cloudflare Learning: What is DNS?",
+        "url": "https://www.cloudflare.com/learning/dns/what-is-dns/"
+      },
+      {
+        "title": "RFC 8484 DNS over HTTPS",
+        "url": "https://www.rfc-editor.org/rfc/rfc8484"
+      },
+      {
+        "title": "RFC 7858 DNS over TLS",
+        "url": "https://www.rfc-editor.org/rfc/rfc7858"
+      },
+      {
+        "title": "Mozilla: DNS over HTTPS (DoH)",
+        "url": "https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Privacy/DNS_over_HTTPS"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "title": "如何检查网络连接安全性",
+    "slug": "check-network-security",
+    "seo_title": "如何检查网络连接安全性：普通用户可执行的步骤",
+    "meta_description": "提供家庭路由与设备侧的网络安全自检顺序与发现陌生设备后的处理。",
+    "content_html": "<p>检查网络连接安全时，不必一开始就使用复杂专业工具。普通用户可以从网络身份、加密状态、设备配置和异常表现四个角度入手。</p><h2>确认网络身份</h2><p>核对本机连接的是哪个 Wi-Fi 或有线网络，名称是否与预期一致。公共场所尤其要避免加入名称相似的陌生热点。</p><h2>检查加密与证书</h2><p>浏览器地址栏应显示安全连接标识。若出现证书错误、反复跳转或突然要求安装未知证书，应停止操作并换一个可信网络。</p><h2>检查设备自身</h2><p>确认系统已更新，防火墙或系统安全功能未被异常关闭，共享功能没有不必要地开启。查看是否存在陌生的 VPN 配置、代理或证书。</p><h2>记录异常</h2><p>如果出现频繁掉线、异常弹窗或账户登录提醒，记录时间、设备与现象，必要时联系网络管理员或服务商。不要在异常状态下继续输入敏感信息。</p><h2>总结</h2><p>网络连接安全检查是一套轻量习惯：确认身份、确认加密、确认设备，再处理异常。</p>\n<h2>家庭网络自检</h2><p>改默认路由口令、检查已连接设备、关闭不必要远程管理、确认 DNS 未被篡改，并保持固件更新。</p><h2>相关阅读</h2><p><a href=\"/articles/choose-secure-network-connection\">选择安全连接</a> · <a href=\"/articles/how-dns-servers-work\">DNS</a> · <a href=\"/articles/public-wifi-safety\">公共 Wi-Fi</a></p>",
+    "status": "published",
+    "published_at": "2026-11-09 17:02:21",
+    "updated_at": "2026-11-10 03:46:14",
+    "is_featured": 0,
+    "is_popular": 0,
+    "image_url": "/uploads/covers/check-network-security.svg",
+    "image_alt": "如何检查网络连接安全性主题插图",
+    "faq_json": [
+      {
+        "a": "可以。先从网络名称、HTTPS、系统更新和异常登录提醒开始。",
+        "q": "没有专业工具能检查吗？"
+      },
+      {
+        "a": "多数情况下不应忽略，尤其是在登录或支付页面。",
+        "q": "证书警告可以忽略吗？"
+      }
+    ],
+    "sources_json": [
+      {
+        "title": "CISA: Home Network Security",
+        "url": "https://www.cisa.gov/news-events/news/home-network-security"
+      },
+      {
+        "title": "NIST Cybersecurity Framework",
+        "url": "https://www.nist.gov/cyberframework"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "title": "Windows 网络安全设置指南",
+    "slug": "windows-network-security-settings",
+    "seo_title": "Windows 网络安全设置指南：更新、防火墙与账户",
+    "meta_description": "梳理 Windows 上公用网络、防火墙、远程桌面与更新等关键网络安全设置。",
+    "content_html": "<p>Windows 的网络安全并不只取决于杀毒软件。系统更新、账户权限、防火墙和应用来源共同决定了基础防护水平。</p><h2>保持更新</h2><p>通过官方渠道安装系统和驱动更新。临时关闭更新可能方便某次操作，但长期关闭会积累已知漏洞。</p><h2>防火墙与安全功能</h2><p>保持防火墙开启。不要为了运行来源不明的程序而长期关闭系统安全功能。若必须放行，应尽量限定具体应用。</p><h2>账户与应用来源</h2><p>日常使用标准用户权限更稳妥。安装软件前检查发布者，优先使用官方站点或可信商店。减少随安装捆绑的额外工具。</p><h2>总结</h2><p>Windows 网络安全的基础是：更新、最小权限、防火墙和谨慎安装。额外工具无法替代这些基本设置。</p>\n<h2>Windows 网络核对清单</h2><p>公用/专用配置文件、防火墙、远程桌面开关与自动更新应优先确认。不明软件要求关闭防火墙时要警惕。</p><h2>相关阅读</h2><p>公共场所连接见 <a href=\"/articles/public-wifi-safety\">公共 Wi-Fi 安全</a>；流量加密概念见 <a href=\"/articles/network-traffic-encryption\">网络流量加密</a>。</p>",
+    "status": "published",
+    "published_at": "2026-11-09 17:02:21",
+    "updated_at": "2026-11-10 03:46:14",
+    "is_featured": 0,
+    "is_popular": 0,
+    "image_url": "/uploads/covers/windows-network-security-settings.svg",
+    "image_alt": "Windows 网络安全设置指南主题插图",
+    "faq_json": [
+      {
+        "a": "取决于环境和威胁模型。首先应确保系统安全功能、更新和安装来源可靠。",
+        "q": "必须安装第三方杀毒吗？"
+      },
+      {
+        "a": "管理员权限会放大恶意程序的影响，日常使用低权限账户更稳妥。",
+        "q": "管理员账户为什么有风险？"
+      }
+    ],
+    "sources_json": [
+      {
+        "title": "Microsoft: Windows security",
+        "url": "https://support.microsoft.com/windows"
+      },
+      {
+        "title": "CISA Cybersecurity Best Practices",
+        "url": "https://www.cisa.gov/topics/cybersecurity-best-practices"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "title": "数据加密为什么重要",
+    "slug": "why-data-encryption-matters",
+    "seo_title": "数据加密为什么重要？传输中与静态数据",
+    "meta_description": "区分传输加密、静态加密与端到端加密，说明密钥与备份为何同样关键。",
+    "content_html": "<p>加密把可读信息转换为需要密钥才能还原的形式，是保护数据机密性的基础技术。无论是网页传输、设备存储还是备份，都可能用到不同形式的加密。</p><h2>传输中的加密</h2><p>HTTPS/TLS 等技术保护浏览器与网站之间的通信，降低路径上被直接窃听的风险。这对登录、支付和隐私浏览尤其重要。</p><h2>静态数据加密</h2><p>设备硬盘加密、备份加密和服务器端加密，关注的是数据在存储状态下被拿走后是否仍可被读取。丢失笔记本时，磁盘加密能显著降低内容直接暴露的风险。</p><h2>密钥管理决定效果</h2><p>没有良好密钥管理的加密，保护会大打折扣。弱密码、共享密钥或把密钥和密文放在一起，都会削弱加密价值。</p><h2>总结</h2><p>加密很重要，但它不能替代访问控制、备份和恶意软件防护。应把它理解为整体安全中的一层。</p>\n<h2>传输、静态与端到端</h2><p>TLS 保护传输；磁盘/备份加密保护丢失设备上的静态数据；端到端加密限制服务端读取内容。三者解决不同问题，见 <a href=\"/articles/what-is-end-to-end-encryption\">端到端加密</a>。</p><h2>相关阅读</h2><p><a href=\"/articles/network-traffic-encryption\">网络流量加密</a> · <a href=\"/articles/create-strong-passwords\">强密码</a></p>",
+    "status": "published",
+    "published_at": "2026-11-09 17:02:21",
+    "updated_at": "2026-11-10 03:46:14",
+    "is_featured": 0,
+    "is_popular": 0,
+    "image_url": "/uploads/covers/why-data-encryption-matters.svg",
+    "image_alt": "数据加密为什么重要主题插图",
+    "faq_json": [
+      {
+        "a": "不是。锁屏保护的是正在使用中的会话，磁盘加密保护的是存储数据。",
+        "q": "开了磁盘加密就不用设锁屏了吗？"
+      },
+      {
+        "a": "不一样。算法、实现和密钥管理都会影响实际安全性。",
+        "q": "所有加密都一样强吗？"
+      }
+    ],
+    "sources_json": [
+      {
+        "title": "NIST Cryptography",
+        "url": "https://www.nist.gov/cryptography"
+      },
+      {
+        "title": "Cloudflare: What is encryption?",
+        "url": "https://www.cloudflare.com/learning/ssl/what-is-encryption/"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "title": "如何安全地使用公共网络",
+    "slug": "safe-public-network-use",
+    "seo_title": "如何安全地使用公共网络：机场、酒店与咖啡馆",
+    "meta_description": "给出公共网络上按敏感度分级的使用建议与证书告警处理方式。",
+    "content_html": "<p>公共网络的便利性伴随着身份不确定和配置不可控。把它当作临时通道，而不是可信办公环境，会更安全。</p><h2>使用前</h2><p>关闭文件共享和自动连接，确认热点名称，完成系统与应用更新。尽量使用官方应用处理重要账户。</p><h2>使用中</h2><p>优先 HTTPS，不在陌生网络中重置密码或做大额操作。发现证书警告、异常弹窗或强制安装配置时立即停止。</p><h2>使用后</h2><p>退出账户，忘记网络，检查是否多了陌生证书、代理或配置文件。如有异常登录提醒，尽快修改密码。</p><h2>总结</h2><p>安全使用公共网络的关键是：少做敏感事、确认加密、用后清理。</p>\n<h2>公共网络操作建议</h2><p>高敏感事务改用移动数据；必须使用公共 Wi-Fi 时确认 HTTPS，并考虑可信隧道。门户页只填上网所需信息。</p><h2>相关阅读</h2><p><a href=\"/articles/public-wifi-safety\">公共 Wi-Fi 安全吗</a> · <a href=\"/articles/what-is-vpn\">VPN</a> · <a href=\"/articles/what-is-https\">HTTPS</a></p>",
+    "status": "published",
+    "published_at": "2026-11-09 17:02:21",
+    "updated_at": "2026-11-10 03:46:14",
+    "is_featured": 0,
+    "is_popular": 1,
+    "image_url": "/uploads/covers/safe-public-network-use.svg",
+    "image_alt": "如何安全地使用公共网络主题插图",
+    "faq_json": [
+      {
+        "a": "门户页本身常见，但要确认你进入的是官方网络，并在登录后警惕后续钓鱼页。",
+        "q": "酒店 Wi-Fi 登录页安全吗？"
+      },
+      {
+        "a": "在不信任公共 Wi-Fi 时，个人热点通常更可控，但仍需注意流量与设备安全。",
+        "q": "用手机热点是否更好？"
+      }
+    ],
+    "sources_json": [
+      {
+        "title": "FTC: Public Wi-Fi",
+        "url": "https://consumer.ftc.gov/articles/how-safe-your-public-wi-fi-network"
+      },
+      {
+        "title": "EFF SSD",
+        "url": "https://ssd.eff.org/"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "title": "什么是 HTTPS 及其作用",
+    "slug": "what-is-https",
+    "seo_title": "什么是 HTTPS 及其作用？TLS 与证书基础",
+    "meta_description": "解释 HTTPS/TLS 的保护范围、证书警告处理，以及它不能证明的事项。",
+    "content_html": "<p>HTTPS 是在 HTTP 之上使用 TLS 的安全传输方式。它帮助保护浏览器与网站之间的通信，并通过证书帮助浏览器验证网站身份。</p><h2>HTTPS 保护什么</h2><p>它可以降低传输内容在路径上被直接读取或篡改的风险，使登录、表单和 Cookie 等数据更不容易在中间链路上明文暴露。</p><h2>看见锁形图标不代表一切安全</h2><p>HTTPS 证明的是连接加密和证书相关身份信息，不代表网站内容可信，也不能阻止你主动把密码交给钓鱼站。仿冒站点同样可能启用 HTTPS。</p><h2>遇到证书错误怎么办</h2><p>不要习惯性点“继续访问”。先检查时间设置、网络环境和域名拼写。对银行、邮箱等关键服务，应改用官方应用或已知安全的网络。</p><h2>证书到底在证明什么</h2><p>浏览器显示安全连接，通常意味着传输受 TLS 保护，并且证书与当前域名存在可验证关联。它不证明网站经营者诚实，也不证明页面里的下载内容无害。</p>\n<h2>和登录安全的关系</h2><p>没有 HTTPS 的登录页风险更高，因为密码可能在路径上被窃听。但即便有 HTTPS，如果域名是仿冒站，你仍可能把密码交给错误对象。因此“锁形图标 + 正确域名 + 官方入口”要一起看。</p>\n<h2>开发与运维视角的提醒</h2><p>对网站运营者而言，正确配置证书、重定向到 HTTPS、避免混合内容，是基本责任。对普通读者，则应把证书警告当成停止信号，而不是麻烦的弹窗。</p><h2>混合内容问题</h2><p>页面本身是 HTTPS，但其中脚本或表单仍指向不安全地址时，保护会被削弱。作为读者，遇到异常跳转或反复警告应停止；作为站点维护者，应消除混合内容。</p><h2>总结</h2><p>HTTPS 是现代网页的基础安全能力，但需要与域名核对、钓鱼识别和设备安全一起使用。</p>\n<h2>HTTPS 保护什么</h2><p>TLS 保护浏览器与网站间的传输，并在校验证常时确认域名匹配。它不证明页面无欺诈，也不能保护你在假站输入的内容。</p><h2>相关阅读</h2><p><a href=\"/articles/network-traffic-encryption\">流量加密</a> · <a href=\"/articles/identify-malicious-websites\">恶意网站</a> · <a href=\"/articles/what-is-dns-leak\">DNS 泄露</a></p>",
+    "status": "published",
+    "published_at": "2026-11-09 17:02:21",
+    "updated_at": "2026-11-10 03:45:52",
+    "is_featured": 0,
+    "is_popular": 1,
+    "image_url": "/uploads/covers/what-is-https.svg",
+    "image_alt": "什么是 HTTPS 及其作用主题插图",
+    "faq_json": [
+      {
+        "a": "HTTPS 在传输层增加了 TLS 保护，降低路径窃听和篡改风险。",
+        "q": "HTTP 和 HTTPS 差在哪里？"
+      },
+      {
+        "a": "某些托管网络会插入检查证书。若你不理解该环境，不要在警告状态下处理敏感事务。",
+        "q": "公司代理导致证书警告正常吗？"
+      }
+    ],
+    "sources_json": [
+      {
+        "title": "MDN: HTTPS",
+        "url": "https://developer.mozilla.org/en-US/docs/Glossary/HTTPS"
+      },
+      {
+        "title": "Cloudflare: What is HTTPS?",
+        "url": "https://www.cloudflare.com/learning/ssl/what-is-https/"
+      },
+      {
+        "title": "RFC 9110 HTTP Semantics",
+        "url": "https://www.rfc-editor.org/rfc/rfc9110"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "title": "如何保护自己的在线账户",
+    "slug": "protect-online-accounts",
+    "seo_title": "如何保护自己的在线账户：密码、验证与恢复",
+    "meta_description": "按核心账户优先顺序，说明密码、双重验证、会话与授权应用的保护方法。",
+    "content_html": "<p>在线账户保护需要多个独立环节共同工作。只设置一个复杂密码，却不做验证和恢复保护，仍然容易在钓鱼或泄露事件中失守。</p><h2>四项基础措施</h2><p>使用独立密码；开启多重验证；保护恢复邮箱和手机号；打开登录通知并定期查看活动记录。这四项能覆盖大多数个人账户场景。</p><h2>减少长期暴露</h2><p>不使用的账户应关闭或删除。检查已授权的第三方应用，撤销不再需要的访问。特别关注邮箱，因为它常被用于重置其他服务。</p><h2>发现异常时</h2><p>立即修改密码，退出陌生会话，检查转发规则和已授权应用，并通知可能受影响的相关服务。保留时间线有助于后续判断。</p><h2>总结</h2><p>账户安全是组合拳：凭据、验证、恢复和监控缺一不可。</p>\n<h2>核心账户优先</h2><p>先保护邮箱与密码管理器，再保护金融与云盘。启用双重验证并离线保存恢复码，定期检查转发规则与授权应用。</p><h2>相关阅读</h2><p><a href=\"/articles/two-factor-authentication-guide\">双重验证指南</a> · <a href=\"/articles/identify-phishing-attacks\">识别钓鱼</a> · <a href=\"/articles/create-strong-passwords\">强密码</a></p>",
+    "status": "published",
+    "published_at": "2026-11-09 17:02:21",
+    "updated_at": "2026-11-10 03:46:14",
+    "is_featured": 0,
+    "is_popular": 1,
+    "image_url": "/uploads/covers/protect-online-accounts.svg",
+    "image_alt": "如何保护自己的在线账户主题插图",
+    "faq_json": [
+      {
+        "a": "因为多数服务把邮箱作为重置入口，邮箱失守常导致连锁失守。",
+        "q": "为什么邮箱最重要？"
+      },
+      {
+        "a": "有。它能帮助你更早发现异常登录并采取行动。",
+        "q": "登录通知有必要吗？"
+      }
+    ],
+    "sources_json": [
+      {
+        "title": "NIST Digital Identity Guidelines",
+        "url": "https://pages.nist.gov/800-63-3/"
+      },
+      {
+        "title": "OWASP Authentication Cheat Sheet",
+        "url": "https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "title": "网络追踪技术是如何工作的",
+    "slug": "how-online-tracking-works",
+    "seo_title": "网络追踪技术是如何工作的？Cookie 与设备特征",
+    "meta_description": "介绍 Cookie、指纹与登录态等追踪信号，以及降低跨站识别的思路。",
+    "content_html": "<p>网站和广告系统可能通过 Cookie、脚本、像素或设备特征来记录访问行为，以便统计、个性化或广告投放。理解这些机制，有助于你更有意识地管理浏览器设置。</p><h2>常见追踪方式</h2><p>第一方 Cookie 通常服务当前网站功能；第三方 Cookie 更常用于跨站识别。像素和脚本可在页面加载时回传事件。此外，浏览器与设备特征组合也可能用于识别。</p><h2>如何减少不必要追踪</h2><p>限制第三方 Cookie，清理不需要的站点数据，审慎授予通知和定位权限，并减少不必要的扩展。隐私相关设置可能影响某些网站功能，需要按场景调整。</p><h2>总结</h2><p>追踪技术多样，完全消除并不现实。目标应是减少非必要暴露，并保护高敏感账户场景。</p>\n<h2>常见追踪信号</h2><p>Cookie、像素、本地存储、广告标识与指纹可跨站拼接。登录态会让识别更稳定。</p><h2>相关阅读</h2><p><a href=\"/articles/browser-privacy-settings\">浏览器隐私设置</a> · <a href=\"/articles/protect-online-privacy\">保护网络隐私</a></p>",
+    "status": "published",
+    "published_at": "2026-11-09 17:02:21",
+    "updated_at": "2026-11-10 03:46:14",
+    "is_featured": 0,
+    "is_popular": 0,
+    "image_url": "/uploads/covers/how-online-tracking-works.svg",
+    "image_alt": "网络追踪技术是如何工作的主题插图",
+    "faq_json": [
+      {
+        "a": "可改为限制第三方 Cookie，或为信任站点保留必要权限。",
+        "q": "禁用 Cookie 后网站不能用怎么办？"
+      },
+      {
+        "a": "不等于。它主要减少本地痕迹，不保证对网站或网络侧完全不可识别。",
+        "q": "无痕模式等于不被追踪吗？"
+      }
+    ],
+    "sources_json": [
+      {
+        "title": "EFF: Cover your tracks",
+        "url": "https://coveryourtracks.eff.org/"
+      },
+      {
+        "title": "Mozilla: Fingerprinting",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/Privacy/Guides/Firefox_and_privacy"
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "title": "浏览器隐私设置指南",
+    "slug": "browser-privacy-settings",
+    "seo_title": "浏览器隐私设置指南：Cookie、权限与扩展",
+    "meta_description": "说明浏览器权限、第三方存储、扩展与配置隔离等隐私设置要点。",
+    "content_html": "<p>浏览器是接触互联网的主要入口。合理设置可以减少不必要的数据暴露，也能降低恶意页面和危险扩展带来的风险。</p><h2>建议优先检查的项目</h2><p>站点权限、Cookie 策略、弹窗与下载行为、同步账户安全，以及是否启用安全浏览相关功能。不同浏览器名称不同，但逻辑类似。</p><h2>扩展需要克制</h2><p>扩展能增强功能，也可能获得读取页面内容的权限。只保留真正需要的扩展，并定期删除不再使用的项目。来源不明的扩展不要安装。</p><h2>配置要分“日常”和“高敏感”</h2><p>日常浏览可以保留必要登录状态；处理网银、政务或邮箱安全设置时，可改用更干净的配置文件或官方应用。一套极端设置硬套所有场景，往往坚持不下去。</p>\n<h2>扩展的安全审查</h2><p>安装扩展前看开发者、权限、更新时间和用户报告。能读取所有网站数据的扩展，本质上接近“额外的浏览器插件型中间人”，只留给真正需要的工具。</p><h2>多配置文件策略</h2><p>可以建立“日常”和“高敏感”两套浏览器配置：日常保留登录便利，高敏感则扩展更少、隔离更强。这比让一个配置同时满足所有目标更容易坚持。</p><h2>总结</h2><p>浏览器隐私设置没有一劳永逸的开关。把它当作定期维护项，与账户和设备安全一起管理。</p>\n<h2>浏览器可先改的项</h2><p>自动更新、站点权限最小化、限制第三方存储、慎装扩展。按场景分离登录配置。</p><h2>相关阅读</h2><p><a href=\"/articles/how-online-tracking-works\">在线追踪</a> · <a href=\"/articles/protect-online-privacy\">保护网络隐私</a> · <a href=\"/articles/identify-malicious-websites\">识别恶意网站</a></p>",
+    "status": "published",
+    "published_at": "2026-11-09 17:02:21",
+    "updated_at": "2026-11-10 03:46:14",
+    "is_featured": 0,
+    "is_popular": 1,
+    "image_url": "/uploads/covers/browser-privacy-settings.svg",
+    "image_alt": "浏览器隐私设置指南主题插图",
+    "faq_json": [
+      {
+        "a": "方便的同时会集中书签和密码等数据，因此同步账户本身需要强保护。",
+        "q": "同步功能有风险吗？"
+      },
+      {
+        "a": "可以减少追踪，但也会频繁退出登录。可按站点重要程度分层处理。",
+        "q": "每次都清 Cookie 好吗？"
+      }
+    ],
+    "sources_json": [
+      {
+        "title": "Mozilla Firefox Privacy",
+        "url": "https://support.mozilla.org/kb/enhanced-tracking-protection-firefox-desktop"
+      },
+      {
+        "title": "EFF SSD",
+        "url": "https://ssd.eff.org/"
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "title": "什么是 IP 地址",
+    "slug": "what-is-ip-address",
+    "seo_title": "什么是 IP 地址？公网与内网的区别",
+    "meta_description": "解释 IP 地址能说明什么、不能说明什么，以及它与风控和隐私工具的关系。",
+    "content_html": "<p>IP 地址用于在网络中标识连接端点。家庭网络通常同时涉及路由器的公网地址和设备的内网地址。理解这一区别，有助于看懂“查 IP”类工具到底显示了什么。</p><h2>公网与内网</h2><p>公网 IP 是互联网上可路由的地址；内网 IP 用于家庭或组织内部通信。多台设备可通过路由器共享一个公网出口。</p><h2>它能说明什么</h2><p>IP 地址可以提供粗略的网络和地区信息，但通常不能单独证明一个人的真实身份。把 IP 与完整匿名性简单等同，并不准确。</p><h2>总结</h2><p>IP 是网络通信的基础标识。关注它时，应结合路由方式、日志政策和具体应用场景来理解。</p>\n<h2>IP 与身份的关系</h2><p>IP 可指向接入网络与大致区域，常用于风控，但通常不等于精确门牌，也不等于掌握全部身份。账号与指纹往往更稳定。</p><h2>相关阅读</h2><p><a href=\"/articles/what-is-vpn\">VPN 如何改变出口 IP</a> · <a href=\"/articles/how-dns-servers-work\">DNS</a></p>",
+    "status": "published",
+    "published_at": "2026-11-09 17:02:21",
+    "updated_at": "2026-11-10 03:46:14",
+    "is_featured": 0,
+    "is_popular": 0,
+    "image_url": "/uploads/covers/what-is-ip-address.svg",
+    "image_alt": "什么是 IP 地址主题插图",
+    "faq_json": [
+      {
+        "a": "可能会。运营商、网络切换或路由器重启都可能导致公网地址变化。",
+        "q": "IP 会变吗？"
+      },
+      {
+        "a": "改变出口地址不等于全面安全，账户、设备和钓鱼风险仍然存在。",
+        "q": "隐藏 IP 就安全了吗？"
+      }
+    ],
+    "sources_json": [
+      {
+        "title": "Cloudflare: What is an IP address?",
+        "url": "https://www.cloudflare.com/learning/dns/glossary/what-is-an-ip-address/"
+      },
+      {
+        "title": "MDN: IP Address",
+        "url": "https://developer.mozilla.org/en-US/docs/Glossary/IP_Address"
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "title": "DNS 服务器的工作原理",
+    "slug": "how-dns-servers-work",
+    "seo_title": "DNS 服务器的工作原理：查询、缓存与故障",
+    "meta_description": "通俗解释 DNS 解析路径、加密 DNS 的作用边界与家庭统一配置的好处。",
+    "content_html": "<p>DNS 把便于记忆的域名转换为服务器地址。一次查询可能经过本地缓存、递归解析器和权威服务器。没有 DNS，日常上网会困难得多。</p><h2>查询大致流程</h2><p>设备先看本地缓存；未命中则询问配置的 DNS 解析器；解析器再代表你去查找权威答案，并可能缓存结果以加快后续访问。</p><h2>为什么会失败</h2><p>缓存过期、服务器故障、配置错误、网络限制或域名本身问题都可能导致解析异常。换网络后“打不开某个站”有时就是 DNS 问题。</p><h2>更换 DNS 前要想清楚</h2><p>更换公共 DNS 前，应了解服务商的隐私政策、过滤策略和稳定性。对普通用户，稳定与透明比单纯追求“更快”更重要。</p><h2>总结</h2><p>DNS 是互联网的目录服务。理解查询路径，有助于排查故障和评估隐私影响。</p>\n<h2>解析器看到什么</h2><p>DNS 将域名翻译为 IP，解析器能看到查询域名。加密 DNS 保护传输，但不替代 HTTPS 对内容的保护。</p><h2>相关阅读</h2><p><a href=\"/articles/what-is-dns-leak\">DNS 泄露</a> · <a href=\"/articles/what-is-https\">HTTPS</a> · <a href=\"/articles/what-is-ip-address\">IP 地址</a></p>",
+    "status": "published",
+    "published_at": "2026-11-09 17:02:21",
+    "updated_at": "2026-11-10 03:46:14",
+    "is_featured": 0,
+    "is_popular": 0,
+    "image_url": "/uploads/covers/how-dns-servers-work.svg",
+    "image_alt": "DNS 服务器的工作原理主题插图",
+    "faq_json": [
+      {
+        "a": "可能出现错误页面、跳转到陌生站或特定域名无法解析。应换网络并检查设备代理/DNS 设置。",
+        "q": "DNS 被污染或劫持时有何表现？"
+      },
+      {
+        "a": "DNS over HTTPS 是一种将 DNS 查询放在 HTTPS 中传输的方式，具体效果取决于浏览器与解析器实现。",
+        "q": "DoH 是什么？"
+      }
+    ],
+    "sources_json": [
+      {
+        "title": "Cloudflare: What is DNS?",
+        "url": "https://www.cloudflare.com/learning/dns/what-is-dns/"
+      },
+      {
+        "title": "RFC 1035 Domain Names",
+        "url": "https://www.rfc-editor.org/rfc/rfc1035"
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "title": "如何识别恶意网站",
+    "slug": "identify-malicious-websites",
+    "seo_title": "如何识别恶意网站？地址、证书与行为信号",
+    "meta_description": "说明仿冒站特征、域名核对与扫码/短链风险，避免只看 HTTPS 小锁。",
+    "content_html": "<p>恶意网站不一定看起来粗糙。有的页面模仿知名品牌，有的则通过“假更新”“假中奖”诱导下载。判断时要综合多个信号，而不是只看是否精美。</p><h2>重点观察</h2><p>检查域名拼写、异常弹窗、强制下载、证书警告，以及是否突然要求提供敏感信息。对支付和账户登录，优先走官方书签或手动输入地址。</p><h2>下载与插件套路</h2><p>警惕“必须安装播放器/证书/安全控件才能继续”的页面，尤其是你并未主动寻找这些软件时。官方服务很少用这种方式强迫安装不明程序。</p><h2>总结</h2><p>识别恶意网站靠的是放慢操作：核域名、看行为、不盲装。不确定时先换官方渠道。</p>\n<h2>判断仿冒站</h2><p>不要只看小锁。核对域名拼写，从官方应用进入，警惕紧急话术与索要验证码。</p><h2>相关阅读</h2><p><a href=\"/articles/identify-phishing-attacks\">钓鱼攻击</a> · <a href=\"/articles/what-is-https\">HTTPS 能证明什么</a></p>",
+    "status": "published",
+    "published_at": "2026-11-09 17:02:21",
+    "updated_at": "2026-11-10 03:46:14",
+    "is_featured": 0,
+    "is_popular": 0,
+    "image_url": "/uploads/covers/identify-malicious-websites.svg",
+    "image_alt": "如何识别恶意网站主题插图",
+    "faq_json": [
+      {
+        "a": "不应继续。先离开页面，并通过官方渠道确认。",
+        "q": "浏览器已标红还能点吗？"
+      },
+      {
+        "a": "不一定，但短链接会隐藏最终域名，重要操作前应先解析或避免使用。",
+        "q": "短链接一定有害吗？"
+      }
+    ],
+    "sources_json": [
+      {
+        "title": "OWASP Phishing",
+        "url": "https://owasp.org/www-community/attacks/Phishing"
+      },
+      {
+        "title": "Google Safe Browsing",
+        "url": "https://safebrowsing.google.com/"
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "title": "如何保护个人数字身份",
+    "slug": "protect-digital-identity",
+    "seo_title": "如何保护个人数字身份：减少关联与保护恢复渠道",
+    "meta_description": "说明数字身份如何被拼接利用，以及降低证件与联系方式暴露的做法。",
+    "content_html": "<p>数字身份由账户、联系方式、设备和公开信息共同构成。攻击者不一定需要完整证件，只要拼起足够多的线索，就可能完成社工或账户接管。</p><h2>减少不必要关联</h2><p>不同场景使用合适的公开信息，避免把邮箱、手机号、生日和证件照片同时公开。简历、社交和论坛尽量分层管理。</p><h2>保护恢复渠道</h2><p>恢复邮箱、手机号和验证器是账户安全的关键。给这些入口单独加强密码与双重验证，能显著提高整体安全性。</p><h2>总结</h2><p>保护数字身份，既要少暴露，也要把“能重置一切的入口”保护好。</p>\n<h2>降低身份拼图暴露</h2><p>避免在同一处同时公开姓名、电话与证件号。证件提交走官方渠道并注明用途；旧账号不用就注销。</p><h2>相关阅读</h2><p><a href=\"/articles/prevent-personal-data-leaks\">防止个人数据泄露</a> · <a href=\"/articles/protect-online-accounts\">保护在线账户</a></p>",
+    "status": "published",
+    "published_at": "2026-11-09 17:02:21",
+    "updated_at": "2026-11-10 03:46:14",
+    "is_featured": 0,
+    "is_popular": 0,
+    "image_url": "/uploads/covers/protect-digital-identity.svg",
+    "image_alt": "如何保护个人数字身份主题插图",
+    "faq_json": [
+      {
+        "a": "有一定暴露面。可避免放完整生日、私人手机号和过多可社工细节。",
+        "q": "公开简历有风险吗？"
+      },
+      {
+        "a": "陌生验证码、异常登录、信用或账户变动通知都值得立即核查。",
+        "q": "身份被冒用迹象有哪些？"
+      }
+    ],
+    "sources_json": [
+      {
+        "title": "EFF SSD",
+        "url": "https://ssd.eff.org/"
+      },
+      {
+        "title": "OWASP Top Ten",
+        "url": "https://owasp.org/www-project-top-ten/"
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "title": "什么是零信任安全架构",
+    "slug": "zero-trust-security",
+    "seo_title": "什么是零信任安全架构？验证、最小权限与持续检查",
+    "meta_description": "用个人可执行的语言解释零信任：持续验证、最小权限与分段访问。",
+    "content_html": "<p>零信任不是某个单一产品，而是一种不因网络位置而默认信任的安全思路。传统上“在内网就更可信”的假设，在远程办公和云服务时代越来越不可靠。</p><h2>核心原则</h2><p>验证访问者和设备；只授予完成任务所需的最小权限；并根据风险持续检查访问状态。重点是持续确认，而不是一次性放行。</p><h2>个人用户也能借鉴</h2><p>关闭不必要权限、定期复核登录会话、重要操作二次确认、不因为“在自己家网络”就放松更新和钓鱼警惕，这些都与零信任精神一致。</p><h2>总结</h2><p>零信任强调“永不默认信任，始终校验”。对企业是架构原则，对个人则是更审慎的权限和验证习惯。</p>\n<h2>个人可借鉴的原则</h2><p>不默认信任内网；敏感操作再验证；最小权限；共享链接设过期。家庭物联网尽量网段隔离。</p><h2>相关阅读</h2><p><a href=\"/articles/protect-online-accounts\">账户安全</a> · <a href=\"/articles/check-network-security\">检查网络安全</a></p>",
+    "status": "published",
+    "published_at": "2026-11-09 17:02:21",
+    "updated_at": "2026-11-10 03:46:14",
+    "is_featured": 0,
+    "is_popular": 0,
+    "image_url": "/uploads/covers/zero-trust-security.svg",
+    "image_alt": "什么是零信任安全架构主题插图",
+    "faq_json": [
+      {
+        "a": "不是。VPN 是一种远程接入技术；零信任是更广泛的访问控制思路。",
+        "q": "零信任是不是等于 VPN？"
+      },
+      {
+        "a": "不必一次上齐所有产品，但最小权限和持续验证的原则同样有价值。",
+        "q": "小团队也需要零信任吗？"
+      }
+    ],
+    "sources_json": [
+      {
+        "title": "NIST SP 800-207 Zero Trust Architecture",
+        "url": "https://csrc.nist.gov/pubs/sp/800/207/final"
+      },
+      {
+        "title": "CISA Zero Trust Maturity Model",
+        "url": "https://www.cisa.gov/zero-trust-maturity-model"
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "title": "什么是 WireGuard 协议",
+    "slug": "what-is-wireguard",
+    "seo_title": "什么是 WireGuard：Noise、曲线与 Cryptokey Routing",
+    "meta_description": "依据官方协议说明，解读 WireGuard 的 Noise 握手、Curve25519、ChaCha20-Poly1305、BLAKE2s、SipHash24 与路由要点。",
+    "content_html": "<p>WireGuard 是一种以简洁实现著称的三层 VPN 隧道协议，基于 UDP 封装 IP 包。官方将密码学原语固定为一小组现代算法，并用 Cryptokey Routing 把对端公钥与允许的 IP 前缀绑定。</p>\n<h2>设计目标</h2>\n<p>相对传统 IPsec/OpenVPN 的庞杂选项，WireGuard 强调：代码量可控、配置面小、默认密码学套件固定、内核态可高效转发。它不提供“应用层代理”语义，而是虚拟网卡上的点对点安全隧道。</p>\n<h2>Noise Protocol Framework</h2>\n<p>握手建立在 Noise 框架之上。官方构造字符串为 <code>Noise_IKpsk2_25519_ChaChaPoly_BLAKE2s</code>：即 IK 模式（发起方已知响应方静态公钥），并可选混入预共享密钥（psk2）以增强抗量子等场景的余量。Noise 负责把长期密钥与临时密钥的 Diffie–Hellman 组合编排成可分析的握手脚本。</p>\n<h2>核心密码学原语</h2>\n<ul>\n<li><strong>Curve25519：</strong>用于椭圆曲线 Diffie–Hellman（ECDH），生成共享密钥材料。</li>\n<li><strong>ChaCha20-Poly1305：</strong>按 RFC 7539 的 AEAD 构造保护数据包机密性与完整性；计数器型 nonce，避免重用。</li>\n<li><strong>BLAKE2s：</strong>用于哈希与键控哈希（含 HMAC-BLAKE2s），并参与 HKDF 风格的密钥派生（官方引用 RFC 5869）。</li>\n<li><strong>SipHash24：</strong>用于哈希表键等内部结构，降低哈希洪水一类攻击面。</li>\n</ul>\n<p>可选预共享密钥会混入握手；未启用时按全零 32 字节处理（协议定义行为）。</p>\n<h2>Handshake 与密钥轮换</h2>\n<p>连接开始时进行简短握手，建立对称会话密钥后传输数据。为提供前向保密，握手会按时间与报文计数等条件重新发起（官方描述为每隔数分钟量级轮换，并由定时器与报文阈值触发）。握手基于时间而非“必须依赖上一包内容”，以便在丢包网络中更稳健。</p>\n<p>响应方在完成握手后，需等到收到发起方使用新会话加密的首个数据包（可为心跳空包）才确认新密钥，避免未完成确认就发送。</p>\n<h2>Cryptokey Routing</h2>\n<p>每个对端由 Curve25519 公钥标识，并配置 AllowedIPs（允许的源/目的前缀）。出站时按目的 IP 选择对应公钥加密；入站解密后，仅当内层源 IP 落在该公钥的允许集合内才接收，否则丢弃。这把“身份”与“可声明的 IP”绑在一起，简化防火墙推理，也要求 AllowedIPs 配置正确，否则会出现无法互通或误路由。</p>\n<h2>MTU 与路由注意事项</h2>\n<ul>\n<li>外层 UDP/IP 与加密开销会降低有效 MTU；路径 MTU 发现失败时可能出现分片或大包丢弃，需按环境调整接口 MTU。</li>\n<li>全隧道默认路由与本地局域网、DNS、回程路由冲突时，容易造成“连上即断网”，应明确分流与表优先级。</li>\n<li>移动网络下的漫游依赖端点更新机制；防火墙需放行对应 UDP 端口。</li>\n</ul>\n<h2>安全使用边界</h2>\n<p>WireGuard 保证的是隧道上的加密与对端认证（基于预置公钥），不自动审查服务端运营方，也不保护隧道终点之后的明文处理。私钥与配置文件等同于凭证，应限制权限并避免随手上传到不可信位置。与系统级 VPN 概念的关系见 <a href=\"/articles/what-is-vpn\">什么是 VPN</a>；与代理对比见 <a href=\"/articles/vpn-vs-proxy\">VPN 和代理</a>。</p>\n<h2>典型错误</h2>\n<ul>\n<li>AllowedIPs 写错导致流量未入隧或非对称路由。</li>\n<li>多台设备复用同一私钥，破坏身份模型。</li>\n<li>忽略 DNS 仍走明文解析器。</li>\n<li>把“协议现代”等同于“运营方可信”。</li>\n</ul>",
+    "status": "published",
+    "published_at": "2026-11-09 17:02:21",
+    "updated_at": "2026-11-10 03:45:52",
+    "is_featured": 1,
+    "is_popular": 1,
+    "image_url": "/uploads/covers/what-is-wireguard.svg",
+    "image_alt": "什么是 WireGuard 协议主题插图",
+    "faq_json": [
+      {
+        "q": "WireGuard 用的是哪种 Noise 模式？",
+        "a": "官方实现基于 Noise_IKpsk2_25519_ChaChaPoly_BLAKE2s，即 IK 握手并可混入预共享密钥。"
+      },
+      {
+        "q": "为什么强调 Cryptokey Routing？",
+        "a": "它用公钥标识对端，并用 AllowedIPs 约束加解密后可接受的 IP，把认证与路由策略绑在一起。"
+      },
+      {
+        "q": "会话密钥会轮换吗？",
+        "a": "会。官方设计通过定时与报文阈值重新握手，以提供前向保密，并在丢包环境保持可用性。"
+      },
+      {
+        "q": "WireGuard 能替代账号安全吗？",
+        "a": "不能。它保护的是网络路径层；钓鱼、弱密码与恶意客户端仍需单独防护。"
+      }
+    ],
+    "sources_json": [
+      {
+        "title": "WireGuard: Protocol & Cryptography",
+        "url": "https://www.wireguard.com/protocol/"
+      },
+      {
+        "title": "WireGuard whitepaper (PDF)",
+        "url": "https://www.wireguard.com/papers/wireguard.pdf"
+      },
+      {
+        "title": "Noise Protocol Framework",
+        "url": "https://noiseprotocol.org/noise.html"
+      },
+      {
+        "title": "RFC 7539 ChaCha20-Poly1305",
+        "url": "https://www.rfc-editor.org/rfc/rfc7539"
+      },
+      {
+        "title": "RFC 7693 BLAKE2",
+        "url": "https://www.rfc-editor.org/rfc/rfc7693"
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "title": "什么是 VLESS 协议",
+    "slug": "what-is-vless",
+    "seo_title": "什么是 VLESS：Xray 中的定位、TLS/REALITY 与边界",
+    "meta_description": "根据 Xray 文档说明 VLESS 的无状态设计、与 VMess 差异、TLS/REALITY、flow 兼容性，以及协议本身不保证什么。",
+    "content_html": "<p>VLESS 是 Xray 生态中的一种轻量、无状态传输协议，可作为客户端与服务端之间的桥接。它本身主要解决“如何标识用户并承载流量”，安全传输通常还要依赖外层的 TLS、REALITY 或文档允许的加密模式。</p>\n<h2>协议定位</h2>\n<p>按 Project X 文档，VLESS 分为 inbound/outbound，用 UUID（或可映射为 UUID 的短字符串）做用户标识，不依赖系统时间对齐。它被设计为比早期 VMess 更精简的承载层，而不是完整的“一键安全产品”。</p>\n<h2>在 Xray 架构中的位置</h2>\n<p>Xray 将入站、出站、路由与流设置（transport / security）分层。VLESS 多出现在 protocol 字段，真正的外表特征与加密由 <code>streamSettings</code>（如 TCP、TLS、REALITY）以及可选的 VLESS Encryption 等配置决定。换言之：讨论“VLESS 安不安全”时，必须同时说明外层安全如何配置。</p>\n<h2>与 VMess 的主要差异</h2>\n<ul>\n<li>VLESS 强调无状态与轻量；文档明确其不依赖系统时间。</li>\n<li>认证以 UUID 为主；VMess 有不同的历史设计与时间窗等行为。</li>\n<li>二者都只是核心中的协议选项之一，实际风险还取决于客户端来源、分享订阅是否被篡改、以及节点运营方。</li>\n</ul>\n<h2>TLS 与 REALITY 的角色</h2>\n<p>文档警告：除非链路本身可信（例如私有地址且受控）或启用了规定的 VLESS Encryption，否则 VLESS 应配合外层传输安全。TLS 提供常规的证书认证与加密通道；REALITY 等机制用于特定对抗场景，属于部署选择，不是 VLESS 名称自带的魔法。配置错误或证书校验被关闭时，协议名字帮不上忙。</p>\n<h2>Flow 与兼容性</h2>\n<p>用户对象可设置 <code>flow</code>。常见情况包括：空 flow 走标准 TLS 代理；<code>xtls-rprx-vision</code> 启用文档所述的 XTLS 相关模式（含内部握手随机填充等）。XTLS 仅在文档列出的组合下可用（例如 TCP+TLS/REALITY，或配合 VLESS Encryption 的条件）。客户端与服务端 flow 不一致会导致无法连接或行为异常。</p>\n<h2>协议本身不保证什么</h2>\n<ul>\n<li>不保证节点运营方不记录或不明文处理出口流量。</li>\n<li>不保证来路不明的“一键客户端”未被植入后门。</li>\n<li>不保证绕过一切网络策略；可用性随环境变化。</li>\n<li>不替代账号安全、系统更新与防钓鱼。</li>\n</ul>\n<p>若你的目标是理解系统级隧道，优先阅读 <a href=\"/articles/what-is-vpn\">VPN</a> 与 <a href=\"/articles/what-is-wireguard\">WireGuard</a>；若在比较工具选型，见 <a href=\"/articles/choose-privacy-tools\">如何选择隐私工具</a>。</p>\n<h2>安全使用建议</h2>\n<p>只使用可核验来源的核心与客户端；把 UUID 与私钥当凭证保管；理解订阅链接泄露等于接入权泄露。本站若出现商业客户端链接，会标明“商业链接”，且不将其表述为绝对安全保证。</p>",
+    "status": "published",
+    "published_at": "2026-11-09 17:02:21",
+    "updated_at": "2026-11-10 03:45:52",
+    "is_featured": 0,
+    "is_popular": 0,
+    "image_url": "/uploads/covers/what-is-vless.svg",
+    "image_alt": "什么是 VLESS 协议主题插图",
+    "faq_json": [
+      {
+        "q": "VLESS 等于 VPN 吗？",
+        "a": "不等同。它是 Xray 等实现中的传输/代理协议选项，通常还要配合 TLS 等外层安全与路由配置。"
+      },
+      {
+        "q": "为什么文档强调必须配合外层安全？",
+        "a": "VLESS 默认聚焦轻量承载；在不受信链路上，需要 TLS/REALITY 或文档允许的加密模式防止路径窃听与篡改。"
+      },
+      {
+        "q": "flow 填错会怎样？",
+        "a": "可能导致无法握手或功能不可用。服务端与客户端需按同一文档约定配置，尤其是 xtls-rprx-vision 等模式。"
+      },
+      {
+        "q": "VLESS 能保证匿名吗？",
+        "a": "不能。出口节点、DNS、账号与客户端供应链都会影响真实隐私效果。"
+      }
+    ],
+    "sources_json": [
+      {
+        "title": "Xray docs: VLESS inbound",
+        "url": "https://xtls.github.io/en/config/inbounds/vless.html"
+      },
+      {
+        "title": "Xray docs (Chinese): VLESS",
+        "url": "https://xtls.github.io/config/inbounds/vless.html"
+      },
+      {
+        "title": "Project X documentation home",
+        "url": "https://xtls.github.io/"
+      },
+      {
+        "title": "Cloudflare Learning: What is TLS?",
+        "url": "https://www.cloudflare.com/learning/ssl/transport-layer-security-tls/"
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "title": "什么是网络流量加密",
+    "slug": "network-traffic-encryption",
+    "seo_title": "什么是网络流量加密：TLS、隧道与元数据",
+    "meta_description": "区分 HTTPS/TLS、VPN 隧道与磁盘加密各自保护的范围，并说明元数据、端点安全与验证方法。",
+    "content_html": "<p>网络流量加密泛指在传输路径上保护数据机密性与完整性的技术。HTTPS/TLS、VPN 隧道等属于不同层次，保护对象与可见元数据并不相同。</p>\n<h2>TLS/HTTPS：应用会话层</h2>\n<p>浏览器与网站之间的 TLS 保护 HTTP 等内容，并借助证书体系验证你连接的域名身份（在校验证常的前提下）。它不改变系统中其他应用的流量，也不能证明网站经营者诚实。详见 <a href=\"/articles/what-is-https\">什么是 HTTPS</a>。</p>\n<h2>VPN 隧道：路径封装层</h2>\n<p>隧道把多应用的 IP 包封装并加密发往远端，再由远端出站。它改变出口与路径可见性，但终点运营方在出站后通常能看到目标连接。见 <a href=\"/articles/what-is-vpn\">VPN</a> 与 <a href=\"/articles/what-is-wireguard\">WireGuard</a>。</p>\n<h2>内容 vs 元数据</h2>\n<p>加密载荷后，时间、体积、目的端口、SNI（视协议与扩展而定）、DNS 查询等仍可能泄漏意图。因此“已加密”不等于“无可观察信息”。DNS 侧见 <a href=\"/articles/what-is-dns-leak\">DNS 泄露</a>。</p>\n<h2>端点安全仍关键</h2>\n<p>若设备存在键盘记录或恶意软件，数据在加密前已被读取。传输加密不能替代系统更新、权限最小化与防钓鱼。</p>\n<h2>如何验证加密生效</h2>\n<ul>\n<li>网站证书主体与域名匹配，无持续证书警告。</li>\n<li>隧道客户端显示已连接，且 DNS/出口符合预期。</li>\n<li>不在证书告警页输入密码；改走官方应用或已知域名。</li>\n</ul>\n<h2>实践选型</h2>\n<p>防咖啡馆旁路：HTTPS 是底线，可信隧道是增强。防设备丢失：磁盘加密。防跨站追踪：还要处理 Cookie 与账号，见 <a href=\"/articles/protect-online-privacy\">如何保护网络隐私</a>。</p>",
+    "status": "published",
+    "published_at": "2026-11-09 17:02:21",
+    "updated_at": "2026-11-10 03:46:14",
+    "is_featured": 0,
+    "is_popular": 0,
+    "image_url": "/uploads/covers/network-traffic-encryption.svg",
+    "image_alt": "什么是网络流量加密主题插图",
+    "faq_json": [
+      {
+        "q": "VPN 和 HTTPS 可以一起用吗？",
+        "a": "可以。它们保护的阶段不同，常可叠加，但都有边界。"
+      },
+      {
+        "q": "加密后还需要强密码吗？",
+        "a": "需要。传输保护不能替代账户凭据保护。"
+      },
+      {
+        "q": "为什么仍能被推断访问了谁？",
+        "a": "因为 DNS、SNI、流量模式与账号登录等元数据或上层标识仍然存在。"
+      }
+    ],
+    "sources_json": [
+      {
+        "title": "MDN: Transport Layer Security (TLS)",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/Security/Transport_Layer_Security"
+      },
+      {
+        "title": "Cloudflare Learning: What is Encryption?",
+        "url": "https://www.cloudflare.com/learning/ssl/what-is-encryption/"
+      },
+      {
+        "title": "OWASP Transport Layer Protection Cheat Sheet",
+        "url": "https://cheatsheetseries.owasp.org/cheatsheets/Transport_Layer_Protection_Cheat_Sheet.html"
+      },
+      {
+        "title": "NIST SP 800-52 Rev. 2 Guidelines for TLS",
+        "url": "https://csrc.nist.gov/pubs/sp/800/52/r2/final"
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "title": "如何选择可靠的隐私保护工具",
+    "slug": "choose-privacy-tools",
+    "seo_title": "如何选择可靠的隐私保护工具：评估清单",
+    "meta_description": "从威胁模型、透明度、审计、权限、商业模式与退出成本评估隐私工具，避免被过度承诺误导。",
+    "content_html": "<p>选择隐私工具前，先写清威胁模型与预算，再看证据，而不是广告词。工具应可卸载、可导出、可关闭；把生活绑死在无法离开的黑盒上，本身就是风险。</p>\n<h2>第一步：写清需求</h2>\n<ul>\n<li>要防谁：商业追踪、公共网络、账户接管，还是设备丢失？</li>\n<li>覆盖哪些设备与应用？</li>\n<li>能否接受付费？不能接受时，免费产品的商业模式是什么？</li>\n</ul>\n<h2>评估维度</h2>\n<ul>\n<li><strong>透明度：</strong>是否有清晰文档、公司主体与联系方式。</li>\n<li><strong>审计与开源：</strong>是否有独立审计报告或可复现构建；开源不等于自动安全，但提高可验证性。</li>\n<li><strong>权限：</strong>是否强索无障碍、短信、通讯录等与功能无关的权限。</li>\n<li><strong>更新：</strong>客户端是否仍在维护。</li>\n<li><strong>退出：</strong>数据能否导出，账号能否注销。</li>\n</ul>\n<h2>按类别举例思考</h2>\n<ul>\n<li>密码管理器：是否支持强主密码、2FA、紧急访问与泄露报告。</li>\n<li>VPN/隧道：日志政策、管辖地、杀开关、DNS 行为；协议是否可核验（如 <a href=\"/articles/what-is-wireguard\">WireGuard</a>）。</li>\n<li>浏览器与追踪防护：扩展权限是否过大；是否与你的登录策略冲突。</li>\n<li>即时通讯：是否默认 E2EE，见 <a href=\"/articles/what-is-end-to-end-encryption\">端到端加密</a>。</li>\n</ul>\n<h2>红旗信号</h2>\n<ul>\n<li>承诺“绝对匿名/军方加密/警察无法获取”。</li>\n<li>要求关闭系统安全功能才能运行。</li>\n<li>难以卸载或持续推送高危权限。</li>\n<li>只有应用商店好评，没有任何技术文档。</li>\n</ul>\n<p>相关基础：<a href=\"/articles/protect-online-privacy\">保护网络隐私</a>、<a href=\"/articles/what-is-vpn\">VPN</a>、<a href=\"/articles/vpn-vs-proxy\">VPN 与代理</a>。本站工具专题中的商业链接会明确标注。</p>",
+    "status": "published",
+    "published_at": "2026-11-09 17:02:21",
+    "updated_at": "2026-11-10 03:46:14",
+    "is_featured": 0,
+    "is_popular": 1,
+    "image_url": "/uploads/covers/choose-privacy-tools.svg",
+    "image_alt": "如何选择可靠的隐私保护工具主题插图",
+    "faq_json": [
+      {
+        "q": "开源工具是否一定更安全？",
+        "a": "不一定，但通常更易审计。仍需看维护状态、默认配置与供应链。"
+      },
+      {
+        "q": "付费是否等于无日志？",
+        "a": "不等于。应阅读政策、审计与历史事件，而不是只看价格。"
+      },
+      {
+        "q": "如何做小范围试用？",
+        "a": "先在非核心设备安装，观察权限、卸载难度与是否干扰系统安全功能，再决定迁移。"
+      }
+    ],
+    "sources_json": [
+      {
+        "title": "EFF Surveillance Self-Defense",
+        "url": "https://ssd.eff.org/"
+      },
+      {
+        "title": "OWASP: Secure Product Design Cheat Sheet",
+        "url": "https://cheatsheetseries.owasp.org/cheatsheets/Secure_Product_Design_Cheat_Sheet.html"
+      },
+      {
+        "title": "Mozilla: Privacy & Security",
+        "url": "https://www.mozilla.org/en-US/privacy/"
+      },
+      {
+        "title": "NIST Cybersecurity Framework",
+        "url": "https://www.nist.gov/cyberframework"
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "title": "常见网络安全误区",
+    "slug": "common-cybersecurity-myths",
+    "seo_title": "常见网络安全误区：哪些说法并不准确",
+    "meta_description": "澄清“无重要数据”“杀毒即安全”“HTTPS 等于可信”等常见误区。",
+    "content_html": "<p>网络安全没有一次设置永久有效的方案。很多风险来自错误的安全感：以为做了一件事就足够，结果忽略了其他必要环节。</p><h2>三个常见误区</h2><p>复杂密码不能替代多重验证；HTTPS 不等于网站内容可信；安装安全软件也不能替代更新和谨慎操作。还有人以为“我不重要，没人会攻击我”，但自动化攻击通常不先判断你是谁。</p><h2>更稳妥的思路</h2><p>把安全看成分层防护：账户、设备、网络、备份和判断力。每层都做基础事项，整体风险会明显下降。</p><h2>误区背后的真实问题</h2><p>“我有杀毒就不怕”忽略了钓鱼和社工；“我用苹果/大厂手机就够了”忽略了权限和更新；“我无重要资产”忽略了自动化攻击不挑人。误区之所以顽固，是因为它们能提供廉价安慰。</p>\n<h2>用证据替代感觉</h2><p>与其争论某项措施“够不够”，不如检查结果：异常登录能否发现、备份能否恢复、恢复码能否使用、家人是否知道基本流程。感觉安全不等于可验证的安全。</p><h2>建立“足够好”的个人基线</h2><p>普通人不必追求企业级方案。一套足够好的基线通常是：独立密码、双重验证、自动更新、谨慎授权、识别钓鱼、重要数据有备份。先达到基线，再考虑高级工具。</p><h2>总结</h2><p>破除误区的目的不是制造焦虑，而是把精力放在真正有效的措施上。</p>\n<h2>用清单替代口号</h2><p>“我没有重要数据”“有杀毒就够”“有 HTTPS 就绝对可信”都不成立。改为：独立密码、双重验证、更新、少授权、慢点链接。</p><h2>相关阅读</h2><p><a href=\"/articles/create-strong-passwords\">强密码</a> · <a href=\"/articles/what-is-https\">HTTPS</a> · <a href=\"/articles/protect-online-privacy\">网络隐私</a></p>",
+    "status": "published",
+    "published_at": "2026-11-09 17:02:21",
+    "updated_at": "2026-11-10 03:46:14",
+    "is_featured": 1,
+    "is_popular": 1,
+    "image_url": "/uploads/covers/common-cybersecurity-myths.svg",
+    "image_alt": "常见网络安全误区主题插图",
+    "faq_json": [
+      {
+        "a": "通常不需要。先做好密码、双重验证、更新和钓鱼识别就很有价值。",
+        "q": "普通人需要很复杂的安全方案吗？"
+      },
+      {
+        "a": "平台有安全能力，但仍需更新、权限管理和谨慎安装应用。",
+        "q": "只用苹果/安卓是不是就够安全？"
+      }
+    ],
+    "sources_json": [
+      {
+        "title": "CISA Best Practices",
+        "url": "https://www.cisa.gov/topics/cybersecurity-best-practices"
+      },
+      {
+        "title": "OWASP Top Ten",
+        "url": "https://owasp.org/www-project-top-ten/"
+      }
+    ]
+  }
+]

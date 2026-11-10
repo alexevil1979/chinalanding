@@ -1,0 +1,421 @@
+[
+  {
+    "slug": "how-online-tracking-works",
+    "title": "网络追踪技术是如何工作的",
+    "seo_title": "网络追踪技术是如何工作的？Cookie 与设备特征",
+    "meta_description": "了解 Cookie、像素和设备特征等常见追踪方式，以及可以采取的减少措施。",
+    "content_html": "<p>网站和广告系统可能通过 Cookie、脚本、像素或设备特征来记录访问行为，以便统计、个性化或广告投放。理解这些机制，有助于你更有意识地管理浏览器设置。</p><h2>常见追踪方式</h2><p>第一方 Cookie 通常服务当前网站功能；第三方 Cookie 更常用于跨站识别。像素和脚本可在页面加载时回传事件。此外，浏览器与设备特征组合也可能用于识别。</p><h2>如何减少不必要追踪</h2><p>限制第三方 Cookie，清理不需要的站点数据，审慎授予通知和定位权限，并减少不必要的扩展。隐私相关设置可能影响某些网站功能，需要按场景调整。</p><h2>总结</h2><p>追踪技术多样，完全消除并不现实。目标应是减少非必要暴露，并保护高敏感账户场景。</p>",
+    "faq_json": [
+      {
+        "q": "禁用 Cookie 后网站不能用怎么办？",
+        "a": "可改为限制第三方 Cookie，或为信任站点保留必要权限。"
+      },
+      {
+        "q": "无痕模式等于不被追踪吗？",
+        "a": "不等于。它主要减少本地痕迹，不保证对网站或网络侧完全不可识别。"
+      }
+    ],
+    "sources_json": [
+      {
+        "title": "Mozilla Privacy",
+        "url": "https://www.mozilla.org/privacy/"
+      },
+      {
+        "title": "EFF Privacy Badger concepts",
+        "url": "https://www.eff.org/"
+      }
+    ],
+    "is_featured": 0,
+    "is_popular": 0,
+    "cats": [
+      2
+    ],
+    "image_url": "/uploads/covers/how-online-tracking-works.svg",
+    "image_alt": "网络追踪技术是如何工作的主题插图"
+  },
+  {
+    "slug": "browser-privacy-settings",
+    "title": "浏览器隐私设置指南",
+    "seo_title": "浏览器隐私设置指南：Cookie、权限与扩展",
+    "meta_description": "整理浏览器中的 Cookie、权限、同步和安全浏览设置，建立更稳妥的浏览习惯。",
+    "content_html": "<p>浏览器是接触互联网的主要入口。合理设置可以减少不必要的数据暴露，也能降低恶意页面和危险扩展带来的风险。</p><h2>建议优先检查的项目</h2><p>站点权限、Cookie 策略、弹窗与下载行为、同步账户安全，以及是否启用安全浏览相关功能。不同浏览器名称不同，但逻辑类似。</p><h2>扩展需要克制</h2><p>扩展能增强功能，也可能获得读取页面内容的权限。只保留真正需要的扩展，并定期删除不再使用的项目。来源不明的扩展不要安装。</p><h2>总结</h2><p>浏览器隐私设置没有一劳永逸的开关。把它当作定期维护项，与账户和设备安全一起管理。</p>",
+    "faq_json": [
+      {
+        "q": "同步功能有风险吗？",
+        "a": "方便的同时会集中书签和密码等数据，因此同步账户本身需要强保护。"
+      },
+      {
+        "q": "每次都清 Cookie 好吗？",
+        "a": "可以减少追踪，但也会频繁退出登录。可按站点重要程度分层处理。"
+      }
+    ],
+    "sources_json": [
+      {
+        "title": "Mozilla Firefox Privacy",
+        "url": "https://support.mozilla.org/"
+      },
+      {
+        "title": "Chrome Privacy Guide",
+        "url": "https://support.google.com/chrome/"
+      }
+    ],
+    "is_featured": 0,
+    "is_popular": 1,
+    "cats": [
+      2,
+      7
+    ],
+    "image_url": "/uploads/covers/browser-privacy-settings.svg",
+    "image_alt": "浏览器隐私设置指南主题插图"
+  },
+  {
+    "slug": "what-is-ip-address",
+    "title": "什么是 IP 地址",
+    "seo_title": "什么是 IP 地址？公网与内网的区别",
+    "meta_description": "解释 IP 地址的作用、公网与内网差异，以及它与在线隐私的关系。",
+    "content_html": "<p>IP 地址用于在网络中标识连接端点。家庭网络通常同时涉及路由器的公网地址和设备的内网地址。理解这一区别，有助于看懂“查 IP”类工具到底显示了什么。</p><h2>公网与内网</h2><p>公网 IP 是互联网上可路由的地址；内网 IP 用于家庭或组织内部通信。多台设备可通过路由器共享一个公网出口。</p><h2>它能说明什么</h2><p>IP 地址可以提供粗略的网络和地区信息，但通常不能单独证明一个人的真实身份。把 IP 与完整匿名性简单等同，并不准确。</p><h2>总结</h2><p>IP 是网络通信的基础标识。关注它时，应结合路由方式、日志政策和具体应用场景来理解。</p>",
+    "faq_json": [
+      {
+        "q": "IP 会变吗？",
+        "a": "可能会。运营商、网络切换或路由器重启都可能导致公网地址变化。"
+      },
+      {
+        "q": "隐藏 IP 就安全了吗？",
+        "a": "改变出口地址不等于全面安全，账户、设备和钓鱼风险仍然存在。"
+      }
+    ],
+    "sources_json": [
+      {
+        "title": "Cloudflare Learning: What is an IP address?",
+        "url": "https://www.cloudflare.com/learning/network-layer/what-is-an-ip-address/"
+      },
+      {
+        "title": "MDN IP address",
+        "url": "https://developer.mozilla.org/"
+      }
+    ],
+    "is_featured": 0,
+    "is_popular": 0,
+    "cats": [
+      5,
+      12
+    ],
+    "image_url": "/uploads/covers/what-is-ip-address.svg",
+    "image_alt": "什么是 IP 地址主题插图"
+  },
+  {
+    "slug": "how-dns-servers-work",
+    "title": "DNS 服务器的工作原理",
+    "seo_title": "DNS 服务器的工作原理：查询、缓存与故障",
+    "meta_description": "从域名查询到缓存，理解 DNS 如何帮助打开网站，以及为何会解析失败。",
+    "content_html": "<p>DNS 把便于记忆的域名转换为服务器地址。一次查询可能经过本地缓存、递归解析器和权威服务器。没有 DNS，日常上网会困难得多。</p><h2>查询大致流程</h2><p>设备先看本地缓存；未命中则询问配置的 DNS 解析器；解析器再代表你去查找权威答案，并可能缓存结果以加快后续访问。</p><h2>为什么会失败</h2><p>缓存过期、服务器故障、配置错误、网络限制或域名本身问题都可能导致解析异常。换网络后“打不开某个站”有时就是 DNS 问题。</p><h2>更换 DNS 前要想清楚</h2><p>更换公共 DNS 前，应了解服务商的隐私政策、过滤策略和稳定性。对普通用户，稳定与透明比单纯追求“更快”更重要。</p><h2>总结</h2><p>DNS 是互联网的目录服务。理解查询路径，有助于排查故障和评估隐私影响。</p>",
+    "faq_json": [
+      {
+        "q": "DNS 被污染或劫持时有何表现？",
+        "a": "可能出现错误页面、跳转到陌生站或特定域名无法解析。应换网络并检查设备代理/DNS 设置。"
+      },
+      {
+        "q": "DoH 是什么？",
+        "a": "DNS over HTTPS 是一种将 DNS 查询放在 HTTPS 中传输的方式，具体效果取决于浏览器与解析器实现。"
+      }
+    ],
+    "sources_json": [
+      {
+        "title": "Cloudflare Learning: DNS",
+        "url": "https://www.cloudflare.com/learning/dns/what-is-dns/"
+      },
+      {
+        "title": "Mozilla DNS over HTTPS",
+        "url": "https://support.mozilla.org/"
+      }
+    ],
+    "is_featured": 0,
+    "is_popular": 0,
+    "cats": [
+      12,
+      5
+    ],
+    "image_url": "/uploads/covers/how-dns-servers-work.svg",
+    "image_alt": "DNS 服务器的工作原理主题插图"
+  },
+  {
+    "slug": "identify-malicious-websites",
+    "title": "如何识别恶意网站",
+    "seo_title": "如何识别恶意网站？地址、证书与行为信号",
+    "meta_description": "从地址、内容、证书和行为综合识别可疑网站，降低下载与凭据风险。",
+    "content_html": "<p>恶意网站不一定看起来粗糙。有的页面模仿知名品牌，有的则通过“假更新”“假中奖”诱导下载。判断时要综合多个信号，而不是只看是否精美。</p><h2>重点观察</h2><p>检查域名拼写、异常弹窗、强制下载、证书警告，以及是否突然要求提供敏感信息。对支付和账户登录，优先走官方书签或手动输入地址。</p><h2>下载与插件套路</h2><p>警惕“必须安装播放器/证书/安全控件才能继续”的页面，尤其是你并未主动寻找这些软件时。官方服务很少用这种方式强迫安装不明程序。</p><h2>总结</h2><p>识别恶意网站靠的是放慢操作：核域名、看行为、不盲装。不确定时先换官方渠道。</p>",
+    "faq_json": [
+      {
+        "q": "浏览器已标红还能点吗？",
+        "a": "不应继续。先离开页面，并通过官方渠道确认。"
+      },
+      {
+        "q": "短链接一定有害吗？",
+        "a": "不一定，但短链接会隐藏最终域名，重要操作前应先解析或避免使用。"
+      }
+    ],
+    "sources_json": [
+      {
+        "title": "Google Safe Browsing",
+        "url": "https://safebrowsing.google.com/"
+      },
+      {
+        "title": "OWASP",
+        "url": "https://owasp.org/"
+      }
+    ],
+    "is_featured": 0,
+    "is_popular": 0,
+    "cats": [
+      1,
+      7
+    ],
+    "image_url": "/uploads/covers/identify-malicious-websites.svg",
+    "image_alt": "如何识别恶意网站主题插图"
+  },
+  {
+    "slug": "protect-digital-identity",
+    "title": "如何保护个人数字身份",
+    "seo_title": "如何保护个人数字身份：减少关联与保护恢复渠道",
+    "meta_description": "减少身份信息暴露，并保护与身份相关的账户和恢复渠道。",
+    "content_html": "<p>数字身份由账户、联系方式、设备和公开信息共同构成。攻击者不一定需要完整证件，只要拼起足够多的线索，就可能完成社工或账户接管。</p><h2>减少不必要关联</h2><p>不同场景使用合适的公开信息，避免把邮箱、手机号、生日和证件照片同时公开。简历、社交和论坛尽量分层管理。</p><h2>保护恢复渠道</h2><p>恢复邮箱、手机号和验证器是账户安全的关键。给这些入口单独加强密码与双重验证，能显著提高整体安全性。</p><h2>总结</h2><p>保护数字身份，既要少暴露，也要把“能重置一切的入口”保护好。</p>",
+    "faq_json": [
+      {
+        "q": "公开简历有风险吗？",
+        "a": "有一定暴露面。可避免放完整生日、私人手机号和过多可社工细节。"
+      },
+      {
+        "q": "身份被冒用迹象有哪些？",
+        "a": "陌生验证码、异常登录、信用或账户变动通知都值得立即核查。"
+      }
+    ],
+    "sources_json": [
+      {
+        "title": "EFF Privacy",
+        "url": "https://www.eff.org/issues/privacy"
+      },
+      {
+        "title": "CISA identity protection tips",
+        "url": "https://www.cisa.gov/"
+      }
+    ],
+    "is_featured": 0,
+    "is_popular": 0,
+    "cats": [
+      9,
+      3
+    ],
+    "image_url": "/uploads/covers/protect-digital-identity.svg",
+    "image_alt": "如何保护个人数字身份主题插图"
+  },
+  {
+    "slug": "zero-trust-security",
+    "title": "什么是零信任安全架构",
+    "seo_title": "什么是零信任安全架构？验证、最小权限与持续检查",
+    "meta_description": "用通俗语言解释零信任的验证、最小权限和持续检查原则，以及个人用户可借鉴之处。",
+    "content_html": "<p>零信任不是某个单一产品，而是一种不因网络位置而默认信任的安全思路。传统上“在内网就更可信”的假设，在远程办公和云服务时代越来越不可靠。</p><h2>核心原则</h2><p>验证访问者和设备；只授予完成任务所需的最小权限；并根据风险持续检查访问状态。重点是持续确认，而不是一次性放行。</p><h2>个人用户也能借鉴</h2><p>关闭不必要权限、定期复核登录会话、重要操作二次确认、不因为“在自己家网络”就放松更新和钓鱼警惕，这些都与零信任精神一致。</p><h2>总结</h2><p>零信任强调“永不默认信任，始终校验”。对企业是架构原则，对个人则是更审慎的权限和验证习惯。</p>",
+    "faq_json": [
+      {
+        "q": "零信任是不是等于 VPN？",
+        "a": "不是。VPN 是一种远程接入技术；零信任是更广泛的访问控制思路。"
+      },
+      {
+        "q": "小团队也需要零信任吗？",
+        "a": "不必一次上齐所有产品，但最小权限和持续验证的原则同样有价值。"
+      }
+    ],
+    "sources_json": [
+      {
+        "title": "NIST Zero Trust Architecture",
+        "url": "https://www.nist.gov/publications/zero-trust-architecture"
+      },
+      {
+        "title": "CISA Zero Trust Maturity Model",
+        "url": "https://www.cisa.gov/"
+      }
+    ],
+    "is_featured": 0,
+    "is_popular": 0,
+    "cats": [
+      1,
+      9
+    ],
+    "image_url": "/uploads/covers/zero-trust-security.svg",
+    "image_alt": "什么是零信任安全架构主题插图"
+  },
+  {
+    "slug": "what-is-wireguard",
+    "title": "什么是 WireGuard 协议",
+    "seo_title": "什么是 WireGuard 协议？设计目标与使用注意",
+    "meta_description": "介绍 WireGuard 的设计目标、密钥机制，以及配置文件保管等注意事项。",
+    "content_html": "<p>WireGuard 是一种现代 VPN 协议，强调简洁实现和基于密钥的身份验证。许多客户端和服务都提供对它的支持，但它本身只是协议，不等于某个具体商业服务。</p><h2>它强调什么</h2><p>相比某些传统方案，WireGuard 的代码面更小，配置模型也更直接：通过密钥识别对端，并建立加密隧道。具体性能和可用性仍取决于网络环境与实现。</p><h2>使用前要了解</h2><p>协议本身不决定服务商是否记录数据，也不保证所有网络环境都能稳定连接。配置文件包含敏感密钥，应像密码一样保存，不要发到公开聊天或代码仓库。</p><h2>总结</h2><p>WireGuard 是值得了解的现代隧道协议。选择它时，请同时评估客户端来源、密钥保管和服务运营透明度。</p>",
+    "faq_json": [
+      {
+        "q": "WireGuard 比其他协议一定更好吗？",
+        "a": "它有简洁和现代密码学设计上的优势，但“更好”取决于场景、实现和运营方式。"
+      },
+      {
+        "q": "配置能分享给朋友吗？",
+        "a": "不应公开分享。配置通常包含可访问隧道的敏感密钥。"
+      }
+    ],
+    "sources_json": [
+      {
+        "title": "WireGuard official site",
+        "url": "https://www.wireguard.com/"
+      },
+      {
+        "title": "Cloudflare Learning VPN",
+        "url": "https://www.cloudflare.com/learning/access-management/what-is-a-vpn/"
+      }
+    ],
+    "is_featured": 1,
+    "is_popular": 1,
+    "cats": [
+      6,
+      12
+    ],
+    "image_url": "/uploads/covers/what-is-wireguard.svg",
+    "image_alt": "什么是 WireGuard 协议主题插图"
+  },
+  {
+    "slug": "what-is-vless",
+    "title": "什么是 VLESS 协议",
+    "seo_title": "什么是 VLESS 协议？基础概念与安全边界",
+    "meta_description": "介绍 VLESS 的基本定位，并提醒读者区分协议名称与整体服务安全。",
+    "content_html": "<p>VLESS 是代理生态中使用的一种协议名称。理解它时，需要同时关注传输方式、身份验证、客户端来源和服务器管理，而不能只看协议标签。</p><h2>不要只看协议名称</h2><p>协议名称不能单独证明连接安全或服务可信。同一协议可以被认真部署，也可能被配置得很糟糕。客户端是否来自可信渠道、更新是否及时、服务器由谁管理，往往更关键。</p><h2>使用时的务实建议</h2><p>阅读项目文档，使用受支持的官方或可信客户端，理解自己的威胁模型，并避免传播未经验证的“绝对隐身”说法。涉及商业服务时，应查看其说明与限制。</p><h2>总结</h2><p>把 VLESS 当作技术组件来理解：它可能是方案的一部分，但安全取决于整条链路。</p>",
+    "faq_json": [
+      {
+        "q": "会用 VLESS 就等于安全吗？",
+        "a": "不等于。还要看传输、认证、客户端和运营方。"
+      },
+      {
+        "q": "相关教程都可信吗？",
+        "a": "不一定。应优先参考项目官方文档，并警惕索取远控或不明脚本的来源。"
+      }
+    ],
+    "sources_json": [
+      {
+        "title": "Project documentation should be checked from official repos",
+        "url": "https://github.com/"
+      },
+      {
+        "title": "OWASP",
+        "url": "https://owasp.org/"
+      }
+    ],
+    "is_featured": 0,
+    "is_popular": 0,
+    "cats": [
+      6,
+      12
+    ],
+    "image_url": "/uploads/covers/what-is-vless.svg",
+    "image_alt": "什么是 VLESS 协议主题插图"
+  },
+  {
+    "slug": "network-traffic-encryption",
+    "title": "什么是网络流量加密",
+    "seo_title": "什么是网络流量加密？内容与元数据的区别",
+    "meta_description": "理解传输中数据加密、端点安全和元数据之间的区别，避免误解保护范围。",
+    "content_html": "<p>网络流量加密用于降低传输内容被直接读取的风险。HTTPS、VPN 隧道和其他安全协议都属于这一范畴，但它们保护的范围并不完全相同。</p><h2>内容与元数据</h2><p>即使内容加密，连接时间、流量大小或目标域名等元数据仍可能可见。因此，“加密了”不等于“没有任何信息被观察到”。</p><h2>端点安全仍然关键</h2><p>如果设备已失陷，攻击者可以在加密之前读取内容。流量加密不能替代系统更新、权限控制和谨慎操作。</p><h2>总结</h2><p>流量加密是现代网络安全的基础层，需要与端点安全和身份验证一起理解。</p>",
+    "faq_json": [
+      {
+        "q": "VPN 和 HTTPS 可以一起用吗？",
+        "a": "可以。它们保护的阶段不同，常可叠加，但都有各自边界。"
+      },
+      {
+        "q": "加密后还需要强密码吗？",
+        "a": "需要。传输保护不能替代账户凭据保护。"
+      }
+    ],
+    "sources_json": [
+      {
+        "title": "Cloudflare Learning",
+        "url": "https://www.cloudflare.com/learning/"
+      },
+      {
+        "title": "Mozilla TLS concepts",
+        "url": "https://developer.mozilla.org/"
+      }
+    ],
+    "is_featured": 0,
+    "is_popular": 0,
+    "cats": [
+      10,
+      6
+    ],
+    "image_url": "/uploads/covers/network-traffic-encryption.svg",
+    "image_alt": "什么是网络流量加密主题插图"
+  },
+  {
+    "slug": "choose-privacy-tools",
+    "title": "如何选择可靠的隐私保护工具",
+    "seo_title": "如何选择可靠的隐私保护工具：透明度与权限",
+    "meta_description": "从透明度、更新、权限、商业模式和退出机制评估隐私工具，避免被过度承诺误导。",
+    "content_html": "<p>隐私工具不是越多越好。选择时应先明确自己的问题，再审查工具的来源、权限和商业模式。承诺“绝对匿名”“百分百安全”的宣传往往不可信。</p><h2>评估清单</h2><p>查看官方文档、更新记录、隐私政策、权限范围和支持渠道。开源不一定自动等于安全，但可审计性通常是加分项。商业服务则应说明数据如何处理。</p><h2>先小范围测试</h2><p>重要数据场景应先做小范围测试并保留备份。确认工具真能解决你的问题，且不会引入过度权限或难以卸载的组件。</p><h2>总结</h2><p>可靠的隐私工具选择，靠的是透明度和匹配度，而不是口号。先定义需求，再验证能力与风险。</p>",
+    "faq_json": [
+      {
+        "q": "开源工具一定更安全吗？",
+        "a": "开源便于审查，但不等于已被充分审查或配置正确。"
+      },
+      {
+        "q": "免费工具能用吗？",
+        "a": "可以，但要看它如何盈利、请求了哪些权限，以及是否有清晰的隐私说明。"
+      }
+    ],
+    "sources_json": [
+      {
+        "title": "EFF",
+        "url": "https://www.eff.org/"
+      },
+      {
+        "title": "Mozilla Privacy",
+        "url": "https://www.mozilla.org/privacy/"
+      }
+    ],
+    "is_featured": 0,
+    "is_popular": 1,
+    "cats": [
+      2,
+      6
+    ],
+    "image_url": "/uploads/covers/choose-privacy-tools.svg",
+    "image_alt": "如何选择可靠的隐私保护工具主题插图"
+  },
+  {
+    "slug": "common-cybersecurity-myths",
+    "title": "常见网络安全误区",
+    "seo_title": "常见网络安全误区：哪些说法并不准确",
+    "meta_description": "澄清“有密码就安全”“HTTPS 等于可信”等常见误区，建立更务实的安全观。",
+    "content_html": "<p>网络安全没有一次设置永久有效的方案。很多风险来自错误的安全感：以为做了一件事就足够，结果忽略了其他必要环节。</p><h2>三个常见误区</h2><p>复杂密码不能替代多重验证；HTTPS 不等于网站内容可信；安装安全软件也不能替代更新和谨慎操作。还有人以为“我不重要，没人会攻击我”，但自动化攻击通常不先判断你是谁。</p><h2>更稳妥的思路</h2><p>把安全看成分层防护：账户、设备、网络、备份和判断力。每层都做基础事项，整体风险会明显下降。</p><h2>总结</h2><p>破除误区的目的不是制造焦虑，而是把精力放在真正有效的措施上。</p>",
+    "faq_json": [
+      {
+        "q": "普通人需要很复杂的安全方案吗？",
+        "a": "通常不需要。先做好密码、双重验证、更新和钓鱼识别就很有价值。"
+      },
+      {
+        "q": "只用苹果/安卓是不是就够安全？",
+        "a": "平台有安全能力，但仍需更新、权限管理和谨慎安装应用。"
+      }
+    ],
+    "sources_json": [
+      {
+        "title": "OWASP Top 10",
+        "url": "https://owasp.org/www-project-top-ten/"
+      },
+      {
+        "title": "CISA Secure Our World",
+        "url": "https://www.cisa.gov/secure-our-world"
+      }
+    ],
+    "is_featured": 1,
+    "is_popular": 1,
+    "cats": [
+      1,
+      7
+    ],
+    "image_url": "/uploads/covers/common-cybersecurity-myths.svg",
+    "image_alt": "常见网络安全误区主题插图"
+  }
+]
