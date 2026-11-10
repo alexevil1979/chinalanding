@@ -50,17 +50,14 @@ if ($route === 'search') {
     if ($term !== '') {
         if (locale() === 'zh') {
             $like = '%' . $term . '%';
+            $offset = ($page - 1) * $perPage;
             $count = db()->prepare("SELECT COUNT(DISTINCT a.id) FROM articles a LEFT JOIN article_category ac ON ac.article_id=a.id LEFT JOIN categories c ON c.id=ac.category_id WHERE a.status='published' AND a.published_at<=NOW() AND (a.title LIKE ? OR a.content_html LIKE ? OR c.name LIKE ?)");
             $count->execute([$like, $like, $like]);
             $total = (int)$count->fetchColumn();
-            $stmt = db()->prepare("SELECT a.*,(SELECT c.name FROM article_category x JOIN categories c ON c.id=x.category_id WHERE x.article_id=a.id LIMIT 1) category_name FROM articles a WHERE a.status='published' AND a.published_at<=NOW() AND (a.title LIKE ? OR a.content_html LIKE ? OR EXISTS(SELECT 1 FROM article_category x JOIN categories c ON c.id=x.category_id WHERE x.article_id=a.id AND c.name LIKE ?)) ORDER BY a.is_popular DESC,a.published_at DESC LIMIT ? OFFSET ?");
-            $stmt->bindValue(1, $like);
-            $stmt->bindValue(2, $like);
-            $stmt->bindValue(3, $like);
-            $stmt->bindValue(4, $perPage, PDO::PARAM_INT);
-            $stmt->bindValue(5, ($page - 1) * $perPage, PDO::PARAM_INT);
-            $stmt->execute();
-            $results = localize_articles($stmt->fetchAll());
+            $results = localize_articles(query(
+                "SELECT a.*,(SELECT c.name FROM article_category x JOIN categories c ON c.id=x.category_id WHERE x.article_id=a.id LIMIT 1) category_name FROM articles a WHERE a.status='published' AND a.published_at<=NOW() AND (a.title LIKE ? OR a.content_html LIKE ? OR EXISTS(SELECT 1 FROM article_category x JOIN categories c ON c.id=x.category_id WHERE x.article_id=a.id AND c.name LIKE ?)) ORDER BY a.is_popular DESC,a.published_at DESC LIMIT {$perPage} OFFSET {$offset}",
+                [$like, $like, $like]
+            ));
         } else {
             $all = query("SELECT a.*,(SELECT c.name FROM article_category x JOIN categories c ON c.id=x.category_id WHERE x.article_id=a.id LIMIT 1) category_name FROM articles a WHERE a.status='published' AND a.published_at<=NOW() ORDER BY a.is_popular DESC,a.published_at DESC");
             $needle = mb_strtolower($term, 'UTF-8');
@@ -137,13 +134,22 @@ if (in_array($route, ['about', 'contact', 'privacy-policy', 'terms'], true)) {
 }
 
 if (preg_match('#^articles/([a-z0-9-]+)$#', $route, $m)) {
-    $rows = query("SELECT a.*,GROUP_CONCAT(DISTINCT c.name SEPARATOR '、') categories,GROUP_CONCAT(DISTINCT c.slug SEPARATOR ',') category_slugs FROM articles a LEFT JOIN article_category ac ON ac.article_id=a.id LEFT JOIN categories c ON c.id=ac.category_id WHERE a.slug=? AND a.status='published' AND a.published_at<=NOW() GROUP BY a.id", [$m[1]]);
+    $rows = query("SELECT a.* FROM articles a WHERE a.slug=? AND a.status='published' AND a.published_at<=NOW() LIMIT 1", [$m[1]]);
     if (!$rows) {
         http_response_code(404);
         render('pages/404', ['title' => t('page_not_found')]);
         exit;
     }
-    $art = localize_article($rows[0]);
+    $art = $rows[0];
+    try {
+        $catRows = query('SELECT c.name, c.slug FROM categories c INNER JOIN article_category ac ON ac.category_id=c.id WHERE ac.article_id=? ORDER BY c.id', [(int)$art['id']]);
+        $art['categories'] = implode('、', array_values(array_filter(array_map(static fn($r) => (string)($r['name'] ?? ''), $catRows))));
+        $art['category_slugs'] = implode(',', array_values(array_filter(array_map(static fn($r) => (string)($r['slug'] ?? ''), $catRows))));
+    } catch (Throwable $x) {
+        $art['categories'] = '';
+        $art['category_slugs'] = '';
+    }
+    $art = localize_article($art);
     $kwMapZh = [
         'what-is-vpn' => 'VPN原理,隧道加密,企业远程接入,威胁模型,网络加密',
         'vpn-vs-proxy' => 'VPN与代理区别,信任边界,企业远程接入,隧道协议,网络加密',
@@ -203,14 +209,13 @@ if (preg_match('#^category/([a-z0-9-]+)$#', $route, $m)) {
     }
     $page = max(1, (int)($_GET['page'] ?? 1));
     $perPage = 12;
-    $q = db()->prepare("SELECT a.* FROM articles a JOIN article_category ac ON ac.article_id=a.id WHERE ac.category_id=? AND a.status='published' AND a.published_at<=NOW() ORDER BY a.is_featured DESC,a.published_at DESC LIMIT ? OFFSET ?");
-    $q->bindValue(1, $cats[0]['id'], PDO::PARAM_INT);
-    $q->bindValue(2, $perPage, PDO::PARAM_INT);
-    $q->bindValue(3, ($page - 1) * $perPage, PDO::PARAM_INT);
-    $q->execute();
-    $articles = localize_articles($q->fetchAll());
+    $offset = ($page - 1) * $perPage;
+    $articles = localize_articles(query(
+        "SELECT a.* FROM articles a JOIN article_category ac ON ac.article_id=a.id WHERE ac.category_id=? AND a.status='published' AND a.published_at<=NOW() ORDER BY a.is_featured DESC,a.published_at DESC LIMIT {$perPage} OFFSET {$offset}",
+        [(int)$cats[0]['id']]
+    ));
     $countQ = db()->prepare("SELECT COUNT(*) FROM articles a JOIN article_category ac ON ac.article_id=a.id WHERE ac.category_id=? AND a.status='published' AND a.published_at<=NOW()");
-    $countQ->execute([$cats[0]['id']]);
+    $countQ->execute([(int)$cats[0]['id']]);
     $pages = (int)ceil((int)$countQ->fetchColumn() / $perPage);
     $cat = localize_category($cats[0]);
     $catTitle = $cat['seo_title'] ?: ($cat['name'] . ' | ' . t('site_name'));

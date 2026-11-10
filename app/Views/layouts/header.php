@@ -12,7 +12,7 @@ if ($pageKeywords === '') {
 }
 $canonicalPath = request_path_no_locale();
 $canonical = lurl($canonicalPath);
-$ogImage = !empty($article['image_url'])
+$ogImage = (isset($article) && !empty($article['image_url']))
     ? url(ltrim((string)$article['image_url'], '/'))
     : url('assets/og-default.png');
 ?>

@@ -2,17 +2,20 @@
 $catSlugs = explode(',', (string)($article['category_slugs'] ?? ''));
 $firstSlug = $catSlugs[0] ?? '';
 $catNames = (string)($article['categories'] ?? t('nav_network_security'));
-$readMinutes = max(1, (int)ceil(mb_strlen(strip_tags($article['content_html']), 'UTF-8') / 450));
+$contentHtml = (string)($article['content_html'] ?? '');
+$readMinutes = max(1, (int)ceil(mb_strlen(strip_tags($contentHtml), 'UTF-8') / 450));
 $related = [];
 if (!empty($article['id'])) {
     $related = localize_articles(query("SELECT a.slug,a.title,a.meta_description,a.published_at FROM articles a WHERE a.id<>? AND a.status='published' AND a.published_at<=NOW() AND EXISTS(SELECT 1 FROM article_category x WHERE x.article_id=a.id AND x.category_id IN (SELECT category_id FROM article_category WHERE article_id=?)) ORDER BY a.published_at DESC LIMIT 5", [$article['id'], $article['id']]));
 }
-$faqs = json_decode($article['faq_json'] ?? '[]', true) ?: [];
-$sources = json_decode($article['sources_json'] ?? '[]', true) ?: [];
+$faqRaw = $article['faq_json'] ?? '[]';
+$sourceRaw = $article['sources_json'] ?? '[]';
+$faqs = is_array($faqRaw) ? $faqRaw : (json_decode((string)$faqRaw, true) ?: []);
+$sources = is_array($sourceRaw) ? $sourceRaw : (json_decode((string)$sourceRaw, true) ?: []);
 $cover = $article['image_url'] ?? '';
 $sensitiveSlugs = ['what-is-vpn', 'vpn-vs-proxy', 'what-is-wireguard', 'what-is-vless', 'what-is-dns-leak', 'network-traffic-encryption', 'choose-privacy-tools'];
 $isSensitive = in_array($article['slug'] ?? '', $sensitiveSlugs, true) || in_array('vpn-technology', $catSlugs, true);
-$bodyHtml = strip_hiddifysales_html(sanitize_article_html($article['content_html']));
+$bodyHtml = strip_hiddifysales_html(sanitize_article_html($contentHtml));
 if ($isSensitive) {
     $bodyHtml = preg_replace('~<p>\s*(?:<strong>)?(?:编辑说明|Editor note|Примечание редактора)：?(?:</strong>)?.*?</p>~iu', '', $bodyHtml, 1) ?? $bodyHtml;
 }
@@ -49,13 +52,13 @@ $sourcesFallback = locale() === 'zh'
         <span><?=e($article['title'])?></span>
       </nav>
       <header class="article-head">
-        <p class="meta"><?=e($catNames)?> <span>·</span> <?=e(substr($article['published_at'], 0, 10))?></p>
-        <h1><?=e($article['title'])?></h1>
-        <p class="article-dek"><?=e($article['meta_description'])?></p>
+        <p class="meta"><?=e($catNames)?> <span>·</span> <?=e(substr((string)($article['published_at'] ?? ''), 0, 10))?></p>
+        <h1><?=e((string)($article['title'] ?? ''))?></h1>
+        <p class="article-dek"><?=e((string)($article['meta_description'] ?? ''))?></p>
         <div class="article-byline">
           <span><?=e(t('editor_team'))?></span>
-          <span><?=e(t('published_on', ['date' => substr($article['published_at'], 0, 10)]))?></span>
-          <span><?=e(t('updated_on', ['date' => substr($article['updated_at'], 0, 10)]))?></span>
+          <span><?=e(t('published_on', ['date' => substr((string)($article['published_at'] ?? ''), 0, 10)]))?></span>
+          <span><?=e(t('updated_on', ['date' => substr((string)($article['updated_at'] ?? $article['published_at'] ?? ''), 0, 10)]))?></span>
           <span><?=e(t('read_minutes', ['n' => (string)$readMinutes]))?></span>
         </div>
       </header>
